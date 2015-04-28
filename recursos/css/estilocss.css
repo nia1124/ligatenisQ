@@ -1,0 +1,344 @@
+{
+    margin: 0;
+    padding: 0;
+}
+header, body, footer, img, div, aside, article, section, nav, details, figcaption, figure, hgroup, h3 
+{
+	display: block;
+} 
+body
+{	
+	background-image: url('../img/textura2.jpg');
+	/*background-repeat:repeat-x; 
+	background-size: 100%;*/
+	font-family: 'Droid Sans', sans-serif;
+	width: 100%;
+}
+img 
+{
+	width: 100%;
+}
+.borde
+{
+	width: 70%;
+	margin: 0 auto;
+	font: 13px/22px Helvetica, Arial, sans-serif;
+}
+
+/*estilo del header y de cada uno de sus componentes*/
+.encabezado
+{	
+	background:rgba(000,000,000,0.60);
+	box-shadow: 0px 0px 4px rgba(255,255,255,0.75);
+	left: 0;
+	height: 10%;
+	width: 100%;
+	margin-top: 2%;
+	margin-bottom: 0%;
+	display: inline-block;
+}
+.campos
+{
+	box-shadow: 5px 5px 4px rgba(0,0,0,0.75); 
+}
+.logo
+{
+	float: left;
+	width: 20%;
+	margin-bottom: 0;
+}
+.contenidoH 
+{	
+	display: inline-block;
+	float: right;
+	text-align: right;
+	margin-right: 8px;
+	margin-top: 1%;
+	margin-bottom: 0%;
+}
+.con1
+{
+	width: 30%;
+	margin-top: 2%;
+	margin-right: 2%;
+}
+input.imgContacto1
+{
+	width: 60%;
+}
+.imgContacto
+{	
+	display: inline-flex;
+	padding-left: 0%; 
+	width: 10%;
+	height: 10%;
+}
+input.imgContacto
+{
+	padding-left: 0%;
+	padding-right: 0%;
+}
+.labelCon
+{
+	
+	font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    color: #f7f7ff;
+    font-size: 14px;
+	margin-top: 2%;
+	width: 74%;
+	height: 10%;
+}
+.redes
+{
+	font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    color: #f7f7ff;
+    font-size: 14px;
+    /*Esta propiedad permite que el elemento se acomode de acuerdo al espacio en el que 
+	esta ubicado. lo hace flexible*/
+	display: inline-flex;
+	margin: 0%;	
+	margin-top: 1%;
+	width: 40%;
+	padding-left:5%; 
+}
+.imgp
+{
+	display: inline;
+	width: 30px;
+	height: 30px;
+	margin: 1%;
+	margin-top: 2%;
+}
+.enlaces
+{	
+	text-decoration:none;
+	font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+	padding-left: 90px;
+	margin-top: 2%;
+}
+a
+{
+	text-decoration: none;
+	color: yellow;
+}
+.busqueda
+{
+	margin-top: 1%;
+	margin-bottom: 0%;
+	margin-right: 5px;
+	margin-left: 35%;
+	box-shadow: 5px 5px 4px rgba(0,0,0,0.75); 	
+	border-radius: 10px;
+
+}
+
+/*Estilo de la galeria del encabezado*/
+.galeriaF
+{
+	width: 100%;
+	height: 120%;
+	margin-top: 1%;
+	margin-bottom: 0%;
+	background-repeat: no-repeat;
+	background-size: 100% 400px;
+
+	-webkit-background-size: 100% 400px;
+	-moz-background-size: 100% 400px;
+	-o-background-size: 100% 400px;
+
+	animation: galeria;
+	-webkit-animation:galeria;
+	-o-animation:galeria;
+	-moz-animation:galeria;
+		
+	-webkit-animation-duration: 3s;
+		-o-animation-duration: 3s;
+		animation-duration: 3s;	
+}
+/*estilo del menu*/
+.menu 
+{
+	display: inline-block;
+	width: 100%;
+    height: 35px;
+    padding-left: 0%;
+    font-size: 14px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 3px 2px 3px #5B0000;
+    background-color: #000; 
+}
+.menu li
+{
+	display: inline-block;
+	margin-right: 1%;
+	margin-left: 1%;
+	position: relative;
+	z-index: 100%;
+}
+.menu li a
+{
+	display: block;
+	height: 19px;
+	padding: 8px;
+	margin-left: 1%;
+	margin-right: 1%;
+	font-weight: 600px;
+	text-decoration: none;
+	color: #fff;
+	
+
+	/*ahora se realiza la adecuación para los navegadores principales*/
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+.menu li a:hover, .menu li:hover > a
+{
+	color: #000;
+	background: yellow;
+}
+ul.menu
+{
+	margin-top: 0%;
+}
+element.style
+{
+	height: 409px;
+}
+/*ahora se define el estilo del submenu*/
+.menu ul 
+{
+	display: none;
+	margin: 0;
+    margin-top: 0px;
+	padding: 0;
+	width: 200%;
+	text-align: left;
+	margin-left: 1%;
+	margin-right: 5%;
+	position: absolute;
+	top: 36px;
+	left: 0px;
+	background: #000;
+}
+
+/*ahora se define el display para submenu*/
+.menu li:hover > ul
+{
+	display: block;
+}
+
+.menu ul li 
+{
+	display: block;
+	float: none;
+	background: none;
+	margin:0;
+	padding: 0;
+}
+.menu ul li a
+{
+	font-size: 16px;
+	font-weight: normal;
+	display: block;
+	color: #fff;
+	background: #000;
+	width: 100%; 
+}
+.menu ul ul 
+{
+	left: 149px;
+	top: 0px;
+}
+
+/*Estilo sección de las noticias*/
+
+.noticias
+{
+	text-align: center;
+	width: 100%;
+	display: inline-table;
+	margin: 1%;
+}
+p
+{
+	text-align: center;
+	border:1px margin-top;
+	color: #f7f7ff;
+}
+h3
+{
+	color: #f7f7ff;
+}
+.noti
+{
+	background:rgba(0,0,0,0.65);
+	box-shadow: 0px 0px 4px rgba(255,255,255,0.75);
+	border: 2px solid;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 2%;
+	margin-right: 2%;
+	width: 30%;
+	display: inline-table;
+}
+
+/*Estilo de los componentes del pie de página*/
+.seccionRedes
+{
+	text-align: center;
+	width: 30%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 35%;
+}
+.piePagina
+{
+	background:rgba(0,0,0,0.65);
+	box-shadow: 0px 0px 4px rgba(255,255,255,0.4);
+	text-align: center;
+	margin-top: 0%;
+	margin-bottom: 2%;
+}
+.redes1
+{
+	font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    color: #f7f7ff;
+    font-size: 14px;
+	text-align: center;
+	margin: 0%;
+	margin-top: 1%;
+}
+.con
+{
+	display: inline-flex;
+	width: 85%;
+}
+.btnBuscar
+{
+	margin-top: 13%;
+	margin-bottom: 0%;
+	margin-right: 5px;
+	margin-left: -20%;
+	border-radius: 10px;
+}
+.mv
+{
+	background:rgba(0,0,0,0.65);
+	box-shadow: 0px 0px 4px rgba(255,255,255,0.75);
+	border: 2px solid;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 0%;
+	width: 49%;
+	display: inline-table;
+}

@@ -1,0 +1,56 @@
+<section class="noticias" id="contenido">
+	<div class="integrantes">
+		<table BORDER="2" CELLSPACING="3" WIDTH=100%>
+			<tbody>
+				<tr>
+					<td>
+						<th>Integrante</th>
+					</td>
+					<td>
+						<th>Descripción</th>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<th></th>
+					</td>
+					<td>
+						<th></th>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<th></th>
+					</td>
+					<td>
+						<th></th>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<th></th>
+					</td>
+					<td>
+						<th></th>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<th></th>
+					</td>
+					<td>
+						<th></th>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<th></th>
+					</td>
+					<td>
+						<th></th>
+					</td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>	
+</section>
