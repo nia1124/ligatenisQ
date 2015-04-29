@@ -1,10 +1,9 @@
-<?php require_once '../libs/conexion_facebook/app/start.php'; ?>
 <div class="container">
 		<div class="row">
 			<nav class="navbar-fixed-top">
 				<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
 				<img src="../recursos/img/header.jpg" class="img-responsive">
-					<ul id="main-menu" class="nav nav-pills nav-justified visible-md visible-lg" >
+					<ul id="main-menu" class="nav nav-pills nav-justified navbar-inverse color visible-md visible-lg" >
 						<li class="active"><a href="index.php">Inicio</a></li>
 		                <li class="dropdown">
 			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Institución<span class="caret"></span></a>
@@ -35,6 +34,9 @@
 		                <li><a href="#">Foro</a></li>
 		                <li><a href="#">Contactenos</a></li>
 		                <li><a href="#"  id="accion_login" class="btn btn-danger">Login</a></li>
+					</ul>
+					<ul>
+
 					</ul>
 				</div>	
 			</nav>
