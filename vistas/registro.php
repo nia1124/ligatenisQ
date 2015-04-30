@@ -29,7 +29,7 @@
 							<input placeholder="Ingrese de nuevo la contraseña" name="pass2" class="form-control" required/>	
 							</div>
 							<div class= "form-group">
-							<input type="submit" class="form-control  btn btn-success padding-b" value="Registrasre"/>	
+							<input type="submit" class="form-control  btn btn-success" value="Registrasre"/>	
 							</div>
 						</div>
 					</div>
@@ -41,7 +41,9 @@
 			<div class="col-md-12" >
 				<panel class="col-md-6 col-md-offset-3 panel panel-primary " align="center">
 					<div  class="panel-body" action="/ChatSystem/home/login" method="POST">
+						
 						<div class= "form-group">
+						<?php if (!isset($_SESSION['facebook'])): ?>
 						<input placeholder="Ingrese su username" class="form-control padding-l" name="username"/>	
 						</div>
 						<div class= "form-group">
@@ -51,11 +53,18 @@
 						<input type="submit"  class="btn btn-info padding-b" value="Iniciar sesión"/>	
 						</div>
 						<div class="form-group">
-						<button  class="margenes" type="submit"><img src="../recursos/img/facebook.png" height="68" width="68" alt="">
+						<a href="<?php echo $helper->getLoginUrl($config['scopes']);?>"
+						<button  type="submit"><img src="../recursos/img/facebook.png" height="68" width="68" alt="">
 						</button> 	
-						<button class="margenes" type="submit"><img src="../recursos/img/tweet.png" height="68" width="68" alt="">
+						<button type="submit"><img src="../recursos/img/tweet.png" height="68" width="68" alt="">
 						</button> 	
 						</div>
+						<?php else: ?>
+						<p>
+							Bienvenido, <?php echo $facebook_user->getName();?>
+						</p>
+						<a href="libs/conexion_facebook/app/logout.php"><button type="submit" class="form-control btn btn-success" value="Registrasre"/></button></a>
+				<?php endif; ?>
 					</div>
 				</panel>		
 			</div>		
