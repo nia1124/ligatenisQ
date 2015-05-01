@@ -7,6 +7,9 @@
 	<script type="text/javascript" src="../recursos/js/basic.js" ></script>
 	<link rel="stylesheet" href="../recursos/css/bootstrap.css">
 	<link rel="stylesheet" href="../recursos/css/style.css">
+	<?php 
+	require_once '../libs/conexion_facebook/app/start.php'; 
+?>
 
 </head>
 <body>

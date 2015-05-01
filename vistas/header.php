@@ -1,12 +1,15 @@
-<?php 
-	require_once '../libs/conexion_facebook/app/start.php'; 
-?>
 <div class="container">
 		<div class="row">
-			<nav class="navbar-fixed-top">
+			<nav>
 				<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
-				<img src="../recursos/img/header.jpg" class="img-responsive">
-					<ul id="main-menu" class="nav nav-pills nav-justified navbar-inverse color visible-md visible-lg" >
+					<div>
+						<img src="../recursos/img/header.jpg" class="img-responsive" role="navigation" style="margin-bottom: 0%">
+					</div>
+
+					<div>
+							
+						
+					<ul id="main-menu" class="nav nav-pills nav-justified navbar navbar-inverse  menu" role="navigation">
 						<li class="active"><a href="index.php">Inicio</a></li>
 		                <li class="dropdown">
 			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Institución<span class="caret"></span></a>
@@ -15,7 +18,6 @@
 				               		<li><a href="#">Estatutos</a></li>
 				               		<li><a href="#" id="accion_organoAdm">Órgano Administrativo</a></li>
 				               	</ul>
-				               	
 			            </li>
 		                <li><a href="#" id="accion_club">Clubes</a></li>
 		                <li class="dropdown">
@@ -42,32 +44,32 @@
 		                <li><a href="#" id="accion_eventos">Eventos</a></li>
 		                <li><a href="#">Foro</a></li>
 		                <li><a href="#">Contactenos</a></li>
+						<?php if (!isset($_SESSION['facebook'])): ?>
+		                <li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
 
-		                <?php if (!isset($_SESSION['facebook'])): ?>
-		                	<li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
-						<?php else: ?>
+		                <?php else: ?>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle btn btn-danger" data-toggle="dropdown">
+								Hola <?php echo $facebook_user->getFirstName();?><span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="../libs/conexion_facebook/app/logout.php" class="dropdown-toggle">Cerrar Sesión</a></li>
+							</ul>	
+						</li> 
+						<?php endif; ?>	
 
-						<li>
-							<p>
-							<li>
-							<a href="../libs/conexion_facebook/app/logout.php" class="btn btn-danger"><?php echo $facebook_user->getFirstName();?></a>	
-							</li>	
-							</p>
-						</li>
-						<li><a href="../libs/conexion_facebook/app/logout.php" class="btn btn-danger">Cerrar Sesión</a>	
-						</li>	
-						<?php endif; ?>
-					</ul>
-					<ul>
-					</ul>
+						</ul>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin" style="margin-top:0%">
+							<input  type="image" id="foto" class="img-responsive">
+							<script type="text/javascript" src="../recursos/js/galeria.js"></script>
+						</div>
+					</div>
+
 				</div>	
 			</nav>
-			<div class="row">
-					<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin">
-						<input  type="image" id="foto" class="img-responsive">
-						<script type="text/javascript" src="../recursos/js/galeria.js"></script>
-					</div>
-			</div>
+			
 	</div>
 </div>
 	

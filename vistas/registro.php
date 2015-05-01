@@ -7,8 +7,6 @@
 	<link rel="stylesheet" href="../recursos/css/bootstrap.css">
 	<link rel="stylesheet" href="../recursos/css/style.css">
 </head>
-
-<?php include 'header.php'; ?>
 	<div id="contenido" class="container margen registro">
 		<div class="row ">
 			<div class="col-md-12">

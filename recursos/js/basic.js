@@ -43,14 +43,7 @@ $(document).ready(function()
         event.preventDefault();
         link('../vistas/eventos.php', '#contenido');
     });
-
-
-    $('#accion_login').click(function(event) 
-    {
-        event.preventDefault();
-        link('../vistas/login.php', '#contenido');
-    });   
-
+    
     $('#accion_registro').click(function(event) 
     {
         event.preventDefault();
@@ -73,23 +66,40 @@ $(document).ready(function()
     {
         event.preventDefault();
         link('../vistas/entrenador.php', '#contenido');
-    });
+    });   
+
     function link(url, update) 
     {
-        $.ajax({
-        url: url,
+        $.ajax
+        ({
+            url: url,
 
-        type: 'POST',
-        dataType: 'html',
-        success: function(respuesta)
-        {            
-            $(update).html(respuesta);
+            type: 'POST',
+            dataType: 'html',
+            success: function(respuesta)
+            {            
+                $(update).html(respuesta);
+            }
+        });
+    } 
+
+    var menu = $('.menu');
+    var origOffsetY = menu.offset().top;
+
+    function scroll() 
+    {
+        if ($(window).scrollTop() >= origOffsetY) 
+        {
+            $('.menu').addClass('navbar-fixed-top');
+        } 
+        else 
+        {
+            $('.menu').removeClass('navbar-fixed-top');
         }
-    });sss
-
-}
-
-
+    }
+    document.onscroll = scroll;   
 
 });
+
+
 
