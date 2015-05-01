@@ -15,7 +15,8 @@
 		animation-duration: 3s;
 }
 .padding-left{
-	  padding-left: 7px;
+	  padding-left: 8px;
+	  padding-right: 7px;
 }
 .padding-l{
 	padding-left: -23px; 
@@ -37,7 +38,14 @@ button .margenes{
 .alto{
 	height: 10%;
 }
-
+.ajustarTam{
+	width: 100%;
+	margin: 0%;
+	padding: 0%;
+}
+.top-buffer{
+	margin-top: 5%;
+}
 	
 
 
