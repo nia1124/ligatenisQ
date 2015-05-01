@@ -1,3 +1,6 @@
+<?php 
+	require_once '../libs/conexion_facebook/app/start.php'; 
+?>
 <div class="container">
 		<div class="row">
 			<nav class="navbar-fixed-top">
@@ -15,7 +18,13 @@
 				               	
 			            </li>
 		                <li><a href="#" id="accion_club">Clubes</a></li>
-		                <li><a href="#" id="accion_integrantes">Integrantes</a></li>
+		                <li class="dropdown">
+		                	<a href="#" class="dropdown-toggle" data-toogle="dropdown">Integrantes<span class="caret"></span></a>
+		                	<ul class="dropdown-menu" role="menu">
+				                	<li><a href="#" id="accion_deportista">Deportistas</a></li>
+				                	<li><a href="#" id="accion_entrenador">Entrenadores</a></li>
+				               	</ul>
+		                </li>
 		                <li class="dropdown">
 		                	<a href="#" class="dropdown-toggle" data-toogle="dropdown">Ranking<span class="caret"></span></a>
 				                <ul class="dropdown-menu" role="menu">
@@ -33,11 +42,21 @@
 		                <li><a href="#" id="accion_eventos">Eventos</a></li>
 		                <li><a href="#">Foro</a></li>
 		                <li><a href="#">Contactenos</a></li>
-		                <li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
-		                 <li><a href="#"  id="accion_registro" class="btn btn-danger">Registrase</a></li>
+
+		                <?php if (!isset($_SESSION['facebook'])): ?>
+		                	<li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
+						<?php else: ?>
+
+						<li>
+							<p>
+							<?php echo $facebook_user->getFirstName();?>
+							</p>
+						</li>
+						<li><a href="../libs/conexion_facebook/app/logout.php" class="btn btn-danger">Cerrar Sesión</a>	
+						</li>	
+						<?php endif; ?>
 					</ul>
 					<ul>
-
 					</ul>
 				</div>	
 			</nav>

@@ -63,6 +63,17 @@ $(document).ready(function()
         link('../vistas/iniciosesion.php', '#contenido');
     });
 
+    $('#accion_deportista').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/deportista.php', '#contenido');
+    });
+
+    $('#accion_entrenador').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/entrenador.php', '#contenido');
+    });
     function link(url, update) 
     {
         $.ajax({
