@@ -13,20 +13,35 @@
 	<?php include 'header.php'; ?> 
 	<div id="contenido" class="container">
 		<div class="row padding-l">
-			<div class="col-md-10 ">
+			<div class="col-md-12 top-buffer">
 					<div class="col-md-4" >
 						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive" src="../recursos/img/n1.jpg">
+							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
 						<p>descripción.</p>
 					</div>
 					<div class="col-md-4" >
 						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive" src="../recursos/img/n1.jpg">
+							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
 						<p>descripción.</p>
 					</div>
 					<div class="col-md-4" >
 						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive" src="../recursos/img/n1.jpg">
+							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+						<p>descripción.</p>
+					</div>
+					<div class="col-md-4" >
+						<p><h3>Noticia 1</h3></p>
+							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+						<p>descripción.</p>
+					</div>
+					<div class="col-md-4" >
+						<p><h3>Noticia 1</h3></p>
+							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+						<p>descripción.</p>
+					</div>
+					<div class="col-md-4" >
+						<p><h3>Noticia 1</h3></p>
+							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
 						<p>descripción.</p>
 					</div>
 			</div>
