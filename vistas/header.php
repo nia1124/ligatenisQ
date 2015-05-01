@@ -42,7 +42,7 @@
 				</div>	
 			</nav>
 			<div class="row">
-					<div class="col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-3 margin">
+					<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin">
 						<input  type="image" id="foto" class="img-responsive">
 						<script type="text/javascript" src="../recursos/js/galeria.js"></script>
 					</div>

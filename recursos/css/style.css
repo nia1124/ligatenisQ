@@ -1,5 +1,18 @@
 .margin{
 	margin-top: 21%;
+	height: 10%;
+	-webkit-background-size: 100% 400px;
+	-moz-background-size: 100% 400px;
+	-o-background-size: 100% 400px;
+
+	animation: galeria;
+	-webkit-animation:galeria;
+	-o-animation:galeria;
+	-moz-animation:galeria;
+		
+	-webkit-animation-duration: 3s;
+		-o-animation-duration: 3s;
+		animation-duration: 3s;
 }
 .padding-left{
 	  padding-left: 7px;
@@ -20,6 +33,9 @@ button .margenes{
 }
 .margen{
 	margin-top: 5%;
+}
+.alto{
+	height: 10%;
 }
 
 	
