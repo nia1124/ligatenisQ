@@ -49,7 +49,9 @@
 
 						<li>
 							<p>
-							<?php echo $facebook_user->getFirstName();?>
+							<li>
+							<a href="../libs/conexion_facebook/app/logout.php" class="btn btn-danger"><?php echo $facebook_user->getFirstName();?></a>	
+							</li>	
 							</p>
 						</li>
 						<li><a href="../libs/conexion_facebook/app/logout.php" class="btn btn-danger">Cerrar Sesión</a>	
