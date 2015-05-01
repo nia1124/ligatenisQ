@@ -33,7 +33,8 @@
 		                <li><a href="#" id="accion_eventos">Eventos</a></li>
 		                <li><a href="#">Foro</a></li>
 		                <li><a href="#">Contactenos</a></li>
-		                <li><a href="#"  id="accion_login" class="btn btn-danger">Login</a></li>
+		                <li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
+		                 <li><a href="#"  id="accion_registro" class="btn btn-danger">Registrase</a></li>
 					</ul>
 					<ul>
 

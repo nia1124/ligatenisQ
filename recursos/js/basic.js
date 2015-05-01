@@ -45,10 +45,22 @@ $(document).ready(function()
     });
 
 
-     $('#accion_login').click(function(event) 
+    $('#accion_login').click(function(event) 
     {
         event.preventDefault();
         link('../vistas/login.php', '#contenido');
+    });   
+
+    $('#accion_registro').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/registro.php', '#contenido');
+    });
+
+    $('#accion_iniciosesion').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/iniciosesion.php', '#contenido');
     });
 
     function link(url, update) 
