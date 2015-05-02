@@ -17,8 +17,11 @@
 		<div class="row padding-l">
 			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
 				<div class="panel panel-primary fondopagina borde">
-					<div class="panel-body">
-						<div class="col-md-4" >
+  					<div class="panel-heading">
+    					<h3 class="panel-title" align="center">Noticias Destacadas</h3>
+  					</div>
+  					<div class="panel-body">
+    					<div class="col-md-4" >
 							<p><h3>Noticia 1</h3></p>
 								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
 							<p>descripción.</p>
@@ -48,8 +51,8 @@
 								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
 							<p>descripción.</p>
 						</div>
-					</div>
-				</div>	
+  					</div>
+				</div>
 			</div>
 		</div>
 	</div>
