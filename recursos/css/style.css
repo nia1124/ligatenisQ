@@ -55,14 +55,10 @@ button .margenes{
 	font-family: sans-serif;
 	color:#281AA5;
 }
-.fondopagina
-{
-	background-color:#FFFFFF; 
-}
 .borde
 {
 	border-style:solid;
-	border-width: medium;
+	border-width: thin;
 }
 .margen
 {
@@ -74,10 +70,10 @@ button .margenes{
 	margin-top: 0%;
 	margin-bottom: 0%; 
 }
-.bordeT td .bordeT tr 
+.titulo
 {
-	border-collapse: collapse;
-	border-style: 1px solid;
+	font-size: 30%;
+	
 }
 .panel-title{
 	font: sans-serif;

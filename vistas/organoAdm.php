@@ -3,94 +3,54 @@
 		<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
 			<div class="panel panel-primary fondopagina borde">
 				<div class="panel-body">
-						<table class="col-md-10 col-md-offset-1 margen alto bordeT">
+					<div class="col-md-10 col-md-offset-1 margen alto bordeT">
+						<table class="table">
 							<tbody>
-								<tr class="bordeT">
-									<td class="bordeT">
-										<th>Integrante Organo Administrativo</th>
+								<tr>									
+									<td>	
+									<th class="titulo">Integrante Organo Administrativo</th>
 									</td>
 									<td>
-										<th>Contacto</th>
+										<th class="titulo">Contacto</th>
 									</td>
 									<td>					
-										<th>Cargo</th>
+										<th class="titulo">Cargo</th>
 									</td>
 									<td>
-										<th>Información Adicional</th>
+										<th class="titulo">Información Adicional</th>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<th></th>
+										<th>daniel</th>
 									</td>
 									<td>
-										<th></th>
+										<th>6767666</th>
 									</td>
 									<td>					
-										<th></th>
+										<th>gerente</th>
 									</td>
 									<td>
-										<th></th>
+										<th>algo@hotmail.com</th>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										<th></th>
+										<th>cristian</th>
 									</td>
 									<td>
-										<th></th>
+										<th>321456789</th>
 									</td>
 									<td>					
-										<th></th>
+										<th>tesorero</th>
 									</td>
 									<td>
-										<th></th>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<th></th>
-									</td>
-									<td>
-										<th></th>
-									</td>
-									<td>					
-										<th></th>
-									</td>
-									<td>
-										<th></th>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<th></th>
-									</td>
-									<td>
-										<th></th>
-									</td>
-									<td>					
-										<th></th>
-									</td>
-									<td>
-										<th></th>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<th></th>
-									</td>
-									<td>
-										<th></th>
-									</td>
-									<td>					
-										<th></th>
-									</td>
-									<td>
-										<th></th>
+										<th>cosa@hotmail.com</th>
 									</td>
 								</tr>
 							</tbody>
 						</table>
+					</div>	
 				</div>
 			</div>
 		</div>
