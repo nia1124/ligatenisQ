@@ -5,7 +5,6 @@ $(document).ready(function()
 	{
         event.preventDefault();
         link('../vistas/misionVision.php', '#contenido');
-        console.log("yuoo");
     });
 
     $('#accion_organoAdm').click(function(event) 
@@ -43,7 +42,7 @@ $(document).ready(function()
         event.preventDefault();
         link('../vistas/eventos.php', '#contenido');
     });
-    
+
     $('#accion_registro').click(function(event) 
     {
         event.preventDefault();
@@ -91,6 +90,7 @@ $(document).ready(function()
         if ($(window).scrollTop() >= origOffsetY) 
         {
             $('.menu').addClass('navbar-fixed-top');
+            
         } 
         else 
         {

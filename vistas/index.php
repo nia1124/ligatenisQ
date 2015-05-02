@@ -10,48 +10,49 @@
 	<?php 
 	require_once '../libs/conexion_facebook/app/start.php'; 
 ?>
-
 </head>
 <body>
 	<?php include 'header.php'; ?> 
 	<div id="contenido" class="container">
 		<div class="row padding-l">
-			<div class="col-md-12 top-buffer">
-					<div class="col-md-4" >
-						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
-						<p>descripción.</p>
+			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
+				<div class="panel panel-primary fondopagina borde">
+					<div class="panel-body">
+						<div class="col-md-4" >
+							<p><h3>Noticia 1</h3></p>
+								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+							<p>descripción.</p>
+						</div>
+						<div class="col-md-4" >
+							<p><h3>Noticia 1</h3></p>
+								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+							<p>descripción.</p>
+						</div>
+						<div class="col-md-4" >
+							<p><h3>Noticia 1</h3></p>
+								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+							<p>descripción.</p>
+						</div>
+						<div class="col-md-4" >
+							<p><h3>Noticia 1</h3></p>
+								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+							<p>descripción.</p>
+						</div>
+						<div class="col-md-4" >
+							<p><h3>Noticia 1</h3></p>
+								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+							<p>descripción.</p>
+						</div>
+						<div class="col-md-4" >
+							<p><h3>Noticia 1</h3></p>
+								<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
+							<p>descripción.</p>
+						</div>
 					</div>
-					<div class="col-md-4" >
-						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
-						<p>descripción.</p>
-					</div>
-					<div class="col-md-4" >
-						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
-						<p>descripción.</p>
-					</div>
-					<div class="col-md-4" >
-						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
-						<p>descripción.</p>
-					</div>
-					<div class="col-md-4" >
-						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
-						<p>descripción.</p>
-					</div>
-					<div class="col-md-4" >
-						<p><h3>Noticia 1</h3></p>
-							<img class="img-responsive ajustarTam" src="../recursos/img/carlos.jpg">
-						<p>descripción.</p>
-					</div>
+				</div>	
 			</div>
 		</div>
 	</div>
-
 	<?php include 'footer.php'; ?>
-	
 </body>
 </html>

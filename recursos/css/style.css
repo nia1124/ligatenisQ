@@ -46,7 +46,24 @@ button .margenes{
 .top-buffer{
 	margin-top: 5%;
 }
-	
+.fondo
+{
+	background-color:#00021C; 
+}
+.letra
+{
+	font-family: sans-serif;
+	color:#281AA5;
+}
+.fondopagina
+{
+	background-color:#FFFFFF; 
+}
+.borde
+{
+	border-style:solid;
+	border-width: medium;
+}
 
 
 

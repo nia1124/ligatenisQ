@@ -1,14 +1,15 @@
+<header>
+	<?php 
+	require_once '../libs/conexion_facebook/app/start.php'; 
+?>
+</header>
 <div class="container">
-		<div class="row">
+		<div class="row ">
 			<nav>
 				<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
 					<div>
 						<img src="../recursos/img/header.jpg" class="img-responsive" role="navigation" style="margin-bottom: 0%">
 					</div>
-
-					<div>
-							
-						
 					<ul id="main-menu" class="nav nav-pills nav-justified navbar navbar-inverse  menu" role="navigation">
 						<li class="active"><a href="index.php">Inicio</a></li>
 		                <li class="dropdown">
@@ -56,20 +57,19 @@
 							</ul>	
 						</li> 
 						<?php endif; ?>	
-
-						</ul>
-					</div>
-
-					<div class="row">
-						<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin" style="margin-top:0%">
-							<input  type="image" id="foto" class="img-responsive">
-							<script type="text/javascript" src="../recursos/js/galeria.js"></script>
+					</ul>
+				</div>
+				<div class="row ">
+						<div class="panel-primary">
+							<div class="panel-body ">
+								<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin" style="margin-top:0%">
+								<input  type="image" id="foto" class="img-responsive">
+								<script type="text/javascript" src="../recursos/js/galeria.js"></script>
+								</div>
+							</div>
 						</div>
 					</div>
-
-				</div>	
 			</nav>
-			
-	</div>
+		</div>		
 </div>
 	
