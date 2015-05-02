@@ -10,8 +10,8 @@
 	<div id="contenido" class="container margen registro">
 		<div class="row ">
 			<div class="col-md-12">
-				<panel class="col-md-6 col-md-offset-3 panel panel-success " align="center">	
-						<div class="panel-body" action="home/register" method="POST" accept-charset="utf-8">
+				<panel class="col-md-6 col-md-offset-3 panel panel-success borde " align="center">	
+						<div class="panel-body" >
 							<div class= "form-group">
 							<input placeholder="Ingrese su nombre" name="nombre" class="form-control" required/>
 							</div>

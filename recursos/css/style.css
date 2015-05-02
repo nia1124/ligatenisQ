@@ -64,7 +64,16 @@ button .margenes{
 	border-style:solid;
 	border-width: medium;
 }
-
+.margen
+{
+	padding-right: 0%;
+	padding-left: 0%;
+}
+.alto
+{
+	margin-top: 0%;
+	margin-bottom: 0%; 
+}
 
 
 

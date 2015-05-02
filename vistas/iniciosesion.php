@@ -12,7 +12,7 @@
 <div class="iniciosesion container margen" id="contenido" >
 	<div class="row" >
 		<div class="col-md-12" >
-			<div class="col-md-6 col-md-offset-3 panel panel-primary " align="center">
+			<div class="col-md-6 col-md-offset-3 panel panel-primary borde" align="center">
 				<div  class="panel-body">
 					<div class= "form-group">
 					<input placeholder="Ingrese su username" class="form-control padding-l" name="username"/>	
@@ -25,13 +25,19 @@
 					<div class= "form-group ">
 					<input type="submit"  class="btn btn-info padding-b" value="Iniciar sesión"/>
 					</div>
+
+					<div class="form-group">
+						<a href="<?php echo $helper->getLoginUrl($config['scopes']);?>">
+						<img src="../recursos/img/loginfb.png" height="40%" width="40%" alt="">
+						</a>
+					</div>
+
+					<div class="form-group">
+					<a href="#"  id="accion_registro">Registrate Ahora</a>				
+					</div> 
 				</div>
-				<a href="<?php echo $helper->getLoginUrl($config['scopes']);?>">
-				<img src="../recursos/img/loginfb.png" height="40%" width="40%" alt="">
-				</a>
-				<div class="col-md-6 col-md-offset-3">
-				<a href="#"  id="accion_registro">Registrate Ahora</a>				
-				</div> 	
+				
+					
 			</div>
 				
 		</div>		
