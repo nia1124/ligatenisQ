@@ -79,6 +79,9 @@ button .margenes{
 	border-collapse: collapse;
 	border-style: 1px solid;
 }
-
+.panel-title{
+	font: sans-serif;
+	font-size: 200%;
+}
 
 
