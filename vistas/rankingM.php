@@ -1,5 +1,5 @@
-<section class="noticias" id="contenido">
-	<div class="rankingM">
+
+	<div class="rankingM" id="contenido">
 		<table BORDER="2" CELLSPACING="3" WIDTH=100%>
 			<tbody>
 				<tr>
@@ -13,62 +13,6 @@
 						<th>Puntos</th>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<th></th>
-					</td>
-					<td>
-						<th></th>
-					</td>
-					<td>					
-						<th></th>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<th></th>
-					</td>
-					<td>
-						<th></th>
-					</td>
-					<td>					
-						<th></th>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<th></th>
-					</td>
-					<td>
-						<th></th>
-					</td>
-					<td>					
-						<th></th>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<th></th>
-					</td>
-					<td>
-						<th></th>
-					</td>
-					<td>					
-						<th></th>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<th></th>
-					</td>
-					<td>
-						<th></th>
-					</td>
-					<td>					
-						<th></th>
-					</td>
-				</tr>
 			</tbody>
 		</table>	
 	</div>	
-</section>

@@ -20,22 +20,22 @@
 				               		<li><a href="#" id="accion_organoAdm">Órgano Administrativo</a></li>
 				               	</ul>
 			            </li>
-		                <li><a href="#" id="accion_club">Clubes</a></li>
+			            <li><a href="#" id="accion_club">Clubes</a></li>
 		                <li class="dropdown">
-		                	<a href="#" class="dropdown-toggle" data-toogle="dropdown">Integrantes<span class="caret"></span></a>
-		                	<ul class="dropdown-menu" role="menu">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Integrantes<span class="caret"></span></a>
+				                <ul class="dropdown-menu" role="menu">
 				                	<li><a href="#" id="accion_deportista">Deportistas</a></li>
 				                	<li><a href="#" id="accion_entrenador">Entrenadores</a></li>
 				               	</ul>
-		                </li>
+			            </li>
 		                <li class="dropdown">
-		                	<a href="#" class="dropdown-toggle" data-toogle="dropdown">Ranking<span class="caret"></span></a>
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ranking<span class="caret"></span></a>
 				                <ul class="dropdown-menu" role="menu">
 				                	<li><a href="#" id="accion_rankingF">Ranking Femenino</a></li>
 				                	<li><a href="#" id="accion_rankingM">Ranking Masculino</a></li>
 				               	</ul>
 			            </li>
-		                <li class="dropdown">
+			            <li class="dropdown">
 			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Galeria<span class="caret"></span></a>
 			                	<ul class="dropdown-menu" role="menu">
 				                	<li><a href="#">Fotos</a></li>
@@ -44,14 +44,13 @@
 			             </li>
 		                <li><a href="#" id="accion_eventos">Eventos</a></li>
 		                <li><a href="#">Foro</a></li>
-		                <li><a href="#">Contactenos</a></li>
 						<?php if (!isset($_SESSION['facebook'])): ?>
 		                <li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
 
 		                <?php else: ?>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle btn btn-danger" data-toggle="dropdown">
-								Hola <?php echo $facebook_user->getFirstName();?><span class="caret"></span></a>
+								Hola <?php echo $facebook_user->getName();?><span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="../libs/conexion_facebook/app/logout.php" class="dropdown-toggle">Cerrar Sesión</a></li>
 							</ul>	

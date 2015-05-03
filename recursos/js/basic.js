@@ -18,12 +18,6 @@ $(document).ready(function()
         link('../vistas/clubes.php', '#contenido');
     });
 
-    $('#accion_integrantes').click(function(event) 
-    {
-        event.preventDefault();
-        link('../vistas/integrantes.php', '#contenido');
-    });
-
     $('#accion_rankingF').click(function(event) 
     {
         event.preventDefault();
@@ -36,6 +30,18 @@ $(document).ready(function()
         link('../vistas/rankingM.php', '#contenido');
     });
 
+    $('#accion_deportista').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/deportista.php', '#contenido');
+    });  
+
+    $('#accion_entrenador').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/entrenador.php', '#contenido');
+    });  
+    
     $('#accion_eventos').click(function(event) 
     {
         event.preventDefault();
