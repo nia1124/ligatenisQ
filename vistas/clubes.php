@@ -1,5 +1,5 @@
-<section class="noticias" id="contenido">
-	<div class="club">
+<div class="club" id="contenido">
+
 		<table BORDER="2" CELLSPACING="3" WIDTH=100%>
 			<tbody>
 				<tr>
@@ -87,6 +87,5 @@
 					</td>
 				</tr>
 			</tbody>
-		</table>	
-	</div>	
-</section>
+		</table>
+</div>

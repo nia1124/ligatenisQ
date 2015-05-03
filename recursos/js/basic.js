@@ -1,6 +1,5 @@
 $(document).ready(function()
 {
-
 	$('#accion_mv').click(function(event) 
 	{
         event.preventDefault();

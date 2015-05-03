@@ -1,5 +1,5 @@
-<section class="noticias" id="contenido">
-	<div class="eventos">
+
+	<div class="eventos" id="contenido">
 		<table BORDER="2" CELLSPACING="3" WIDTH=100%>
 			<tbody>
 				<tr>
@@ -125,4 +125,3 @@
 			</tbody>
 		</table>	
 	</div>	
-</section>

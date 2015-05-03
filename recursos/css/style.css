@@ -75,9 +75,19 @@ button .margenes{
 	font-size: 30%;
 	
 }
-.panel-title{
+.panel-title
+{
 	font: sans-serif;
-	font-size: 200%;
 }
+.tableBody
+{
+	border-collapse:collapse;
+	border: 3px gray;
+}
+.encabezado
+{
+	border: 5px gray;
+}
+
 
 
