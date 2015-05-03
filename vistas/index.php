@@ -15,6 +15,16 @@
 <body class="fondo-B">
 	<?php include 'header.php'; ?> 
 	<div id="contenido" class="container">
+		<div class="row ">
+						<div class="panel-primary">
+							<div class="panel-body ">
+								<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin" style="margin-top:0%">
+								<input  type="image" id="foto" class="img-responsive">
+								<script type="text/javascript" src="../recursos/js/galeria.js"></script>
+								</div>
+							</div>
+						</div>
+					</div>
 		<div class="row padding-l">
 			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
 				<div class="panel panel-primary fondopagina borde fondo-B">

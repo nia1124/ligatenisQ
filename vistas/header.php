@@ -58,16 +58,6 @@
 						<?php endif; ?>	
 					</ul>
 				</div>
-				<div class="row ">
-						<div class="panel-primary">
-							<div class="panel-body ">
-								<div class="col-xs-6 col-xs-offset-3 col-md-8 col-md-offset-2 margin" style="margin-top:0%">
-								<input  type="image" id="foto" class="img-responsive">
-								<script type="text/javascript" src="../recursos/js/galeria.js"></script>
-								</div>
-							</div>
-						</div>
-					</div>
 			</nav>
 		</div>		
 </div>
