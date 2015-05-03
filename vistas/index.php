@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript" src="../recursos/js/jquery-2.1.3.js"></script>
 	<script type="text/javascript" src="../recursos/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="../recursos/js/basic.js" ></script>
@@ -22,7 +23,7 @@
   					</div>
   					<div class="panel-body">
 	  					<div class="row">
-	 						<div class="col-sm-6 col-md-4">
+	 						<div class="col-xs-6 col-sm-6 col-md-4">
 	    						<div class="thumbnail">
 		      						<img src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
@@ -88,6 +89,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	<?php include 'footer.php'; ?>
 </body>
 </html>
