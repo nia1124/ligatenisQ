@@ -18,7 +18,7 @@
 			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
 				<div class="panel panel-primary fondopagina borde">
   					<div class="panel-heading">
-    					<h1 class="panel-title" align="center">Noticias Destacadas</h1>
+    					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
   					</div>
   					<div class="panel-body">
 	  					<div class="row">

@@ -6,7 +6,7 @@
 <div class="container">
 		<div class="row ">
 			<nav>
-				<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
+				<div class=" col-xs-12 col-md-12 padding-left">
 					<div>
 						<img src="../recursos/img/header.jpg" class="img-responsive" role="navigation" style="margin-bottom: 0%">
 					</div>
