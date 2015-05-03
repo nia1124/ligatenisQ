@@ -71,7 +71,7 @@ $(document).ready(function()
         $.ajax
         ({
             url: url,
-
+            sync: true,
             type: 'POST',
             dataType: 'html',
             success: function(respuesta)

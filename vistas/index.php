@@ -13,84 +13,81 @@
 </head>
 <body>
 	<?php include 'header.php'; ?> 
-	
-		<div  class="container" id="contenido">
-			<div class="row padding-l">
-				<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
-					<div class="panel panel-primary fondopagina borde">
-	  					<div class="panel-heading">
-	    					<h1 class="panel-title" align="center">Noticias Destacadas</h1>
-	  					</div>
-	  					<div class="panel-body">
-		  					<div class="row">
-		 						<div class="col-sm-6 col-md-4">
-		    						<div class="thumbnail">
-			      						<img src="../recursos/img/carlos.jpg" alt="...">
-			      						<div class="caption">
-			        						<h3>Thumbnail label</h3>
-			        						<p>...</p>
-			        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-		      					 		</div>
-		    						</div>
-		  						</div>
-		  						<div class="col-sm-6 col-md-4">
-		    						<div class="thumbnail">
-			      						<img src="../recursos/img/carlos.jpg" alt="...">
-			      						<div class="caption">
-			        						<h3>Thumbnail label</h3>
-			        						<p>...</p>
-			        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-		      					 		</div>
-		    						</div>
-		  						</div>
-		  						<div class="col-sm-6 col-md-4">
-		    						<div class="thumbnail">
-			      						<img src="../recursos/img/carlos.jpg" alt="...">
-			      						<div class="caption">
-			        						<h3>Thumbnail label</h3>
-			        						<p>...</p>
-			        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-		      					 		</div>
-		    						</div>
-		  						</div>
-		  						<div class="col-sm-6 col-md-4">
-		    						<div class="thumbnail">
-			      						<img src="../recursos/img/carlos.jpg" alt="...">
-			      						<div class="caption">
-			        						<h3>Thumbnail label</h3>
-			        						<p>...</p>
-			        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-		      					 		</div>
-		    						</div>
-		  						</div>
-		  						<div class="col-sm-6 col-md-4">
-		    						<div class="thumbnail">
-			      						<img src="../recursos/img/carlos.jpg" alt="...">
-			      						<div class="caption">
-			        						<h3>Thumbnail label</h3>
-			        						<p>...</p>
-			        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-		      					 		</div>
-		    						</div>
-		  						</div>
-		  						<div class="col-sm-6 col-md-4">
-		    						<div class="thumbnail">
-			      						<img src="../recursos/img/carlos.jpg" alt="...">
-			      						<div class="caption">
-			        						<h3>Thumbnail label</h3>
-			        						<p>...</p>
-			        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-		      					 		</div>
-		    						</div>
-		  						</div>
-							</div>
-	  					</div>
+	<div id="contenido" class="container">
+		<div class="row padding-l">
+			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
+				<div class="panel panel-primary fondopagina borde">
+  					<div class="panel-heading">
+    					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
+  					</div>
+  					<div class="panel-body">
+	  					<div class="row">
+	 						<div class="col-sm-6 col-md-4">
+	    						<div class="thumbnail">
+		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<div class="caption">
+		        						<h3>Thumbnail label</h3>
+		        						<p>...</p>
+		        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+	      					 		</div>
+	    						</div>
+	  						</div>
+	  						<div class="col-sm-6 col-md-4">
+	    						<div class="thumbnail">
+		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<div class="caption">
+		        						<h3>Thumbnail label</h3>
+		        						<p>...</p>
+		        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+	      					 		</div>
+	    						</div>
+	  						</div>
+	  						<div class="col-sm-6 col-md-4">
+	    						<div class="thumbnail">
+		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<div class="caption">
+		        						<h3>Thumbnail label</h3>
+		        						<p>...</p>
+		        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+	      					 		</div>
+	    						</div>
+	  						</div>
+	  						<div class="col-sm-6 col-md-4">
+	    						<div class="thumbnail">
+		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<div class="caption">
+		        						<h3>Thumbnail label</h3>
+		        						<p>...</p>
+		        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+	      					 		</div>
+	    						</div>
+	  						</div>
+	  						<div class="col-sm-6 col-md-4">
+	    						<div class="thumbnail">
+		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<div class="caption">
+		        						<h3>Thumbnail label</h3>
+		        						<p>...</p>
+		        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+	      					 		</div>
+	    						</div>
+	  						</div>
+	  						<div class="col-sm-6 col-md-4">
+	    						<div class="thumbnail">
+		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<div class="caption">
+		        						<h3>Thumbnail label</h3>
+		        						<p>...</p>
+		        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+	      					 		</div>
+	    						</div>
+	  						</div>
+						</div>
+  					</div>
 
-					</div>
 				</div>
 			</div>
-		</div>	
-
+		</div>
 	<?php include 'footer.php'; ?>
 </body>
 </html>
