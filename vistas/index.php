@@ -12,12 +12,12 @@
 	require_once '../libs/conexion_facebook/app/start.php'; 
 ?>
 </head>
-<body>
+<body class="fondo-B">
 	<?php include 'header.php'; ?> 
 	<div id="contenido" class="container">
 		<div class="row padding-l">
 			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
-				<div class="panel panel-primary fondopagina borde">
+				<div class="panel panel-primary fondopagina borde fondo-B">
   					<div class="panel-heading">
     					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
   					</div>

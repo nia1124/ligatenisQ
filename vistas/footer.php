@@ -1,58 +1,29 @@
 <div class="container">
-	<div class="row">
-		<div id="contenedorFooter" class="col-xs-12 col-md-12" style="font-size: 12px">
-			<div class="panelFooter" >
-				<div class="itemPanelFooter">
-					<h3 align="center">CONTACTO</h3>				
-					<p>
-						<div class="imgItemPanelFoter">
-							<img src="../recursos/img/movil.png" />
-						</div>
-						<a class="enlace" href="#"
-						target="_blank">
-						<div class="textItemPanelFooter">
-							 (6) - 7359300 ext 305
-						</div> </a>
-					</p>
-					<p>
-						<div class="imgItemPanelFoter">
-							<img src="../recursos/img/ubicacion.png" />
-						</div>
-						<a class="enlace" href="https://www.google.com/maps/@4.552724,-75.659244,3a,75y,29.29h,99t/data=!3m5!1e1!3m3!1s0L4LjrptT8YuUyj_ihepXA!2e0!3e5"
-						target="_blank">
-						<div class="textItemPanelFooter">
-							Bloque K, Administrativo No.1
-						</div> </a>
-					</p>
-
-					<p>
-						<div class="imgItemPanelFoter">
-							<img src="../recursos/img/email.png" />
-						</div>
-						<a class="enlace" href="mailto:viceinvestigaciones@uniquindio.edu.co">
-						<div class="textItemPanelFooter">
-							viceinvestigaciones@uniquindio.edu.co
-						</div> </a>
-					</p>
-
-					<p>
-						<div class="imgItemPanelFoter">
-							<img src="../recursos/img/web.png" />
-						</div>
-						<a class="enlace" href="http://www.uniquindio.edu.co"
-						target="_blank">
-						<div class="textItemPanelFooter">
-							Universidad del Quindío
-						</div> </a>
-					</p>
-					
-				</div>	
-				<div class="itemPanelFooter otro">
-					<div class="col-md-12 textItemPanelFooter top-buffer normal" align="center">
-							© 2015 by Cristian Daniel Cruz Muñoz-Estefanía Arango Centeno
-						</div>
-				</div>
-			</div>	
+	<div id="contenedorFooter" class="col-xs-12 col-md-12" align="center">
+		<div class="row">
+			<h3 align="center">CONTACTO</h3>
+		</div>
+		<div class="row">			
+			<img src="../recursos/img/movil.png" class="imgItemPanelFoter"/>				
+			<a href="#" target="_blank"> 312-235-4123 - 321-234-7654</a>
+		</div>
+		<div class="row">			
+			<img src="../recursos/img/email.png" class="imgItemPanelFoter" />				
+			<a href="#" target="_blank" float="left">ligatenisdemesaquindio@gmail.com</a>
+		</div>	
+		<div class="row">			
+			<img src="../recursos/img/ubicacion.png" class="imgItemPanelFoter" />				
+			<a href="https://www.google.es/maps/place/Coliseo+Del+Caf%C3%A9/@4.547884,-75.668788,3a,75y,114.28h,90t/data=!3m5!1e1!3m3!1sp3IMqiJenEEAAAQZH5Peng!2e0!3e11!4m6!1m3!3m2!1s0x8e38f50213c807db:0xfe943df8d49fcbae!2sColiseo+Del+Caf%C3%A9!3m1!1s0x8e38f50213c807db:0xfe943df8d49fcbae!6m1!1e1" 
+			target="_blank" float="left">Cr 19 # 5N, Bajos del coliseo del café</a>
+		</div>	
+		<div class="row">			
+			<img src="../recursos/img/facebook.png" class="imgItemPanelFoter" />				
+			<a href="http://www.facebook.com" target="_blank" float="left">facebook/ligatenisdemesaquindio</a>
+		</div>
+		<div class="row margin-bottom" >			
+			<img src="../recursos/img/twitter.png" class="imgItemPanelFoter" />				
+			<a href="http://www.twitter.com" target="_blank" float="left">@ligatenisdemesaquindio</a>
 		</div>
 	</div>
+
 </div>
