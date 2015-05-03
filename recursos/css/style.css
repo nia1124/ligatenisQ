@@ -90,6 +90,8 @@ button .margenes{
 .container
 {
 	  width: 1356px;
+	  padding-left: 0%;
+	  padding-right: 0%;
 }
 
 #contenedorFooter

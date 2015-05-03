@@ -50,7 +50,7 @@
 		                <?php else: ?>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle btn btn-danger" data-toggle="dropdown">
-								Hola <?php echo $facebook_user->getName();?><span class="caret"></span></a>
+								Bienvenido <?php echo $facebook_user->getFirstName();?><span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="../libs/conexion_facebook/app/logout.php" class="dropdown-toggle">Cerrar Sesión</a></li>
 							</ul>	
