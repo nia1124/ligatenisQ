@@ -1,7 +1,7 @@
 <div class="mv" id="contenido">
 	<div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-md-10 col-md-offset-1" style="margin-left:83px" >
+		<div class="col-xs-12 col-md-10 col-md-offset-1" float="center" >
 			<div class="panel panel-primary borde">
 				<div class="panel-body">
 					<div class="col-md-10 col-md-offset-1 margen alto">

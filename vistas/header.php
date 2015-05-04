@@ -8,7 +8,7 @@
 			<nav>
 				<div class=" col-xs-12 col-md-12 padding-left">
 					<div>
-						<img src="../recursos/img/header.jpg" class="img-responsive" role="navigation" style="margin-bottom: 0%">
+						<img src="../recursos/img/header.png" class="img-responsive" role="navigation" style="margin-bottom: 0%">
 					</div>
 					<ul id="main-menu" class="nav nav-pills nav-justified navbar navbar-inverse  menu" role="navigation">
 						<li class="active"><a href="index.php" >Inicio</a></li>

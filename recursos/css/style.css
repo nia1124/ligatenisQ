@@ -98,7 +98,7 @@ button .margenes{
 {
 	
 	width: 100%;
-	background-color: rgba(51,122,183,0.8);
+	background-color: rgba(7,137,48,0.9);
 	opacity: 1%;
 	box-shadow: 0px 0px 5px #fff;
 	-webkit-box-shadow: 0px 0px 10px #ccc;
@@ -121,7 +121,11 @@ button .margenes{
 	  margin-right: 20%;
 	  float: left;
 	  margin-left: 1%;
-	  color: #050505;
+	  color: #FFFFFF;
+}
+.row {
+  margin-right: 1px;
+  margin-left: 1px;
 }
 
 .itemPanelFooter  .imgItemPanelFoter img
@@ -135,8 +139,46 @@ button .margenes{
 	margin-bottom: 2%;
 }
 .fondo-B{
-	background-color: rgb(192,192,192); 
+	background-color: rgb(229,233,236); 
+}
+.nav-pills > li.active > a:hover{
+	background-color: rgba(252,221,9,0.9);
 }
 h3{
 	font-size: 20px;
+}
+
+/*------------------------*/
+/*Nuevos colores pagina*/
+/*------------------------*/
+.nav > li > a:hover, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav > li > a:focus{
+	background-color: purple;
+}
+.btn-primary
+{
+	color: #FFFFFF;
+	background-color: rgba(7,137,48,0.9);
+	border-color: rgba(7,137,48,0.9);
+}
+.btn-danger
+{
+	color: #FFFFFF;
+	background-color:rgba(252,221,9,0.9) ;
+	border-color: rgba(252,221,9,0.9);
+}
+.nav-pills > li.active > a
+{
+	color: #FFFFFF;
+	background-color: rgba(7,137,48,0.9);
+}
+.panel-primary > .panel-heading 
+{
+  color: #fff;
+  background-color: #078930;
+  border-color: #078930;
+}
+.nav > li > a
+{
+	color: #FFFFFF;
+  text-decoration: none;
 }
