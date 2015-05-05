@@ -10,10 +10,10 @@
 							<input placeholder="Ingrese su usuario" name="username" class="form-control" required/>	
 							</div>
 							<div class= "form-group">
-							<input placeholder="Ingrese la contraseña" name="pass" class="form-control" required/>	
+							<input  type="password" placeholder="Ingrese la contraseña" name="pass" class="form-control" required/>	
 							</div>
 							<div class= "form-group">
-							<input placeholder="Ingrese de nuevo la contraseña" name="pass2" class="form-control" required/>	
+							<input type="password" placeholder="Ingrese de nuevo la contraseña" name="pass2" class="form-control" required/>	
 							</div>
 							<div class= "form-group">
 							<input type="submit" class="form-control  btn btn-success" value="Registrasre"/>	

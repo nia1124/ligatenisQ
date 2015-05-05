@@ -1,8 +1,8 @@
 <?php
-session_start();
 
-require '../libs/conexion_facebook/config/facebook.php';
-require '../libs/conexion_facebook/vendor/autoload.php';
+
+require '/libs/conexion_facebook/config/facebook.php';
+require '/libs/conexion_facebook/vendor/autoload.php';
 
 use Facebook\FacebookSession;
 use Facebook\FacebookRedirectLoginHelper;
@@ -13,7 +13,7 @@ use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
 
 FacebookSession::setDefaultApplication($config['app_id'], $config['app_secret']);
-$helper = new FacebookRedirectLoginHelper('http://localhost/ligatenisQ/vistas/index.php');
+$helper = new FacebookRedirectLoginHelper('http://localhost/ligatenisQ/index.php');
 
 try {
 	$session = $helper -> getSessionFromRedirect();
@@ -39,7 +39,7 @@ try {
 
 } catch (FacebookRequestException $ex) {
 	//cuando facebook retorna un error
-}catch (\Exception $ex){
+}catch (Exception $ex){
 	//cuando falla la validación o los usos locales 
 
 }

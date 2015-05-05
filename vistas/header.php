@@ -1,12 +1,10 @@
-<?php 
-	require_once '../libs/conexion_facebook/app/start.php'; 
-?>
+
 <!--listoR-->
 <div class="container ">
 		<div class="row ">
 				<div class=" col-xs-12 col-sm-12 col-lg-12 col-md-12 padding-left">
 					<div>
-						<img src="../recursos/img/header.png" class="img-responsive" role="navigation" style="margin-bottom: 0%">
+						<img src="recursos/img/header.png" class="img-responsive" role="navigation" style="margin-bottom: 0%">
 					</div>
 					<!--//////////////////////////////////menu Escritorio/////////////////////////////////////////////////-->
 					<nav id="navDesktop" class="navbar visible-lg visible-md">
@@ -75,7 +73,7 @@
 						              <a href="#" class="dropdown-toggle btn btn-danger" data-toggle="dropdown">
 						                Bienvenido <?php echo $facebook_user->getFirstName();?><span class="caret"></span></a>
 						              <ul class="dropdown-menu" role="menu">
-						                <li><a href="../libs/conexion_facebook/app/logout.php" class="dropdown-toggle">Cerrar Sesión</a></li>
+						                <li id="cerrarSesion"><a href="" class="dropdown-toggle">Cerrar Sesión</a></li>
 						              </ul> 
 						            </li> 
 						            <?php endif; ?> 
@@ -161,7 +159,7 @@
 					<div class="panel-body ">
 						<div class="col-xs-12  col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 margin padding-galeria" >
 							<input  type="image" id="foto" class="img-responsive">
-							<script type="text/javascript" src="../recursos/js/galeria.js"></script>
+							<script type="text/javascript" src="recursos/js/galeria.js"></script>
 						</div>
 					</div>
 				</div>
