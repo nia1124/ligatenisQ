@@ -19,6 +19,7 @@
 							<input type="submit" class="form-control  btn btn-success" value="Registrasre"/>	
 							</div>
 						</div>
+						
 				</panel>
 			</div>
 		</div>
