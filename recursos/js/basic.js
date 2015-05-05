@@ -145,9 +145,10 @@ $(document).ready(function()
     } 
 
     var menu = $('#navDesktop');
+    var origOffsetY = menu.offset().top;
     function scroll() 
     {
-        if ($(window).scrollTop() >= menu.offset().top) 
+        if ($(window).scrollTop() >= origOffsetY) 
         {
             $('#navDesktop').addClass('navbar-fixed-top');
             
