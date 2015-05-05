@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript" src="../recursos/js/jquery-2.1.3.js"></script>
-	<script type="text/javascript" src="../recursos/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="../recursos/js/basic.js" ></script>
-	<link rel="stylesheet" href="../recursos/css/bootstrap.css">
-	<link rel="stylesheet" href="../recursos/css/style.css">
-	<?php 
-	require_once '../libs/conexion_facebook/app/start.php'; 
-?>
-</head>
-<div id="contenido" class="container margen registro">
+	<div id="contenido" class="container margen registro">
 		<div class="row ">
 			<div class="col-md-12">
 				<panel class="col-md-6 col-md-offset-3 panel panel-success borde " align="center">	

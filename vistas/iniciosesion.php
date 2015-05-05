@@ -24,10 +24,6 @@
 						<img src="../recursos/img/loginfb.png" height="40%" width="40%" alt="">
 						</a>
 					</div>
-
-					<div class="form-group">
-					<a href="#"  id="accion_registro">Registrate Ahora</a>				
-					</div> 
 				</div>
 			</div>
 				

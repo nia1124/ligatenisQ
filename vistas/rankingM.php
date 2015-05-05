@@ -1,7 +1,7 @@
 <div class="rankingM" id="contenido">
 	<div class="container">
 		<div class="row">
-			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
+			<div class=" col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 padding-left">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 	    				<h1 class="panel-title">Ranking Masculino</h1>

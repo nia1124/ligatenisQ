@@ -50,27 +50,80 @@ $(document).ready(function()
 
     $('#accion_registro').click(function(event) 
     {
+         console.log("entre");
         event.preventDefault();
+
         link('../vistas/registro.php', '#contenido');
     });
 
     $('#accion_iniciosesion').click(function(event) 
     {
         event.preventDefault();
+
         link('../vistas/iniciosesion.php', '#contenido');
     });
 
-    $('#accion_deportista').click(function(event) 
+//-----------------------------mobile-----------------------//
+
+    $('#accion_mv_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/misionVision.php', '#contenido');
+    });
+
+    $('#accion_organoAdm_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/organoAdm.php', '#contenido');
+    });
+
+    $('#accion_club_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/clubes.php', '#contenido');
+    });
+
+    $('#accion_rankingF_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/rankingF.php', '#contenido');
+    });
+
+    $('#accion_rankingM_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/rankingM.php', '#contenido');
+    });
+
+    $('#accion_deportista_mobile').click(function(event) 
     {
         event.preventDefault();
         link('../vistas/deportista.php', '#contenido');
-    });
+    });  
 
-    $('#accion_entrenador').click(function(event) 
+    $('#accion_entrenador_mobile').click(function(event) 
     {
         event.preventDefault();
         link('../vistas/entrenador.php', '#contenido');
-    });   
+    });  
+    
+    $('#accion_eventos_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/eventos.php', '#contenido');
+    });
+
+    $('#accion_registro_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/registro.php', '#contenido');
+    });
+
+    $('#accion_iniciosesion_mobile').click(function(event) 
+    {
+        event.preventDefault();
+        link('../vistas/iniciosesion.php', '#contenido');
+    });
 
     function link(url, update) 
     {
@@ -87,19 +140,19 @@ $(document).ready(function()
         });
     } 
 
-    var menu = $('.menu');
+    var menu = $('#navDesktop');
     var origOffsetY = menu.offset().top;
 
     function scroll() 
     {
         if ($(window).scrollTop() >= origOffsetY) 
         {
-            $('.menu').addClass('navbar-fixed-top');
+            $('#navDesktop').addClass('navbar-fixed-top');
             
         } 
         else 
         {
-            $('.menu').removeClass('navbar-fixed-top');
+            $('#navDesktop').removeClass('navbar-fixed-top');
         }
     }
     document.onscroll = scroll;   
