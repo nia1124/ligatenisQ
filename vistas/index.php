@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript" src="../recursos/js/jquery-2.1.3.js"></script>
 	<script type="text/javascript" src="../recursos/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="../recursos/js/basic.js" ></script>
@@ -13,19 +13,20 @@
 ?>
 </head>
 <body class="fondo-B">
+<div class="container">
 	<?php include 'header.php'; ?> 
 	<div id="contenido" class="container">
 		<div class="row padding-l">
-			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
+			<div class=" col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 ">
 				<div class="panel panel-primary fondopagina borde fondo-B">
-  					<div class="panel-heading">
+  					<div class="panel-heading ">
     					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
   					</div>
   					<div class="panel-body">
 	  					<div class="row">
-	 						<div class="col-xs-6 col-sm-6 col-md-4">
+	 						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
 	    						<div class="thumbnail">
-		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<img class="img-responsive" src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
 		        						<h3>Thumbnail label</h3>
 		        						<p>...</p>
@@ -33,9 +34,9 @@
 	      					 		</div>
 	    						</div>
 	  						</div>
-	  						<div class="col-sm-6 col-md-4">
+	  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
 	    						<div class="thumbnail">
-		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<img class="img-responsive" src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
 		        						<h3>Thumbnail label</h3>
 		        						<p>...</p>
@@ -43,9 +44,9 @@
 	      					 		</div>
 	    						</div>
 	  						</div>
-	  						<div class="col-sm-6 col-md-4">
+	  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
 	    						<div class="thumbnail">
-		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<img class="img-responsive" src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
 		        						<h3>Thumbnail label</h3>
 		        						<p>...</p>
@@ -53,9 +54,9 @@
 	      					 		</div>
 	    						</div>
 	  						</div>
-	  						<div class="col-sm-6 col-md-4">
+	  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
 	    						<div class="thumbnail">
-		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<img class="img-responsive" src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
 		        						<h3>Thumbnail label</h3>
 		        						<p>...</p>
@@ -63,9 +64,9 @@
 	      					 		</div>
 	    						</div>
 	  						</div>
-	  						<div class="col-sm-6 col-md-4">
+	  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
 	    						<div class="thumbnail">
-		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<img class="img-responsive" src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
 		        						<h3>Thumbnail label</h3>
 		        						<p>...</p>
@@ -73,9 +74,9 @@
 	      					 		</div>
 	    						</div>
 	  						</div>
-	  						<div class="col-sm-6 col-md-4">
+	  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
 	    						<div class="thumbnail">
-		      						<img src="../recursos/img/carlos.jpg" alt="...">
+		      						<img class="img-responsive" src="../recursos/img/carlos.jpg" alt="...">
 		      						<div class="caption">
 		        						<h3>Thumbnail label</h3>
 		        						<p>...</p>
@@ -91,5 +92,6 @@
 		</div>
 	</div>
 	<?php include 'footer.php'; ?>
+	</div>
 </body>
 </html>

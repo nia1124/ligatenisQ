@@ -1,12 +1,4 @@
 
-<head>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="../recursos/js/jquery-2.1.3.js"></script>
-	<script type="text/javascript" src="../recursos/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="../recursos/js/basic.js" ></script>
-	<link rel="stylesheet" href="../recursos/css/bootstrap.css">
-	<link rel="stylesheet" href="../recursos/css/style.css">
-</head>
 	<div id="contenido" class="container margen registro">
 		<div class="row ">
 			<div class="col-md-12">

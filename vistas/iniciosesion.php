@@ -1,14 +1,7 @@
 <?php 
 	require_once '../libs/conexion_facebook/app/start.php'; 
 ?>
-<head>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="../recursos/js/jquery-2.1.3.js"></script>
-	<script type="text/javascript" src="../recursos/js/bootstrap.js" ></script>
-	<script type="text/javascript" src="../recursos/js/basic.js" ></script>
-	<link rel="stylesheet" href="../recursos/css/bootstrap.css">
-	<link rel="stylesheet" href="../recursos/css/style.css">
-</head>
+
 <div class="iniciosesion container margen" id="contenido" >
 	<div class="row" >
 		<div class="col-md-12" >
@@ -31,10 +24,6 @@
 						<img src="../recursos/img/loginfb.png" height="40%" width="40%" alt="">
 						</a>
 					</div>
-
-					<div class="form-group">
-					<a href="#"  id="accion_registro">Registrate Ahora</a>				
-					</div> 
 				</div>
 				
 					
