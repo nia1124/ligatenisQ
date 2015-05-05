@@ -45,7 +45,7 @@
 				if ($pass == $pass2) 
 				{	
 
-					$campos = array('nombre', 'username', 'pass');
+					$campos = array('nombre', 'username', 'contraseña');
 					$valores = array($nombre, $username, $pass);
 
 					$registrarUsuario = $usuario->registroU($campos, $valores);	 

@@ -16,7 +16,7 @@
 							<input type="password" placeholder="Ingrese de nuevo la contraseña" name="pass2" class="form-control" required/>	
 							</div>
 							<div class= "form-group">
-							<input type="submit" class="form-control  btn btn-success" value="Registrasre"/>	
+							<input type="submit" class="form-control  btn btn-success" action="/home/register" value="Registrasre"/>	
 							</div>
 						</div>
 						
