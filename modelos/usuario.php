@@ -8,7 +8,7 @@
 		function __construct()
 		{
 			parent::__construct();
-			$this->setNombreTabla("users");
+			$this->setNombreTabla("usuario");
 		}
 
 		
