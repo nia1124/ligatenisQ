@@ -44,6 +44,7 @@
 			             </li>
 		                <li><a href="#" id="accion_eventos">Eventos</a></li>
 		                <li><a href="#">Foro</a></li>
+		                <li><a href="#" id="accion_registro">Registrate</a></li>
 						<?php if (!isset($_SESSION['facebook'])): ?>
 		                <li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Login</a></li>
 
