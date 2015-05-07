@@ -225,6 +225,9 @@ h4{
 .justificado{
 	text-align: justify;
 }
+.panelReg{
+	  margin-left: 21%;
+}
 @media (max-width: 768px)
 {
 	.panel-body

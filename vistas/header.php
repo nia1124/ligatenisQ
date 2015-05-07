@@ -65,8 +65,9 @@
 
 						        <li><a href="#" id="accion_eventos">Eventos</a></li>
 						        <li><a href="#">Foro</a></li>
-						        <li><a href="#" id="accion_registro" class="btn btn-danger2">Registrate</a></li>
 						        <?php if (!isset($_SESSION['facebook'])): ?>
+						        <li><a href="#" id="accion_registro" class="btn btn-danger2">Registrate</a></li>
+						        
 						        <li><a href="#"  id="accion_iniciosesion" class="btn btn-danger">Iniciar Sesión</a></li>
 						        <?php else: ?>
 						            <li class="dropdown">
@@ -144,7 +145,7 @@
 								</li>
 								<li><a href="#" id="accion_eventos_mobile">Eventos</a></li>
 								<li><a href="#">Foro</a></li>
-								<li><a href="#" id="accion_registro">Registrate</a></li>
+								<li><a href="#" id="accion_registro_mobile">Registrate</a></li>
 								<?php if (!isset($_SESSION['facebook'])): ?>
 									<li><a href="#"  id="accion_iniciosesion_mobile">Iniciar Sesión</a></li>				
 								<?php endif; ?> 

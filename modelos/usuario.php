@@ -38,7 +38,7 @@
 
 		public function registroU($campos, $valores)
 		{	
-			$usuario = $this->insert($campos, $valores);
+			 $this->insert($campos, $valores);
 		}
 		
 

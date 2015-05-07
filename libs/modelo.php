@@ -2,7 +2,7 @@
 	class Modelo
 	{	
 		private $host = "localhost";
-		private $bdname = "ligatenisQ";
+		private $bdname = "ligatenisq";
 		private $usuario = "root";
 		private $contrasena = "";
 
@@ -35,7 +35,14 @@
 
 		protected function query($query)
 		{
-			return $this->conexion->query($query);
+			try{
+				
+				return $this->conexion->query($query);
+			}
+			 
+			 catch (Exception $exception) {
+				echo "error conexion: " . $exception->getMessage();
+			}
 		}	
 
 		function select($parametros = null, $where = null)
@@ -44,7 +51,7 @@
 
 			if($parametros == null)
 			{
-				$query .= "*";
+				$query .= "* ";
 			}
 			else
 			{	
@@ -94,7 +101,7 @@
 					
 				}
 			}
-			echo "$query";
+			
 			return $this->query($query);	
 		}
 
@@ -158,8 +165,6 @@
 				}
 
 			}
-			
-			echo "$queryInsert";
 			$this->query($queryInsert);	
 		}
 
@@ -202,7 +207,6 @@
 				}
 			}
 
-				echo "$queryUpdate";
 				$this->query($queryUpdate);	 	 
 		}			
 
@@ -222,7 +226,6 @@
 				}
 
 			}
-			echo "$queryDelete";
 			$this->query($queryDelete);
 		}
 

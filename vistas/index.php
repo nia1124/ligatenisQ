@@ -20,9 +20,6 @@
 <body class="fondo-B">
 <div class="container">
 	<?php include 'header.php';
-	
-	
-
 ?>
 	<div id="contenido" class="container">
 		<div class="row padding-l">

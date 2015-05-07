@@ -61,12 +61,14 @@ $(document).ready(function()
         event.preventDefault();
 
         link('vistas/iniciosesion.php', '#contenido');
-    });
+    });   
+
     $('#cerrarSesion').click(function(event)
     {
         link('libs/conexion_facebook/app/logout.php', '#contenido');
     });
-    $('#accion_registro').submit(function(e)
+
+    $("#accion_registro").submit(function(e)
     {
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
@@ -87,6 +89,16 @@ $(document).ready(function()
         e.preventDefault(); //STOP default action
         e.unbind(); //unbind. to stop multiple form submit.
     });
+
+    $("accion_registro").submit();
+
+
+    $("accion_iniciosesion").submit(function(e)
+    {
+
+    });
+    $("accion_iniciosesion").submit();
+
 //-----------------------------mobile-----------------------//
 
     $('#accion_mv_mobile').click(function(event) 
