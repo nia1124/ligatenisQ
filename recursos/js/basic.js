@@ -49,17 +49,19 @@ $(document).ready(function()
     });
 
     $('#accion_registro').click(function(event) 
-    {
+    {   
+        actualizarRegistro();
         event.preventDefault();
-
         link('vistas/registro.php', '#contenido');
+        
     });
 
     $('#accion_iniciosesion').click(function(event) 
-    {
+    {   
+        actualizarInicioSesion();
         event.preventDefault();
-
         link('vistas/iniciosesion.php', '#contenido');
+        
     });   
 
     $('#cerrarSesion').click(function(event)
@@ -67,38 +69,11 @@ $(document).ready(function()
         link('libs/conexion_facebook/app/logout.php', '#contenido');
     });
 
-    
-//------------------------inicio de sesion-----------------------------//
-    $('#boton_iniciosesion').click(function(evt) 
+    $('accion_admin').click(function(event)
     {
-        $.ajax
-        ({
-            type: 'POST',
-            data: {
-                username: $('#username').val(),
-                pass: $('#password').val(),
-            },
-            url:'home/login',
-            //url: $(this).attr('action'),
-            dataType: 'json',
-            beforeSend: function(){
-                $('#boton_iniciosesion').attr('disabled', true);
-            },
-            success: function(response) {
-                if(response.success == true){
-                    $('#respuesta').html(response.message);
-                    } else {
-                    $('#boton_iniciosesion').attr('disabled', false);
-
-                    $('#username').text("");
-                    $('#password').text("");
-                    }
-            },
-            error: function(msg){
-                $('#boton_iniciosesion').attr('disabled', false);
-            }
+        event.preventDefault(); 
+        link('vistas/admin.php', '#contenido');        
     });
-    $("accion_iniciosesion").submit();
 
 
 //-----------------------------mobile-----------------------//
@@ -192,44 +167,94 @@ $(document).ready(function()
             $('#navDesktop').removeClass('navbar-fixed-top');
         }
     }
-    document.onscroll = scroll;   
+    document.onscroll = scroll;  
 
-    $('#boton_registrar').click(function(evt) 
+    function actualizarRegistro()
     {
-        $.ajax
-        ({
-            type: 'POST',
-            data: {
-            nombre: $('#nombre_registro').val(),
-            username: $('#username_registro').val(),
-            pass: $('#pass_registro').val(),
-            pass2: $('#pass2_registro').val()
-            },
-            url:'home/register',
-            //url: $(this).attr('action'),
-            dataType: 'json',
-            beforeSend: function(){
-            $('#boton_registro').attr('disabled', true);
-            },
-            success: function(response) 
+        setTimeout(function()
+        {
+            $('#boton_registrar').click(function()
             {
-                if(response.success == true){
-                $('#respuesta').html(response.message);
-                } else {
-                $('#boton_registrar').attr('disabled', false);
+                $.ajax
+                ({
+                    type: 'POST',
+                    data: {
+                        nombre: $('#nombre_registro').val(),
+                        username: $('#username_registro').val(),
+                        pass: $('#pass_registro').val(),
+                        pass2: $('#pass2_registro').val()
+                         },
+                        url:'home/register',
+                        dataType: 'JSON',
+                        beforeSend: function(){
+                            $('#result').html("Un momento por favor");
+                        },
+                        success: function(response) {
+            
+                            if(response.estado == "error"){
+                                $('#result').html(response.mensaje);
+                                $('#result').removeClass("alert alert-success")
+                                    .addClass("alert alert-danger");
+                            }
+                            else if(response.estado =="exitoso"){
+                                 $('#result').html(response.mensaje);
+                                $('#result').removeClass("alert alert-danger")
+                                    .addClass("alert alert-success");
+                            }
+                        },
+                        error: function(msg){
+                            $('#boton_registrar').attr('disabled', false);
+                        }
+                });
+                return false;
+            });
+        },500);
+    }
 
-                $('#nombre_registro').text("");
-                $('#username_registro').text("");
-                $('#pass_registro').text("");
-                $('#pass2_registro').text("");
-                }
-             },
-            error: function(msg){
-            $('#boton_registrar').attr('disabled', false);
-            }
-        });
-    });
+    //------------------------inicio de sesion-----------------------------//
 
+    function actualizarInicioSesion()
+    {
+        setTimeout(function()
+        {
+            $('#boton_iniciosesion').click(function()
+            {
+                $.ajax
+                ({
+                    type: 'POST',
+                    data: {
+                        username: $('#inicios_nombre').val(),
+                        pass: $('#inicios_pass').val(),
+                         },
+                        url:'home/login',
+                        dataType: 'JSON',
+                        beforeSend: function(){
+                            $('#result').html("Un momento por favor");
+                        },
+                        success: function(response) {
+            
+                            if(response.estado == "error"){
+                                $('#result').html(response.mensaje);
+                                $('#result').removeClass("alert alert-success")
+                                    .addClass("alert alert-danger");
+                            }
+                            else if(response.estado =="Bienvenido"){
+                                 $('#result').html(response.mensaje);
+                                $('#result').removeClass("alert alert-danger")
+                                    .addClass("alert alert-success");
+                            }
+                        },
+                        error: function(msg){
+                            $('#boton_iniciosesion').attr('disabled', false);
+                        }
+                });
+                return false;
+            });
+        },500);
+    }
+    
+    
+ 
 });
 
 
