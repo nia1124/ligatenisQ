@@ -18,7 +18,7 @@
 						</div>
 
 						<div class= "form-group ">
-						<input type="submit"  class="btn btn-info padding-b" value="Iniciar sesión"/>
+						<input type="submit" id="boton_iniciosesion" class="btn btn-info padding-b" value="Iniciar sesión"/>
 						</div>
 
 						<div class="form-group">
