@@ -199,22 +199,24 @@ $(document).ready(function()
 
     $('#boton_registrar').click(function(evt) 
     {
-        $.ajax({
-        type: 'POST',
-        data: {
+        $.ajax
+        ({
+            type: 'POST',
+            data: {
             nombre: $('#nombre_registro').val(),
             username: $('#username_registro').val(),
             pass: $('#pass_registro').val(),
             pass2: $('#pass2_registro').val()
-        },
-        url:'home/register',
-        //url: $(this).attr('action'),
-        dataType: 'json',
-        beforeSend: function(){
+            },
+            url:'home/register',
+            //url: $(this).attr('action'),
+            dataType: 'json',
+            beforeSend: function(){
             $('#boton_registro').attr('disabled', true);
-        },
-        success: function(response) {
-            if(response.success == true){
+            },
+            success: function(response) 
+            {
+                if(response.success == true){
                 $('#respuesta').html(response.message);
                 } else {
                 $('#boton_registrar').attr('disabled', false);
@@ -223,12 +225,12 @@ $(document).ready(function()
                 $('#username_registro').text("");
                 $('#pass_registro').text("");
                 $('#pass2_registro').text("");
-            }
-        },
-        error: function(msg){
+                }
+             },
+            error: function(msg){
             $('#boton_registrar').attr('disabled', false);
-        }
-      });
+            }
+        });
     });
 
 });
