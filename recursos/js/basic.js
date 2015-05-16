@@ -57,11 +57,10 @@ $(document).ready(function()
     });
 
     $('#accion_iniciosesion').click(function(event) 
-    {   
-        actualizarInicioSesion();
+    {  
         event.preventDefault();
         link('vistas/iniciosesion.php', '#contenido');
-        
+        actualizarInicioSesion();
     });   
 
     $('#cerrarSesion').click(function(event)
@@ -229,19 +228,18 @@ $(document).ready(function()
                         url:'home/login',
                         dataType: 'JSON',
                         beforeSend: function(){
-                            $('#result').html("Un momento por favor");
+                            $('#result_login').html("Un momento por favor");
                         },
                         success: function(response) {
             
-                            if(response.estado == "error"){
-                                $('#result').html(response.mensaje);
-                                $('#result').removeClass("alert alert-success")
+                            if(response.estado == "Error"){
+                                $('#result_login').html(response.mensaje);
+                                $('#result_login').removeClass("alert alert-success")
                                     .addClass("alert alert-danger");
                             }
-                            else if(response.estado =="Bienvenido"){
-                                 $('#result').html(response.mensaje);
-                                $('#result').removeClass("alert alert-danger")
-                                    .addClass("alert alert-success");
+                            else if(response.estado =="Exito"){
+                                 $('#result_login').html(response.mensaje);
+                                $('#result_login').removeClass("alert alert-danger")
                             }
                         },
                         error: function(msg){

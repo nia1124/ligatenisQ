@@ -23,7 +23,7 @@
 		{	
 			$where = array('username' => "$username");
 
-			$resultado = $this->select(null, $where);
+			$resultado = $this->select(null, $where)->fetchAll();
 			
 			foreach ($resultado as $row ) 
 			{	
@@ -44,7 +44,9 @@
 
 		public function autenticar($username, $pass)
 		{
-			return $this->query("Select * from users where username='$username' and pass='$pass'");
+			$where = array('username' => "$username", 'contrasena' => "$pass");
+			$result = $this->select(null, $where)->fetchAll();
+			return $result;
 		}
 	}
  ?>

@@ -24,9 +24,7 @@
 		{
 			try 
 			{	
-
 				$this->conexion = new PDO("mysql:host={$this->host};dbname={$this->bdname}", $this->usuario, $this->contrasena);
-				
 			}	
 			 catch (PDOException $exception) {
 				echo "error conexion: " . $exception->getMessage();

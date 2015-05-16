@@ -27,6 +27,7 @@
 					</div>
 				</div>
 			</form>
-		</div>		
+		</div>
+		<h2 id="result_login"></h2>		
 	</div>
 </div>

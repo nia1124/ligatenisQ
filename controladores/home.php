@@ -73,21 +73,24 @@
 		{
 			$username = $_POST["username"];
 			$pass = $_POST["pass"];
+			
 
 			$usuario=$this->cargarModelo("usuario");
 
 			$respuesta = $usuario->autenticar($username, $pass);
-
-			if ($respuesta != null && $respuesta->rowcount()>0) 
+			
+			if (count($respuesta)>0) 
 			{
 				setcookie("chsm", "logedin", time()+3600, "/");
-				header("location: /ligatenisQ");
-				exit;
+				$result['estado']="Exito";
+				$result['mensaje']="Bienvenido";
+				echo json_encode($result);
 			}
 			else
 			{
-				echo "login fallido";
-				$this->cargarVista("index");
+				$result['estado']="Error";
+				$result['mensaje']="Usuario y contraseña no encontrados";
+				echo json_encode($result);
 			}
 
 		}
