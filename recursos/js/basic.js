@@ -50,9 +50,9 @@ $(document).ready(function()
 
     $('#accion_registro').click(function(event) 
     {   
-        actualizarRegistro();
         event.preventDefault();
         link('vistas/registro.php', '#contenido');
+        actualizarRegistro();
         
     });
 
@@ -190,13 +190,13 @@ $(document).ready(function()
                             $('#result').html("Un momento por favor");
                         },
                         success: function(response) {
-            
-                            if(response.estado == "error"){
+                            console.log(response);
+                            if(response.estado == "Error"){
                                 $('#result').html(response.mensaje);
                                 $('#result').removeClass("alert alert-success")
                                     .addClass("alert alert-danger");
                             }
-                            else if(response.estado =="exitoso"){
+                            else if(response.estado =="Exito"){
                                  $('#result').html(response.mensaje);
                                 $('#result').removeClass("alert alert-danger")
                                     .addClass("alert alert-success");

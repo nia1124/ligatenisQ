@@ -25,6 +25,7 @@
 							</div>
 						</div>
 					</form>
+					<h2 id="result"></h2>
 				</panel>
 			</div>
 		</div>

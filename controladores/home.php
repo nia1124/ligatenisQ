@@ -39,7 +39,7 @@
 			$usuario=$this->cargarModelo("usuario");
 
 			$validarNombre = $usuario->validarUsuario($username);
-
+			
 			if ($validarNombre == false) 
 			{	
 				if ($pass == $pass2) 
@@ -48,15 +48,22 @@
 					$campos = array('nombre', 'username', 'contrasena');
 					$valores = array($nombre, $username, $pass);
 					$usuario->registroU($campos, $valores);	 
+					$respuesta['estado']="Exito";
+					$respuesta['mensaje']="Registro exitoso.";
+					echo json_encode($respuesta);
 				}
 				else
 				{
-					echo "Verifique la contraseña";
+					$respuesta['estado']="Error";
+					$respuesta['mensaje']="Las contraseñas no coinciden.";
+					echo json_encode($respuesta);
 				}
 			}	
 			else
 			{
-				echo "El usuario ya se encuentra registrado";
+				$respuesta['estado']="Error";
+				$respuesta['mensaje']="El usuario ya se encuentra registrado.";
+				echo json_encode($respuesta);
 			}	
 
 		}
