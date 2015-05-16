@@ -69,9 +69,7 @@ $(document).ready(function()
 
     
 //------------------------inicio de sesion-----------------------------//
-    $("accion_iniciosesion").submit(function(e)
-    {
-        $('#boton_iniciosesion').click(function(evt) 
+    $('#boton_iniciosesion').click(function(evt) 
     {
         $.ajax
         ({
@@ -99,7 +97,6 @@ $(document).ready(function()
             error: function(msg){
                 $('#boton_iniciosesion').attr('disabled', false);
             }
-        });
     });
     $("accion_iniciosesion").submit();
 
