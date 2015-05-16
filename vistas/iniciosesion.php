@@ -6,19 +6,17 @@
 					<div class="panel-heading">
 						<h1 class="panel-title" align="left">Iniciar Sesión</h1>
 					</div>
-    					
-  					
 					<div  class="panel-body">
 						<div class= "form-group">
-						<input placeholder="Ingrese su username" class="form-control padding-l" name="username"/>	
+						<input id="inicios_nombre" placeholder="Ingrese su username" class="form-control padding-l" name="username"/>	
 						</div>
 
 						<div class= "form-group">
-						<input type="password" placeholder="Ingrese su contraseña" class="form-control" name="pass"/>	
+						<input id="inicios_pass" type="password" placeholder="Ingrese su contraseña" class="form-control" name="pass"/>	
 						</div>
 
 						<div class= "form-group ">
-						<input type="submit" id="boton_iniciosesion" class="btn btn-info padding-b" value="Iniciar sesión"/>
+						<input id="boton_iniciosesion" type="submit"  class="btn btn-info padding-b" value="Iniciar sesión"/>
 						</div>
 
 						<div class="form-group">
@@ -29,8 +27,6 @@
 					</div>
 				</div>
 			</form>
-			
-				
 		</div>		
 	</div>
 </div>
