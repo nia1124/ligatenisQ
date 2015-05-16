@@ -70,6 +70,7 @@ $(document).ready(function()
 
     $("#accion_registro").submit(function(e)
     {
+        
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
         $.ajax(
@@ -92,10 +93,37 @@ $(document).ready(function()
 
     $("accion_registro").submit();
 
-
+//------------------------inicio de sesion-----------------------------//
     $("accion_iniciosesion").submit(function(e)
     {
+        $('#boton_iniciosesion').click(function(evt) 
+    {
+        $.ajax({
+        type: 'POST',
+        data: {
+            username: $('#username').val(),
+            pass: $('#password').val(),
+        },
+        url:'home/login',
+        //url: $(this).attr('action'),
+        dataType: 'json',
+        beforeSend: function(){
+            $('#boton_iniciosesion').attr('disabled', true);
+        },
+        success: function(response) {
+            if(response.success == true){
+                $('#respuesta').html(response.message);
+                } else {
+                $('#boton_iniciosesion').attr('disabled', false);
 
+                $('#username').text("");
+                $('#password').text("");
+            }
+        },
+        error: function(msg){
+            $('#boton_iniciosesion').attr('disabled', false);
+        }
+    });
     });
     $("accion_iniciosesion").submit();
 
