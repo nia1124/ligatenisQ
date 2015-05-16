@@ -50,7 +50,6 @@ $(document).ready(function()
 
     $('#accion_registro').click(function(event) 
     {
-         console.log("entre");
         event.preventDefault();
 
         link('vistas/registro.php', '#contenido');
@@ -68,64 +67,42 @@ $(document).ready(function()
         link('libs/conexion_facebook/app/logout.php', '#contenido');
     });
 
-    $("#accion_registro").submit(function(e)
-    {
-        
-        var postData = $(this).serializeArray();
-        var formURL = $(this).attr("action");
-        $.ajax(
-        {
-            url : formURL,
-            type: "POST",
-            data : postData,
-            success:function(data, textStatus, jqXHR) 
-            {
-                //data: return data from server
-            },
-            error: function(jqXHR, textStatus, errorThrown) 
-            {
-                //if fails      
-            }
-        });
-        e.preventDefault(); //STOP default action
-        e.unbind(); //unbind. to stop multiple form submit.
-    });
-
-    $("accion_registro").submit();
-
+    
 //------------------------inicio de sesion-----------------------------//
     $("accion_iniciosesion").submit(function(e)
     {
         $('#boton_iniciosesion').click(function(evt) 
     {
-        $.ajax({
-        type: 'POST',
-        data: {
-            username: $('#username').val(),
-            pass: $('#password').val(),
-        },
-        url:'home/login',
-        //url: $(this).attr('action'),
-        dataType: 'json',
-        beforeSend: function(){
-            $('#boton_iniciosesion').attr('disabled', true);
-        },
-        success: function(response) {
-            if(response.success == true){
-                $('#respuesta').html(response.message);
-                } else {
-                $('#boton_iniciosesion').attr('disabled', false);
+        $.ajax
+        ({
+            type: 'POST',
+            data: {
+                username: $('#username').val(),
+                pass: $('#password').val(),
+            },
+            url:'home/login',
+            //url: $(this).attr('action'),
+            dataType: 'json',
+            beforeSend: function(){
+                $('#boton_iniciosesion').attr('disabled', true);
+            },
+            success: function(response) {
+                if(response.success == true){
+                    $('#respuesta').html(response.message);
+                    } else {
+                    $('#boton_iniciosesion').attr('disabled', false);
 
-                $('#username').text("");
-                $('#password').text("");
+                    $('#username').text("");
+                    $('#password').text("");
+                    }
+            },
+            error: function(msg){
+                $('#boton_iniciosesion').attr('disabled', false);
             }
-        },
-        error: function(msg){
-            $('#boton_iniciosesion').attr('disabled', false);
-        }
-    });
+        });
     });
     $("accion_iniciosesion").submit();
+
 
 //-----------------------------mobile-----------------------//
 
@@ -219,6 +196,40 @@ $(document).ready(function()
         }
     }
     document.onscroll = scroll;   
+
+    $('#boton_registrar').click(function(evt) 
+    {
+        $.ajax({
+        type: 'POST',
+        data: {
+            nombre: $('#nombre_registro').val(),
+            username: $('#username_registro').val(),
+            pass: $('#pass_registro').val(),
+            pass2: $('#pass2_registro').val()
+        },
+        url:'home/register',
+        //url: $(this).attr('action'),
+        dataType: 'json',
+        beforeSend: function(){
+            $('#boton_registro').attr('disabled', true);
+        },
+        success: function(response) {
+            if(response.success == true){
+                $('#respuesta').html(response.message);
+                } else {
+                $('#boton_registrar').attr('disabled', false);
+
+                $('#nombre_registro').text("");
+                $('#username_registro').text("");
+                $('#pass_registro').text("");
+                $('#pass2_registro').text("");
+            }
+        },
+        error: function(msg){
+            $('#boton_registrar').attr('disabled', false);
+        }
+      });
+    });
 
 });
 
