@@ -78,10 +78,18 @@
 			$usuario=$this->cargarModelo("usuario");
 
 			$respuesta = $usuario->autenticar($username, $pass);
+			$tipo = $respuesta[0]['tipo'];
+			print_r($respuesta);
 			
-			if (count($respuesta)>0) 
+			if (count($respuesta)>0 && $tipo == 0) 
 			{
 				setcookie("chsm", "logedin", time()+3600, "/");
+				$result['estado']="Exito";
+				$result['mensaje']="Bienvenido";
+				echo json_encode($result);
+			}
+			elseif (count($respuesta)>0 && $tipo == 1) {
+				setcookie("chsm", "logedinAdmin", time()+3600, "/");
 				$result['estado']="Exito";
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);

@@ -45,6 +45,7 @@
 		public function autenticar($username, $pass)
 		{
 			$where = array('username' => "$username", 'contrasena' => "$pass");
+
 			$result = $this->select(null, $where)->fetchAll();
 			return $result;
 		}
