@@ -1,7 +1,7 @@
 <div class="organoAdm" id="contenido">
 	<div class="container">
 		<div class="row">
-			<div class=" col-xs-12 col-md-10 col-md-offset-1 padding-left">
+			<div class="col-md-10 col-md-offset-1 padding-left">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 	    				<h1 class="panel-title">Organo Administrativo</h1>

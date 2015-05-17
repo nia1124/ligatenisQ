@@ -68,11 +68,18 @@ $(document).ready(function()
         link('libs/conexion_facebook/app/logout.php', '#contenido');
     });
 
-    $('accion_admin').click(function(event)
+
+//-------------------------administrador---------------------//
+
+    $('accion_adminNoticias').click(function(event)
     {
         event.preventDefault(); 
-        link('vistas/admin.php', '#contenido');        
+        link('vistas/adminNoticias.php', '#contenido');        
     });
+
+
+
+
 
 
 //-----------------------------mobile-----------------------//
