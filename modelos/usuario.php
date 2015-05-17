@@ -48,6 +48,7 @@
 
 			$result = $this->select(null, $where)->fetchAll();
 			return $result;
+			print_r($result);
 		}
 	}
  ?>
