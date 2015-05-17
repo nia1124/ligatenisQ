@@ -129,12 +129,14 @@ $(document).ready(function()
     {
         event.preventDefault();
         link(' vistas/registro.php', '#contenido');
+        actualizarRegistro();
     });
 
     $('#accion_iniciosesion_mobile').click(function(event) 
     {
         event.preventDefault();
         link(' vistas/iniciosesion.php', '#contenido');
+        actualizarInicioSesion();
     });
 
     function link(url, update) 
