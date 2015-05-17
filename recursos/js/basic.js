@@ -227,33 +227,35 @@ $(document).ready(function()
         {
             $('#boton_iniciosesion').click(function()
             {
-                $.ajax
-                ({
+                $.ajax({
                     type: 'POST',
-                    data: {
+                    data: 
+                    {
                         username: $('#inicios_nombre').val(),
                         pass: $('#inicios_pass').val(),
-                         },
-                        url:'home/login',
-                        dataType: 'JSON',
-                        beforeSend: function(){
-                            $('#result_login').html("Un momento por favor");
-                        },
-                        success: function(response) {
-            
-                            if(response.estado == "Error"){
-                                $('#result_login').html(response.mensaje);
-                                $('#result_login').removeClass("alert alert-success")
-                                    .addClass("alert alert-danger");
-                            }
-                            else if(response.estado =="Exito"){
-                                 $('#result_login').html(response.mensaje);
-                                $('#result_login').removeClass("alert alert-danger")
-                            }
-                        },
-                        error: function(msg){
-                            $('#boton_iniciosesion').attr('disabled', false);
+                    },
+                    url:'home/login',
+                    dataType: 'JSON',
+                    beforeSend: function()
+                    {
+                        $('#result_login').html("Un momento por favor");
+                    },
+                    success: function(response)
+                    {
+                        console.log(response);
+                        if(response.estado == "Error"){
+                            $('#result_login').html(response.mensaje);
+                            $('#result_login').removeClass("alert alert-danger").addClass("alert alert-danger");
                         }
+                        else if(response.estado =="Exito")
+                        {
+                            $('#result_login').html(response.mensaje);
+                            $('#result_login').removeClass("alert alert-success")
+                        }
+                    },
+                    error: function(msg){
+                        $('#boton_iniciosesion').attr('disabled', false);
+                    }
                 });
                 return false;
             });

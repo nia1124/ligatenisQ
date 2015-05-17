@@ -79,8 +79,7 @@
 
 			$respuesta = $usuario->autenticar($username, $pass);
 			$tipo = $respuesta[0]['tipo'];
-			print_r($respuesta);
-			
+					
 			if (count($respuesta)>0 && $tipo == 0) 
 			{
 				setcookie("chsm", "logedin", time()+3600, "/");
@@ -100,7 +99,6 @@
 				$result['mensaje']="Usuario y contraseña no encontrados";
 				echo json_encode($result);
 			}
-
 		}
 		
 		

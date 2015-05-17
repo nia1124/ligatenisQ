@@ -87,7 +87,7 @@
 					{
 						$query .= "$key = '$value' ";
 					}
-					print( $var);
+					
 					if ($var != $value) 
 					{
 						$query .='AND ';
