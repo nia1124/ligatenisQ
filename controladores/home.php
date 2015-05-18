@@ -79,9 +79,6 @@
 
 			$respuesta = $usuario->autenticar($username, $pass);
 			$tipo = $respuesta[0]['tipo'];
-			$noticia = $this->cargarModelo("noticia");
-			$consultaBD = $noticia->getNoticias();
-			print_r($consultaBD);
 					
 			if (count($respuesta)>0 && $tipo == 0) 
 			{
@@ -112,12 +109,6 @@
 		{
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBD = $noticia->getNoticias();
-
-
-			for ($i=0; $i < count($consultaBD) ; $i++) 
-			{ 
-				
-			}
 		}
 
 		
