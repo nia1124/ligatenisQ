@@ -104,5 +104,13 @@
 			setcookie("chsm", "", time() - 3600,"/");
 			header("location: /ligatenisQ");
 		}
+
+		public function cargarNoticasBD()
+		{
+			$noticia = $this->cargarModelo("noticia");
+			$consultaBD = $noticia->getNoticias();
+		}
+
+		
 	}
 ?>
