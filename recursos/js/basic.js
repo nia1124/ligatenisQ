@@ -1,152 +1,158 @@
 $(document).ready(function()
 {
-	$('#accion_mv').click(function(event) 
-	{
-        event.preventDefault();
-        link('vistas/misionVision.php', '#contenido');
-    });
+    if(getCookie('chsm') == "logedin" || getCookie('chsm') == ""){
 
-    $('#accion_organoAdm').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/organoAdm.php', '#contenido');
-    });
+        $('#accion_mv').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/misionVision.php', '#contenido');
+        });
 
-    $('#accion_club').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/clubes.php', '#contenido');
-    });
+        $('#accion_organoAdm').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/organoAdm.php', '#contenido');
+        });
 
-    $('#accion_rankingF').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/rankingF.php', '#contenido');
-    });
+        $('#accion_club').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/clubes.php', '#contenido');
+        });
 
-    $('#accion_rankingM').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/rankingM.php', '#contenido');
-    });
+        $('#accion_rankingF').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/rankingF.php', '#contenido');
+        });
 
-    $('#accion_deportista').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/deportista.php', '#contenido');
-    });  
+        $('#accion_rankingM').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/rankingM.php', '#contenido');
+        });
 
-    $('#accion_entrenador').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/entrenador.php', '#contenido');
-    });  
-    
-    $('#accion_eventos').click(function(event) 
-    {
-        event.preventDefault();
-        link('vistas/eventos.php', '#contenido');
-    });
+        $('#accion_deportista').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/deportista.php', '#contenido');
+        });  
 
-    $('#accion_registro').click(function(event) 
-    {   
-        event.preventDefault();
-        link('vistas/registro.php', '#contenido');
-        actualizarRegistro();
+        $('#accion_entrenador').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/entrenador.php', '#contenido');
+        });  
         
-    });
+        $('#accion_eventos').click(function(event) 
+        {
+            event.preventDefault();
+            link('vistas/eventos.php', '#contenido');
+        });
 
-    $('#accion_iniciosesion').click(function(event) 
-    {  
-        event.preventDefault();
-        link('vistas/iniciosesion.php', '#contenido');
-        actualizarInicioSesion();
-    });   
+        $('#accion_registro').click(function(event) 
+        {   
+            event.preventDefault();
+            link('vistas/registro.php', '#contenido');
+            actualizarRegistro();
+            
+        });
 
-    $('#cerrarSesion').click(function(event)
-    {
-        link('libs/conexion_facebook/app/logout.php', '#contenido');
-    });
+        $('#accion_iniciosesion').click(function(event) 
+        {  
+            event.preventDefault();
+            link('vistas/iniciosesion.php', '#contenido');
+            actualizarInicioSesion();
+        });   
 
-
-//-------------------------administrador---------------------//
-
-    $('accion_adminNoticias').click(function(event)
-    {
-        event.preventDefault(); 
-        link('vistas/adminNoticias.php', '#contenido');        
-    });
-
+        $('#cerrarSesion').click(function(event)
+        {
+            link('libs/conexion_facebook/app/logout.php', '#contenido');
+        });
 
 
+    //-------------------------administrador---------------------//
+
+        $('accion_adminNoticias').click(function(event)
+        {
+            event.preventDefault(); 
+            link('vistas/adminNoticias.php', '#contenido');        
+        });
 
 
 
-//-----------------------------mobile-----------------------//
 
-    $('#accion_mv_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/misionVision.php', '#contenido');
-    });
 
-    $('#accion_organoAdm_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/organoAdm.php', '#contenido');
-    });
 
-    $('#accion_club_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/clubes.php', '#contenido');
-    });
+    //-----------------------------mobile-----------------------//
 
-    $('#accion_rankingF_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/rankingF.php', '#contenido');
-    });
+        $('#accion_mv_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/misionVision.php', '#contenido');
+        });
 
-    $('#accion_rankingM_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/rankingM.php', '#contenido');
-    });
+        $('#accion_organoAdm_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/organoAdm.php', '#contenido');
+        });
 
-    $('#accion_deportista_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/deportista.php', '#contenido');
-    });  
+        $('#accion_club_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/clubes.php', '#contenido');
+        });
 
-    $('#accion_entrenador_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/entrenador.php', '#contenido');
-    });  
-    
-    $('#accion_eventos_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/eventos.php', '#contenido');
-    });
+        $('#accion_rankingF_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/rankingF.php', '#contenido');
+        });
 
-    $('#accion_registro_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/registro.php', '#contenido');
-        actualizarRegistro();
-    });
+        $('#accion_rankingM_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/rankingM.php', '#contenido');
+        });
 
-    $('#accion_iniciosesion_mobile').click(function(event) 
-    {
-        event.preventDefault();
-        link(' vistas/iniciosesion.php', '#contenido');
-        actualizarInicioSesion();
-    });
+        $('#accion_deportista_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/deportista.php', '#contenido');
+        });  
 
-    function link(url, update) 
+        $('#accion_entrenador_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/entrenador.php', '#contenido');
+        });  
+        
+        $('#accion_eventos_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/eventos.php', '#contenido');
+        });
+
+        $('#accion_registro_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/registro.php', '#contenido');
+            actualizarRegistro();
+        });
+
+        $('#accion_iniciosesion_mobile').click(function(event) 
+        {
+            event.preventDefault();
+            link(' vistas/iniciosesion.php', '#contenido');
+            actualizarInicioSesion();
+        });   
+
+    }
+    else if(getCookie('chsm') == "logedinAdmin"){
+        console.log("Algo")
+    }; 
+     function link(url, update) 
     {
         $.ajax
         ({
@@ -175,6 +181,7 @@ $(document).ready(function()
             $('#navDesktop').removeClass('navbar-fixed-top');
         }
     }
+
     document.onscroll = scroll;  
 
     function actualizarRegistro()
@@ -199,13 +206,14 @@ $(document).ready(function()
                         },
                         success: function(response) {
                             console.log(response);
+                            window.location.reload(true);
                             if(response.estado == "Error"){
                                 $('#result').html(response.mensaje);
                                 $('#result').removeClass("alert alert-success")
                                     .addClass("alert alert-danger");
                             }
                             else if(response.estado =="Exito"){
-                                 $('#result').html(response.mensaje);
+                                $('#result').html(response.mensaje);
                                 $('#result').removeClass("alert alert-danger")
                                     .addClass("alert alert-success");
                             }
@@ -261,9 +269,17 @@ $(document).ready(function()
             });
         },500);
     }
-    
-    
- 
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    }
 });
 
 

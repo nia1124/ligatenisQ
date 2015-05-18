@@ -86,18 +86,15 @@
 				$result['estado']="Exito";
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);
+				header('Location: /ligatenisQ/index.php');
+
 			}
 			elseif (count($respuesta)>0 && $tipo == 1) {
 				setcookie("chsm", "logedinAdmin", time()+3600, "/");
 				$result['estado']="Exito";
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);
-			}
-			else
-			{
-				$result['estado']="Error";
-				$result['mensaje']="Usuario y contraseña no encontrados";
-				echo json_encode($result);
+				header('Location: /ligatenisQ/index.php');
 			}
 		}
 		
@@ -108,5 +105,4 @@
 			header("location: /ligatenisQ");
 		}
 	}
-
 ?>
