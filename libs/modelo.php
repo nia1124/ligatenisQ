@@ -170,9 +170,6 @@
 		function update($camposA = null, $where = null)
 		{
 			$queryUpdate = "UPDATE $this->nombreTabla SET ";
-			$camposA = array('nombre' =>"cristian mi vida" ,'apellidos'=>"cruz muñoz" );
-			$where = array('id' => "2  ");
-
 			if($camposA == null)
 			{
 				echo "error campos o valores nulos ";
@@ -212,8 +209,6 @@
 		function delete($where = null)
 		{
 			$queryDelete="DELETE FROM $this->nombreTabla";
-			$where= array('id' => "1");
-
 			if ($where != null) 
 			{	
 				$queryDelete .= "WHERE ";
@@ -221,7 +216,6 @@
 				{
 					$queryDelete .= "$key = '$value'";
 				}
-
 			}
 			$this->query($queryDelete);
 		}
