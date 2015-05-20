@@ -21,7 +21,7 @@
 										<th>Acciones</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody >
 									<tr>
 										<td>
 											<?php 

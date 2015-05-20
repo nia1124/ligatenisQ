@@ -73,28 +73,26 @@
 		{
 			$username = $_POST["username"];
 			$pass = $_POST["pass"];
-			
-
 			$usuario=$this->cargarModelo("usuario");
 
 			$respuesta = $usuario->autenticar($username, $pass);
-			$tipo = $respuesta[0]['tipo'];
-					
+			$tipo = $respuesta[0]['tipo'];		
+
 			if (count($respuesta)>0 && $tipo == 0) 
 			{
+
 				setcookie("chsm", "logedin", time()+3600, "/");
-				$result['estado']="Exito";
+				$result['estado']="Exito";			
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);
-				header('Location: /ligatenisQ/index.php');
-
+				
 			}
 			elseif (count($respuesta)>0 && $tipo == 1) {
 				setcookie("chsm", "logedinAdmin", time()+3600, "/");
 				$result['estado']="Exito";
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);
-				header('Location: /ligatenisQ/index.php');
+				
 			}
 		}
 		
@@ -105,10 +103,14 @@
 			header("location: /ligatenisQ");
 		}
 
-		public function cargarNoticasBD()
+		public function cargarNoticiasBD()
 		{
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBD = $noticia->getNoticias();
+			$consultaBD;
+			$this->cargarVista("adminNoticias", $consultaBD);
+			
+			//echo json_encode($consultaBD);
 		}
 
 		

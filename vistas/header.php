@@ -27,7 +27,7 @@
 						        <li class="dropdown">
 						          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Institución<span class="caret"></span></a>
 						          <ul class="dropdown-menu" role="menu">
-						            <li><a href="#" id="accion_mv">Misión y visión</a></li>
+						            <li><a href="#" id="accion_adminNoticias">Misión y visión</a></li>
 						            <li class="divider"></li>
 						            <li><a href="#">Estatutos</a></li>
 						            <li class="divider"></li>

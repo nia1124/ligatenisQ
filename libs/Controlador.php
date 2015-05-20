@@ -34,17 +34,20 @@
 		}
 
 
-		protected function cargarVista($nombreVista)
+		protected function cargarVista($nombreVista, $params = null)
 		{	
 			$vista = 'vistas/' . $nombreVista . '.php';
+			
 			if (file_exists($vista)) 
 			{
-				require_once($vista);
-				return true;
+				$parametros =  $params;
+				//print_r($parametros);
+				include_once($vista);
+				
 			}
 			else 
 			{
-				return falso;
+				return false;
 			}
 		} 
 	}	

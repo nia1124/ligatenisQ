@@ -11,7 +11,8 @@
 							<div>
 								<input type="button" id="boton_registroNoti" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
 							</div>
-							<table class="table"> 
+							
+							<table class="table" id="tablaNoticias"> 
 								<thead>
 									<tr>
 										<th>Imagen</th>
@@ -21,28 +22,25 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>
-											<?php 
-												
-											 ?>
-										</td>
-										<td>
-											<?php 
-											 ?>
-										</td>
-										<td>
-											<?php 
-											 ?>
-										</td>
-										<td>
-											<input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
-											<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
-											<?php 
+							
+								<?php
 
-											 ?>
-										</td>
-									</tr>
+									$data = $parametros;
+									$tabla = "";
+								 for ($i=0; $i < count($data) ; $i++) { 
+									echo '<tr>';
+									$tabla .= "<td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
+									"</td>";
+									echo $tabla;
+									echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
+												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
+										</td></tr>';
+								}			
+			
+			?>
+							
+										
+									
 								</tbody>
 							</table>
 							</div>

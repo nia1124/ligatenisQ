@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    if(getCookie('chsm') == "logedin" || getCookie('chsm') == ""){
+    
 
         $('#accion_mv').click(function(event) 
         {
@@ -70,13 +70,13 @@ $(document).ready(function()
             link('libs/conexion_facebook/app/logout.php', '#contenido');
         });
 
-
     //-------------------------administrador---------------------//
 
-        $('accion_adminNoticias').click(function(event)
+        $('#accion_adminNoticias').click(function(event)
         {
             event.preventDefault(); 
-            link('vistas/adminNoticias.php', '#contenido');        
+            link('home/cargarNoticiasBD', '#contenido');
+            
         });
 
 
@@ -148,10 +148,7 @@ $(document).ready(function()
             actualizarInicioSesion();
         });   
 
-    }
-    else if(getCookie('chsm') == "logedinAdmin"){
-        console.log("Algo")
-    }; 
+    
      function link(url, update) 
     {
         $.ajax
@@ -206,6 +203,7 @@ $(document).ready(function()
                         },
                         success: function(response) {
                             console.log(response);
+
                             window.location.reload(true);
                             if(response.estado == "Error"){
                                 $('#result').html(response.mensaje);
@@ -251,6 +249,7 @@ $(document).ready(function()
                     success: function(response)
                     {
                         console.log(response);
+
                         if(response.estado == "Error"){
                             $('#result_login').html(response.mensaje);
                             $('#result_login').removeClass("alert alert-danger").addClass("alert alert-danger");
@@ -279,6 +278,27 @@ $(document).ready(function()
             if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
         }
         return "";
+    }
+
+    function noticias(){
+
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarNoticiasBD',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    console.log(response);
+                    $("#accion_tablaNoticias").html(response.tabla);
+                },
+                error: function(msg){
+                   
+                }
+            });
     }
 });
 
