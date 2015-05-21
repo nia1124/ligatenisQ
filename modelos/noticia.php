@@ -32,6 +32,8 @@
 		{
 			$this->insert($campos, $valores);
 		}
+
+		
 	}
 	
 

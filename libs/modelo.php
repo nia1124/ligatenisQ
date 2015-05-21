@@ -220,7 +220,7 @@
 			$this->query($queryDelete);
 		}
 
-			
+	
 		
 	}
 ?>
