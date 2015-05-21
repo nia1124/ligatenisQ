@@ -107,10 +107,15 @@
 		{
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBD = $noticia->getNoticias();
-			
-			$this->cargarVista("adminNoticias", $consultaBD);
+			$this->cargarVista("index", $consultaBD);
 		}
 
+		public function cargarRanking()
+		{
+			$ranking = $this->cargarModelo("ranking");
+			$consultaBDR = $ranking->getRanking();
+			$this->cargarVista("adminRanking", $consultaBDR);
+		}
 		
 	}
 ?>
