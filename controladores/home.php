@@ -107,10 +107,8 @@
 		{
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBD = $noticia->getNoticias();
-			$consultaBD;
-			$this->cargarVista("adminNoticias", $consultaBD);
 			
-			//echo json_encode($consultaBD);
+			$this->cargarVista("adminNoticias", $consultaBD);
 		}
 
 		

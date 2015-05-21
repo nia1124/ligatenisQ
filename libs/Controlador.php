@@ -41,7 +41,6 @@
 			if (file_exists($vista)) 
 			{
 				$parametros =  $params;
-				//print_r($parametros);
 				include_once($vista);
 				
 			}
