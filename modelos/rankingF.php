@@ -11,23 +11,23 @@ require_once('libs/modelo.php');
 			$this->setNombreTabla("ranking");
 		}
 
-		function getRanking()
+		function getRankingF()
 		{
 			$resultado = $this->select()->fetchAll();
 			return $resultado;
 		}
 
-		function eleminarRanking()
+		function eleminarRankingF()
 		{
 			$eliminado = $this->delete();
 		}
 
-		function actualizarRanking()
+		function actualizarRankingF()
 		{
 			$actualizado = $this->update();
 		}
 
-		function insertarRanking($campos, $valores)
+		function insertarRankingF($campos, $valores)
 		{
 			$insertado = $this->insert($campos, $valores);
 		}
