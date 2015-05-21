@@ -24,7 +24,7 @@
 	<div id="contenido" class="container">
 
 		<?php 
-			if ($_COOKIE['chsm']=="logedin") 
+			if (!isset($_COOKIE['chsm']) || $_COOKIE['chsm']=="logedin") 
 			{
 		?>
 				<div class="row padding-l">
