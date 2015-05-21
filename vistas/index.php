@@ -93,6 +93,10 @@
 				        						<h3>Thumbnail label</h3>
 				        						<p>...</p>
 				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
+				        						<form enctype="multipart/form-data" action="uploader.php" method="POST">
+<input name="uploadedfile" type="file" />
+<input type="submit" value="Subir archivo" />
+</form>
 			      					 		</div>
 			    						</div>
 			  						</div>
@@ -141,6 +145,7 @@
 												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
 											</td></tr>';
 									}
+
 								?>
 								</tbody>
 							</table>
