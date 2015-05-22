@@ -294,8 +294,8 @@ $(document).ready(function()
         return "";
     }
 
-    function noticias(){
-
+    function noticias()
+    {
         $.ajax({
                 type: 'POST',
                 url:'home/cargarNoticiasBD',
@@ -308,6 +308,27 @@ $(document).ready(function()
                 {
                     console.log(response);
                     $("#accion_tablaNoticias").html(response.tabla);
+                },
+                error: function(msg){
+                   
+                }
+            });
+    }
+
+    function rankingF()
+    {
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarRankingF',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    console.log(response);
+                    $("#accion_tablaRankingF").html(response.tabla);
                 },
                 error: function(msg){
                    

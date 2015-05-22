@@ -110,11 +110,11 @@
 			$this->cargarVista("index", $consultaBD);
 		}
 
-		public function cargarRanking()
+		public function cargarRankingF()
 		{
-			$ranking = $this->cargarModelo("ranking");
-			$consultaBDR = $ranking->getRanking();
-			$this->cargarVista("adminRanking", $consultaBDR);
+			$rankingF = $this->cargarModelo("rankingF");
+			$consultaRF = $rankingF->getRankingF();
+			$this->cargarVista("rankingF", $consultaRF);
 		}
 		
 		public function insertarNoticias()
