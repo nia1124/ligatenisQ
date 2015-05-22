@@ -1,7 +1,7 @@
 <div class="rankingF" id="contenido">
 	<div class="container">
 	<?php 
-		if ((!isset($_COOKIE['chsm']=="")) || ($_COOKIE['chsm']=="logedin")) 
+		if (!isset($_COOKIE['chsm']) || ($_COOKIE['chsm']=="logedin")) 
 		{
 	 ?>
 		<div class="row">
@@ -39,42 +39,37 @@
 			</div>
 		</div>
 	<?php 
-		}else{
+		}
+		else
+		{
 	 ?>
 	 	<div class="row">
-       	    	<div class="col-md-10 col-md-offset-1 padding-left">
+       	    <div class="col-md-10 col-md-offset-1 padding-left">
        	    	<form method="POST" accept-charset="utf-8">
             	    <div class="panel-heading ">
     					<h1 class="panel-title" align="left">Administrar Ranking</h1>
   					</div>
 					<div class="panel-body" >
-						<div class="table-responsive">
-							<div>
-								<input type="button" id="boton_registroRankingF" alt="" accion="" class="glyphicon glyphicon-plus">
-							</div>
+						<div class="table-responsive">								
 							<table class="table" id="tablaRankingF"> 
 								<thead>
 									<tr>
-										<th>Imagen</th>
-										<th>Titulo</th>
-										<th>Descripción</th>
-										<th>Acciones</th>
+										<th>Posición</th>
+										<th>Nombre</th>
+										<th>Puntos</th>
 									</tr>
 								</thead>
 								<tbody>
 							
 								<?php
-									$data = $parametros;
+									$data = $consultaRF;
 									$tabla = "";
 								 	for ($i=0; $i < count($data) ; $i++) 
 								 	{ 
 										echo '<tr>';
-										$tabla .= "<td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
+										$tabla .= "<td>".$data[$i]['posicion']."</td><td>".$data[$i]['nombre']."</td><td>".$data[$i]['puntos'].
 										"</td>";
 										echo $tabla;
-										echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
-												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
-											</td></tr>';
 									}
 								?>
 								</tbody>
@@ -82,9 +77,10 @@
 						</div>
 					</div>
        	    	</form>
-       	    	</div>
-       			</div>
-
-
+       	    </div>
+       	</div>
+       	<?php 
+         }
+       	 ?>
 	</div>
 </div>

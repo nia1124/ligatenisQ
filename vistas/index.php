@@ -142,7 +142,6 @@
 												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
 											</td></tr>';
 									}
-
 								?>
 								</tbody>
 							</table>

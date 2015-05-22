@@ -222,7 +222,10 @@
 			$this->query($queryDelete);
 		}
 
-	
+		public function cargarRanking($consultaRf)
+		{
+			$this->query($consultaRf);
+		}
 		
 	}
 ?>

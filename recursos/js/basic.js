@@ -95,7 +95,12 @@ $(document).ready(function()
 
 
 
-
+     //---------------------------ventana modal-----------------//
+        $('open-Modal').click(function(event)
+        {
+            var myDNI = $(this).data('id');
+            $(".modal-body #DNI").val( myDNI );
+        })
 
 
     //-----------------------------mobile-----------------------//

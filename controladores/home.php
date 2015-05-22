@@ -113,7 +113,7 @@
 		public function cargarRankingF()
 		{
 			$rankingF = $this->cargarModelo("rankingF");
-			$consultaRF = $rankingF->getRankingF();
+			$consultaRF = $rankingF->cargarRankingF();
 			$this->cargarVista("rankingF", $consultaRF);
 		}
 		
