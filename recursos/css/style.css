@@ -41,6 +41,17 @@ button .margenes{
 	margin-left: 4%;
  	margin-right: 4%;
 }
+.size_label{
+	font-size: 120%;
+	text-align: left;
+}
+.padding_panel {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.width_campo{
+	width: 90%;
+}
 .alto{
 	height: 10%;
 }
@@ -85,6 +96,7 @@ button .margenes{
 {
 	font: sans-serif;
 	font-size: 24px;
+	margin-bottom: 5%;
 }
 .navbar{
 	min-height: 43px;

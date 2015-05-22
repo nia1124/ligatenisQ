@@ -93,10 +93,7 @@
 				        						<h3>Thumbnail label</h3>
 				        						<p>...</p>
 				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-				        						<form enctype="multipart/form-data" action="uploader.php" method="POST">
-<input name="uploadedfile" type="file" />
-<input type="submit" value="Subir archivo" />
-</form>
+				        						
 			      					 		</div>
 			    						</div>
 			  						</div>
@@ -119,7 +116,7 @@
 					<div class="panel-body" >
 						<div class="table-responsive">
 							<div>
-								<input type="button" id="boton_registroNoti" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
+								<input type="button" id="accion_registroNoti" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
 							</div>
 							<table class="table" id="tablaNoticias"> 
 								<thead>

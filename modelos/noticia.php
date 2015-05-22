@@ -30,7 +30,7 @@
 
 		function registrarNoticia($campos, $valores)
 		{
-			$this->insert($campos, $valores);
+			return $this->insert($campos, $valores);
 		}
 
 		

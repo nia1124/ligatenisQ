@@ -78,6 +78,20 @@ $(document).ready(function()
             link('home/cargarNoticiasBD', '#contenido');
             
         });
+        $('#accion_registroNoti').click(function(event){
+
+            event.preventDefault();
+            link('vistas/registrarNoticia.php', '#contenido');
+
+        });
+       /* $('#insertar_noticia').click(function(event){
+
+            event.preventDefault();
+            link('home/insertarNoticias', '#contenido');
+            
+        });
+        */
+
 
 
 

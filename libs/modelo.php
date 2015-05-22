@@ -99,6 +99,7 @@
 					
 				}
 			}
+
 			return $this->query($query);	
 		}
 
@@ -162,6 +163,7 @@
 				}
 
 			}
+			echo "$queryInsert";
 			$this->query($queryInsert);	
 		}
 
