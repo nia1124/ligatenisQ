@@ -34,8 +34,8 @@ require_once('libs/modelo.php');
 
 		function cargarRankingF()
 		{	
-			$resultado= join("(SELECT posicion, nombre, puntos
-			FROM resultado[ SELECT (nombre, puntos, posicion) FROM tablaDM[ SELECT (posicion) Deportista 
+			$consultaRF= join("(SELECT posicion, nombre, puntos
+			FROM resultadoC[ SELECT (nombre, puntos, posicion) FROM tablaDM[ SELECT (posicion) Deportista 
 															   JOIN Miembro 
 															   ON Deportista.Miembro_id = Miembro.id]
 															   JOIN RankingD
@@ -44,8 +44,8 @@ require_once('libs/modelo.php');
 															   FROM Ranking 
 															   ON RankingD.id = Ranking.RankingD_id]])");
 		
-			$consultaRF = $this->cargarRanking($resultado)->fetchAll();
-			print_r($consultaRF);
+			$resultado = $this->cargarRankingModelo($consultaRF);
+			return $resultado;
 		}
 
 

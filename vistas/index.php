@@ -34,69 +34,33 @@
 		    					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
 		  					</div>
 		  					<div class="panel-body">
-			  					<div class="row">
-			 						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
-			 						
-			    						<div class="thumbnail">
-				      						<img class="img-responsive" src="recursos/img/carlos.jpg" alt="...">
-				      						<div class="caption">
-				        						<h3>Thumbnail label</h3>
-				        						<p>...</p>
-				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-			      					 		</div>
-			    						</div>
-			  						</div>
-			  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
-			    						<div class="thumbnail">
-				      						<img class="img-responsive" src="recursos/img/carlos.jpg" alt="...">
-				      						<div class="caption">
-				        						<h3>Thumbnail label</h3>
-				        						<p>...</p>
-				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-			      					 		</div>
-			    						</div>
-			  						</div>
-			  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
-			    						<div class="thumbnail">
-				      						<img class="img-responsive" src="recursos/img/carlos.jpg" alt="...">
-				      						<div class="caption">
-				        						<h3>Thumbnail label</h3>
-				        						<p>...</p>
-				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-			      					 		</div>
-			    						</div>
-			  						</div>
-			  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
-			    						<div class="thumbnail">
-				      						<img class="img-responsive" src="recursos/img/carlos.jpg" alt="...">
-				      						<div class="caption">
-				        						<h3>Thumbnail label</h3>
-				        						<p>...</p>
-				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-			      					 		</div>
-			    						</div>
-			  						</div>
-			  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
-			    						<div class="thumbnail">
-				      						<img class="img-responsive" src="recursos/img/carlos.jpg" alt="...">
-				      						<div class="caption">
-				        						<h3>Thumbnail label</h3>
-				        						<p>...</p>
-				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-			      					 		</div>
-			    						</div>
-			  						</div>
-			  						<div class="col-xs-12  col-sm-6 col-md-4 col-lg-4">
-			    						<div class="thumbnail">
-				      						<img class="img-responsive" src="recursos/img/carlos.jpg" alt="...">
-				      						<div class="caption">
-				        						<h3>Thumbnail label</h3>
-				        						<p>...</p>
-				        						<p><a href="#" class="btn btn-primary" role="button">Ver mas</a></p>
-				        						
-			      					 		</div>
-			    						</div>
-			  						</div>
+			  					<div class="table-responsive">
+									<table class="table" id="tablaNoticias"> 
+										<thead>
+											<tr>
+												<th>Imagen</th>
+												<th>Titulo</th>
+												<th>Descripción</th>
+												<th>Acciones</th>
+											</tr>
+										</thead>
+										<tbody>
+									
+										<?php
+											$data = $parametros;
+											$tabla = "";
+										 	for ($i=0; $i < count($data) ; $i++) 
+										 	{ 
+												echo '<tr>';
+												$tabla .= "<td>".$data[$i]['imagen']."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
+												"</td>";
+												echo "</tr>";
+												echo $tabla;
+												print_r($tabla);
+											}
+										?>
+										</tbody>
+									</table>
 								</div>
 		  					</div>
 						</div>
@@ -116,7 +80,7 @@
 					<div class="panel-body" >
 						<div class="table-responsive">
 							<div>
-								<input type="button" id="accion_registroNoti" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
+								<input type="button" id="accion_registrarNoticia" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
 							</div>
 							<table class="table" id="tablaNoticias"> 
 								<thead>
@@ -128,19 +92,24 @@
 									</tr>
 								</thead>
 								<tbody>
-							
+								
 								<?php
+
 									$data = $parametros;
 									$tabla = "";
 								 	for ($i=0; $i < count($data) ; $i++) 
 								 	{ 
+
 										echo '<tr>';
-										$tabla .= "<td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
+										$tabla .= "<td>".$data[$i]['imagen']."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
 										"</td>";
+
 										echo $tabla;
+
 										echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
 												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
 											</td></tr>';
+
 									}
 								?>
 								</tbody>

@@ -1,4 +1,4 @@
-<div id="contenido" class="container margen registro">
+<div id="contenido" class="registrarNoticia container margen ">
 	<div class="row ">
 		<div class=" col-xs-12 col-md-12 col-sm-12 col-lg-12" style="margin: 0%;">
 			<panel class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 panel panel-default borde padding_panel " align="center">						

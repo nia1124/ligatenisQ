@@ -62,7 +62,7 @@
 								<tbody>
 							
 								<?php
-									$data = $consultaRF;
+									$data = $parametros;
 									$tabla = "";
 								 	for ($i=0; $i < count($data) ; $i++) 
 								 	{ 

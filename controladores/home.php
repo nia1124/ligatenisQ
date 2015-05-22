@@ -110,10 +110,10 @@
 			$this->cargarVista("index", $consultaBD);
 		}
 
-		public function cargarRankingF()
+		public function cargarRankingFHome()
 		{
 			$rankingF = $this->cargarModelo("rankingF");
-			$consultaRF = $rankingF->cargarRankingF();
+			$consultaRF = $rankingF->getRankingF();
 			$this->cargarVista("rankingF", $consultaRF);
 		}
 		

@@ -72,25 +72,21 @@ $(document).ready(function()
 
     //-------------------------administrador---------------------//
 
-        $('#accion_adminNoticias').click(function(event)
-        {
-            event.preventDefault(); 
-            link('home/cargarNoticiasBD', '#contenido');
-            
-        });
-        $('#accion_registroNoti').click(function(event){
+        
+        $('#accion_registrarNoticia').click(function(event){
 
             event.preventDefault();
             link('vistas/registrarNoticia.php', '#contenido');
 
+
         });
-       /* $('#insertar_noticia').click(function(event){
+       $('#insertar_noticia').click(function(event){
 
             event.preventDefault();
-            link('home/insertarNoticias', '#contenido');
+            link('vistas/index.php', '#contenido');
             
         });
-        */
+        
 
 
 
@@ -324,7 +320,7 @@ $(document).ready(function()
     {
         $.ajax({
                 type: 'POST',
-                url:'home/cargarRankingF',
+                url:'home/cargarRankingFHome',
                 
                 beforeSend: function()
                 {
