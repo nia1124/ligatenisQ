@@ -23,7 +23,17 @@
 
 		function index2()
 		{
+			$noticia = $this->cargarModelo("noticia");
+			$consultaBD = $noticia->getNoticias();
+			$this->cargarVista("index", $consultaBD);
+
+			$rankingF = $this->cargarModelo("rankingF");
+			$consultaRF = $rankingF->getRankingF();
+			$this->cargarVista("rankingF", $consultaRF);
+
 			$usuario=$this->cargarVista("index");
+
+
 		}
 		
 
@@ -103,12 +113,10 @@
 			header("location: /ligatenisQ");
 		}
 
-		public function cargarNoticiasBD()
-		{
-			$noticia = $this->cargarModelo("noticia");
-			$consultaBD = $noticia->getNoticias();
-			$this->cargarVista("index", $consultaBD);
-		}
+		//public function cargarNoticiasBD()
+		//{
+			
+		//}
 
 		public function cargarRankingFHome()
 		{
