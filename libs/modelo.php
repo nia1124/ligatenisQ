@@ -99,7 +99,7 @@
 					
 				}
 			}
-
+			
 			return $this->query($query);	
 		}
 

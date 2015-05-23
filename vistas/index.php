@@ -49,10 +49,10 @@
 										<?php
 											$data = $parametros;
 											$tabla = "";
-										 	for ($i=0; $i < count($data) ; $i++) 
+										 	for ($i=0; $i < count($data) ; $i++)
 										 	{ 
 												echo '<tr>';
-												$tabla .= "<td>".$data[$i]['imagen']."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
+												$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
 												"</td>";
 												echo "</tr>";
 												echo $tabla;
