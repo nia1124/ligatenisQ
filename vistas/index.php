@@ -101,15 +101,14 @@
 								 	{ 
 
 										echo '<tr>';
-										$tabla .= "<td>".$data[$i]['imagen']."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
-										"</td>";
-
+										$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
+											"</td>";
+										echo "</tr>";
 										echo $tabla;
 
 										echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
 												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
 											</td></tr>';
-
 									}
 								?>
 								</tbody>

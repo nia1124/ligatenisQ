@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
     
-
+/*-----------vistas de escritorio-----------------------------*/
         $('#accion_mv').click(function(event) 
         {
             event.preventDefault();
@@ -24,6 +24,8 @@ $(document).ready(function()
         {
             event.preventDefault();
             link('vistas/rankingF.php', '#contenido');
+            rankingF();
+
         });
 
         $('#accion_rankingM').click(function(event) 
@@ -70,36 +72,10 @@ $(document).ready(function()
             link('libs/conexion_facebook/app/logout.php', '#contenido');
         });
 
-    //-------------------------administrador---------------------//
-
-        
-        $('#accion_registrarNoticia').click(function(event){
-
-            event.preventDefault();
-            link('vistas/registrarNoticia.php', '#contenido');
+        /*------------fin vistas escritorio------------------------*/
 
 
-        });
-       $('#insertar_noticia').click(function(event){
-
-            event.preventDefault();
-            link('vistas/index.php', '#contenido');
-            
-        });
-        
-
-
-
-
-     //---------------------------ventana modal-----------------//
-        $('open-Modal').click(function(event)
-        {
-            var myDNI = $(this).data('id');
-            $(".modal-body #DNI").val( myDNI );
-        })
-
-
-    //-----------------------------mobile-----------------------//
+       /*---------------------view mobile-----------------------*/
 
         $('#accion_mv_mobile').click(function(event) 
         {
@@ -162,9 +138,39 @@ $(document).ready(function()
             link(' vistas/iniciosesion.php', '#contenido');
             actualizarInicioSesion();
         });   
+ /*-------------------end view mobile----------------------------*/
 
-    
-     function link(url, update) 
+/*--------------------evento menu movil...................*/
+$('#boton_menumobile').click(function(event)
+{
+    $('#collapsed').Collapse('hide');
+})
+
+
+
+/*-------------------------administrador-------------------------*/
+        
+        $('#accion_registrarNoticia').click(function(event){
+
+            event.preventDefault();
+            link('vistas/registrarNoticia.php', '#contenido');
+
+
+        });
+       $('#insertar_noticia').click(function(event){
+
+            event.preventDefault();
+            link('vistas/index.php', '#contenido');
+            
+        });
+/*-------------------fin administrador-----------------------*/
+
+
+
+/*-----------------------metodos ---------------------------*/
+
+    /*......................metodo menu estatico---------*/
+    function link(url, update) 
     {
         $.ajax
         ({
@@ -196,6 +202,10 @@ $(document).ready(function()
 
     document.onscroll = scroll;  
 
+
+
+
+    /*--------------------metodo registrar.............*/
     function actualizarRegistro()
     {
         setTimeout(function()
@@ -240,8 +250,9 @@ $(document).ready(function()
         },500);
     }
 
-    //------------------------inicio de sesion-----------------------------//
 
+
+    /*.................metodo iniciar sesion..............*/
     function actualizarInicioSesion()
     {
         setTimeout(function()
@@ -295,11 +306,14 @@ $(document).ready(function()
         return "";
     }
 
+
+
+    /*................cargar noticias base de datos........*/
     function noticias()
     {
         $.ajax({
                 type: 'POST',
-                url:'home/cargarNoticiasBD',
+                url:'home/index2',
                 
                 beforeSend: function()
                 {
@@ -316,6 +330,7 @@ $(document).ready(function()
             });
     }
 
+    /*............cargar ranking base de datos........*/
     function rankingF()
     {
         $.ajax({
@@ -328,7 +343,7 @@ $(document).ready(function()
                 },
                 success: function(response)
                 {
-                    console.log(response);
+                    //console.log(response);
                     $("#accion_tablaRankingF").html(response.tabla);
                 },
                 error: function(msg){
@@ -336,6 +351,9 @@ $(document).ready(function()
                 }
             });
     }
+
+    /*............. metodo ventana modal..........*/
+
 });
 
 

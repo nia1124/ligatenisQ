@@ -9,7 +9,6 @@
 			print_r($this->parametrosC);
 		}
 
-
 		function index()
 		{	
 			$usuario=$this->cargarModelo("usuario");
@@ -25,106 +24,12 @@
 		{
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBD = $noticia->getNoticias();
-			$this->cargarVista("index", $consultaBD);
-
-			$rankingF = $this->cargarModelo("rankingF");
-			$consultaRF = $rankingF->getRankingF();
-			$this->cargarVista("rankingF", $consultaRF);
-
+			$this->cargarVista("index", $consultaBD);			
+			
 			$usuario=$this->cargarVista("index");
 
-
-		}
-		
-
-		public function register()
-		{	
-			
-
-			$nombre = $_POST["nombre"];
-			$username = $_POST["username"];
-			$pass = $_POST["pass"];
-			$pass2 = $_POST["pass2"];
-
-			$usuario=$this->cargarModelo("usuario");
-
-			$validarNombre = $usuario->validarUsuario($username);
-			
-			if ($validarNombre == false) 
-			{	
-				if ($pass == $pass2) 
-				{	
-
-					$campos = array('nombre', 'username', 'contrasena');
-					$valores = array($nombre, $username, $pass);
-					$usuario->registroU($campos, $valores);	 
-					$respuesta['estado']="Exito";
-					$respuesta['mensaje']="Registro exitoso.";
-					echo json_encode($respuesta);
-				}
-				else
-				{
-					$respuesta['estado']="Error";
-					$respuesta['mensaje']="Las contraseñas no coinciden.";
-					echo json_encode($respuesta);
-				}
-			}	
-			else
-			{
-				$respuesta['estado']="Error";
-				$respuesta['mensaje']="El usuario ya se encuentra registrado.";
-				echo json_encode($respuesta);
-			}	
-
-		}
-			
-		
-		public function login()
-		{
-			$username = $_POST["username"];
-			$pass = $_POST["pass"];
-			$usuario=$this->cargarModelo("usuario");
-
-			$respuesta = $usuario->autenticar($username, $pass);
-			$tipo = $respuesta[0]['tipo'];		
-
-			if (count($respuesta)>0 && $tipo == 0) 
-			{
-
-				setcookie("chsm", "logedin", time()+3600, "/");
-				$result['estado']="Exito";			
-				$result['mensaje']="Bienvenido";
-				echo json_encode($result);
-				
-			}
-			elseif (count($respuesta)>0 && $tipo == 1) {
-				setcookie("chsm", "logedinAdmin", time()+3600, "/");
-				$result['estado']="Exito";
-				$result['mensaje']="Bienvenido";
-				echo json_encode($result);
-				
-			}
-		}
-		
-		
-		public function logout()
-		{
-			setcookie("chsm", "", time() - 3600,"/");
-			header("location: /ligatenisQ");
 		}
 
-		//public function cargarNoticiasBD()
-		//{
-			
-		//}
-
-		public function cargarRankingFHome()
-		{
-			$rankingF = $this->cargarModelo("rankingF");
-			$consultaRF = $rankingF->getRankingF();
-			$this->cargarVista("rankingF", $consultaRF);
-		}
-		
 		public function insertarNoticias()
 		{
 			$target_path = "uploads/";
@@ -178,8 +83,87 @@
 			print_r($valores);
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBDR = $noticia->registrarNoticia( $campos, $valores);
+		}
 
+		public function cargarRankingFHome()
+		{
+			$rankingF = $this->cargarModelo("ranking");
+			$consultaRF = $rankingF->getRankingF();
+			$this->cargarVista("ranking", $consultaRF);
+		}
 
+		public function register() 
+		{	
+			
+
+			$nombre = $_POST["nombre"];
+			$username = $_POST["username"];
+			$pass = $_POST["pass"];
+			$pass2 = $_POST["pass2"];
+
+			$usuario=$this->cargarModelo("usuario");
+
+			$validarNombre = $usuario->validarUsuario($username);
+			
+			if ($validarNombre == false) 
+			{	
+				if ($pass == $pass2) 
+				{	
+
+					$campos = array('nombre', 'username', 'contrasena');
+					$valores = array($nombre, $username, $pass);
+					$usuario->registroU($campos, $valores);	 
+					$respuesta['estado']="Exito";
+					$respuesta['mensaje']="Registro exitoso.";
+					echo json_encode($respuesta);
+				}
+				else
+				{
+					$respuesta['estado']="Error";
+					$respuesta['mensaje']="Las contraseñas no coinciden.";
+					echo json_encode($respuesta);
+				}
+			}	
+			else
+			{
+				$respuesta['estado']="Error";
+				$respuesta['mensaje']="El usuario ya se encuentra registrado.";
+				echo json_encode($respuesta);
+			}	
+
+		}
+		
+		public function login()
+		{
+			$username = $_POST["username"];
+			$pass = $_POST["pass"];
+			$usuario=$this->cargarModelo("usuario");
+
+			$respuesta = $usuario->autenticar($username, $pass);
+			$tipo = $respuesta[0]['tipo'];		
+
+			if (count($respuesta)>0 && $tipo == 0) 
+			{
+
+				setcookie("chsm", "logedin", time()+3600, "/");
+				$result['estado']="Exito";			
+				$result['mensaje']="Bienvenido";
+				echo json_encode($result);
+				
+			}
+			elseif (count($respuesta)>0 && $tipo == 1) {
+				setcookie("chsm", "logedinAdmin", time()+3600, "/");
+				$result['estado']="Exito";
+				$result['mensaje']="Bienvenido";
+				echo json_encode($result);
+				
+			}
+		}
+		
+		public function logout()
+		{
+			setcookie("chsm", "", time() - 3600,"/");
+			header("location: /ligatenisQ");
 		}
 	}
 ?>

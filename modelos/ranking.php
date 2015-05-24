@@ -34,15 +34,12 @@ require_once('libs/modelo.php');
 
 		function cargarRankingF()
 		{	
-			$consultaRF= join("(SELECT posicion, nombre, puntos
-			FROM resultadoC[ SELECT (nombre, puntos, posicion) FROM tablaDM[ SELECT (posicion) Deportista 
-															   JOIN Miembro 
-															   ON Deportista.Miembro_id = Miembro.id]
-															   JOIN RankingD
-															   ON Deportista.RankingD_id = RankingD.id
-															   JOIN [SELECT posicion
-															   FROM Ranking 
-															   ON RankingD.id = Ranking.RankingD_id]])");
+			$consultaRF= "SELECT r.posicion, dep.nombre, dep.puntos
+						  FROM deportista dep
+						  INNER JOIN rankingd rd 
+						  ON dep.RankingD_id = rd.id
+						  INNER JOIN ranking r 
+						  ON r.RankingD_id = rd.id";
 		
 			$resultado = $this->cargarRankingModelo($consultaRF);
 			return $resultado;
