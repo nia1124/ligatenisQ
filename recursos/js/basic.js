@@ -378,6 +378,28 @@ $('#boton_menumobile').click(function(event)
                 }
             });
     }
+
+    /*............cargar deportista base de datos........*/
+    function deportista()
+    {
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarDeportistaHome',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    //console.log(response);
+                    $("#accion_tablaDeportista").html(response.tabla);
+                },
+                error: function(msg){
+                   
+                }
+            });
+    }
     /*............. metodo ventana modal..........*/
 
 });

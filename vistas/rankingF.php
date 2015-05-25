@@ -8,15 +8,16 @@
 			<div class=" col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 padding-left">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-	    				<h1 class="panel-title">Deportista</h1>
+	    				<h1 class="panel-title">Ranking Femenino</h1>
 	  				</div>
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
-	  						<table class="table">
+	  						<table class="table" id="tablaRankingF">
 								<thead>
 									<tr>
-										<th>Imagen</th>
-										<th>Descripción</th>
+										<th>Posicion</th>
+										<th>Nombre</th>
+										<th>Puntos</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -46,7 +47,7 @@
        	    <div class="col-md-10 col-md-offset-1 padding-left">
        	    	<form method="POST" accept-charset="utf-8">
             	    <div class="panel-heading ">
-    					<h1 class="panel-title" align="left">Administrar Ranking</h1>
+    					<h1 class="panel-title" align="left">Administrar Ranking Femenino</h1>
   					</div>
 					<div class="panel-body" >
 						<div class="table-responsive">								

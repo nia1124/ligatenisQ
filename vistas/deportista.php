@@ -12,7 +12,7 @@
 	  				</div>
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
-	  						<table class="table">
+	  						<table class="table" id="tablaDeportista">
 								<thead>
 									<tr>
 										<th>Deportista</th>
@@ -51,7 +51,10 @@
 	  				</div>
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
-	  						<table class="table">
+	  					<div>
+							<input type="button" id="accion_registrarDeportista" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
+						</div>
+	  						<table class="table" id="tablaDeportista">
 								<thead>
 									<tr>
 										<th>Deportista</th>
@@ -59,14 +62,20 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td style="width: 316px"><a class="img-thumbnail"><img src="" height="187" width="249" alt=""></a></td>
-										<td><p>Nombre, edad, categoria(s), club, puntos</p></td>
-									</tr>
-									<tr>
-										<td style="width: 316px"><a class="img-thumbnail"><img src="" height="187" width="249" alt=""></a></td>
-										<td><p>Nombre, edad, categoria(s), club, puntos</p></td>
-									</tr>
+									<?php
+										$data = $parametros;
+										$tabla = "";
+										for ($i=0; $i < count($data) ; $i++)
+										{ 
+											echo '<tr>';
+											$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['Descripcion']."</td>";
+											echo "</tr>";
+											echo $tabla;
+											echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
+												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
+											</td></tr>';
+										}
+									?>
 								</tbody>
 							</table>
 	  					</div>
