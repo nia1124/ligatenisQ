@@ -1,7 +1,7 @@
 <?php 
 require_once('libs/modelo.php'); 
 
-	class Ranking extends modelo
+	class RankingF extends modelo
 	{
 		private $parametros;
 		
@@ -34,14 +34,17 @@ require_once('libs/modelo.php');
 
 		function cargarRankingF()
 		{	
-			$consultaRF= "SELECT r.posicion, dep.nombre, dep.puntos
-						  FROM deportista dep
+			$consultaRF= "SELECT r.posicion, m.nombre, dep.puntos 
+						  FROM deportista dep 
 						  INNER JOIN rankingd rd 
-						  ON dep.RankingD_id = rd.id
+						  ON dep.RankingD_id = rd.id 
 						  INNER JOIN ranking r 
-						  ON r.RankingD_id = rd.id";
+						  ON r.RankingD_id = rd.id 
+						  INNER JOIN miembro m 
+						  ON m.id = dep.Miembro_id";
 		
 			$resultado = $this->cargarRankingModelo($consultaRF);
+
 			return $resultado;
 		}
 

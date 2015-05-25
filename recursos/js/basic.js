@@ -11,7 +11,9 @@ $(document).ready(function()
         $('#accion_organoAdm').click(function(event) 
         {
             event.preventDefault();
+            link('home/cargarOrganoA', '#contenido');
             link('vistas/organoAdm.php', '#contenido');
+
         });
 
         $('#accion_club').click(function(event) 
@@ -23,6 +25,7 @@ $(document).ready(function()
         $('#accion_rankingF').click(function(event) 
         {
             event.preventDefault();
+            link('home/cargarRankingFHome', '#contenido');
             link('vistas/rankingF.php', '#contenido');
             rankingF();
 
@@ -32,11 +35,13 @@ $(document).ready(function()
         {
             event.preventDefault();
             link('vistas/rankingM.php', '#contenido');
+            link('vistas/rankingM.php', '#contenido');
         });
 
         $('#accion_deportista').click(function(event) 
         {
             event.preventDefault();
+            link('home/cargarDeportistaHome', '#contenido');
             link('vistas/deportista.php', '#contenido');
         });  
 
@@ -352,6 +357,27 @@ $('#boton_menumobile').click(function(event)
             });
     }
 
+    /*............cargar organo administrativo base de datos........*/
+    function organoAdm()
+    {
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarOrganoA',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    //console.log(response);
+                    $("#accion_tablaOrganoA").html(response.tabla);
+                },
+                error: function(msg){
+                   
+                }
+            });
+    }
     /*............. metodo ventana modal..........*/
 
 });

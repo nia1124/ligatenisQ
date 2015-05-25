@@ -8,29 +8,28 @@
 			<div class=" col-xs-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 padding-left">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-	    				<h1 class="panel-title">Ranking Femenino</h1>
+	    				<h1 class="panel-title">Deportista</h1>
 	  				</div>
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
 	  						<table class="table">
 								<thead>
 									<tr>
-										<th style="width: 216px">N°</th>
-										<th>Nombre</th>
-										<th style="width: 216px">Puntos</th>
+										<th>Imagen</th>
+										<th>Descripción</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Daniela</td>
-										<td>10000</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Cristina</td>
-										<td>2000</td>
-									</tr>
+									<?php
+										$data = $parametros;
+										$tabla = "";
+									 	for ($i=0; $i < count($data) ; $i++) 
+									 	{ 
+											echo '<tr>';
+											$tabla .= "<td>".$data[$i]['posicion']."</td><td>".$data[$i]['nombre']."</td><td>".$data[$i]['puntos']."</td>";
+											echo $tabla;
+										}
+									?>
 								</tbody>
 							</table>
 	  					</div>
@@ -67,8 +66,7 @@
 								 	for ($i=0; $i < count($data) ; $i++) 
 								 	{ 
 										echo '<tr>';
-										$tabla .= "<td>".$data[$i]['posicion']."</td><td>".$data[$i]['nombre']."</td><td>".$data[$i]['puntos'].
-										"</td>";
+										$tabla .= "<td>".$data[$i]['posicion']."</td><td>".$data[$i]['nombre']."</td><td>".$data[$i]['puntos']."</td>";
 										echo $tabla;
 									}
 								?>

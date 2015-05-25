@@ -226,6 +226,11 @@
 		{
 			$this->query($consultaRf);
 		}
+
+		public function cargarDeportistaModelo($consultaDep)
+		{
+			$this->query($consultaDep);
+		}
 		
 	}
 ?>
