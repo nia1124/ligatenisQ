@@ -15,11 +15,11 @@
 	  						<table class="table" id="tablaOrganoA"> 
 								<thead>
 									<tr>
-										<th>Imagen</th>
-										<!--<th>Nombre</th>-->
 										<th>Contacto</th>
 										<th>Cargo</th>
-										<th>Información</th>
+										<th>Informacion</th>
+										<th>Nombre</th> 
+										<th>Imagen</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -29,11 +29,9 @@
 										$tabla = "";
 									 	for ($i=0; $i < count($data) ; $i++)
 									 	{ 
-											echo '<tr>';
-											$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td>";
-											echo "</tr>";
-											echo $tabla;
+											$tabla .= "<tr><th>".$data[$i]['contacto']."</th><th>".$data[$i]['cargo']."</th><th>".$data[$i]['informacion']."</th><th>".$data[$i]['nombre']."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th></tr>";
 										}
+										echo $tabla;
 									?>
 								</tbody>
 							</table>
@@ -43,7 +41,8 @@
 			</div>
 		</div>
 		<?php 
-			}else
+			}
+			else
 			{
 		 ?>
 		<div class="row">
@@ -55,35 +54,30 @@
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
 	  						<div>
-								<input type="button" id="accion_registrarOrganoA" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
+	  							<button type="submit" id="boton_eliminarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 							</div>
 	  						<table class="table" id="tablaOrganoA"> 
 								<thead>
 									<tr>
-										<th>Imagen</th>
-										<!--<th>Nombre</th>-->
 										<th>Contacto</th>
 										<th>Cargo</th>
-										<th>Información</th>
+										<th>Informacion</th>
+										<th>Nombre</th> 
+										<th>Imagen</th>
 									</tr>
 								</thead>
 								<tbody>
 									
 									<?php
 										$data = $parametros;
-										print_r($data);
-
 										$tabla = "";
 									 	for ($i=0; $i < count($data) ; $i++)
 									 	{ 
-											echo '<tr>';
-											$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td>";
-											echo "</tr>";
-											echo $tabla;
-											echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
-												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
-											</td></tr>';
+											$tabla .= "<tr><th>".$data[$i]['contacto']."</th><th>".$data[$i]['cargo']."</th><th>".$data[$i]['informacion']."</th><th>".$data['nombre']."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th><th>".
+													   '<button type="submit" id="boton_actualizarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+											  	    	<button type="submit" id="boton_eliminarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></th></tr>';
 										}
+										echo $tabla;
 									?>
 								</tbody>
 							</table>

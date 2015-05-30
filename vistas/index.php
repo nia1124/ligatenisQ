@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" name="viewport" content="text/html" initial-scale="1.0" charset="utf-8">
 	<script type="text/javascript" src="recursos/js/jquery-2.1.3.js"></script>
 	<script type="text/javascript" src="recursos/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="recursos/js/basic.js" ></script>
@@ -35,13 +34,12 @@
 		  					</div>
 		  					<div class="panel-body">
 			  					<div class="table-responsive">
-									<table class="table" id="tablaNoticias"> 
+									<table class="table table-hover" id="tablaNoticias"> 
 										<thead>
 											<tr>
-												<th>Imagen</th>
-												<th>Titulo</th>
-												<th>Descripción</th>
-												<th>Acciones</th>
+												<th class="col-lg-3"></th>
+												<th class="col-lg-4"></th>
+												<th class="col-lg-6"></th>
 											</tr>
 										</thead>
 										<tbody>
@@ -51,13 +49,11 @@
 											$tabla = "";
 										 	for ($i=0; $i < count($data) ; $i++)
 										 	{ 
-												echo '<tr>';
-												$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
-												"</td>";
-												echo "</tr>";
-												echo $tabla;
-												print_r($tabla);
+												$tabla .= "<tr><th>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th><th>".utf8_encode($data[$i]['descripcion'])."</th><tr>";
+												
 											}
+											echo $tabla;
+
 										?>
 										</tbody>
 									</table>
@@ -80,36 +76,30 @@
 					<div class="panel-body" >
 						<div class="table-responsive">
 							<div>
-								<input type="button" id="accion_registrarNoticia" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
+								<button type="submit" id="accion_registrarNoticia" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 							</div>
-							<table class="table" id="tablaNoticias"> 
+							<table class="table table-hover" id="tablaNoticias"> 
 								<thead>
 									<tr>
-										<th>Imagen</th>
-										<th>Titulo</th>
-										<th>Descripción</th>
-										<th>Acciones</th>
+										<th class="col-lg-3">Titulo</th>
+										<th class="col-lg-4">Imagen</th>
+										<th class="col-lg-4">Descripción</th>
+										<th class="col-lg-3">Acciones</th>
 									</tr>
 								</thead>
 								<tbody>
-								
 								<?php
 
 									$data = $parametros;
 									$tabla = "";
 								 	for ($i=0; $i < count($data) ; $i++) 
 								 	{ 
-
-										echo '<tr>';
-										$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['titulo']."</td><td>".$data[$i]['descripcion'].
-											"</td>";
-										echo "</tr>";
-										echo $tabla;
-
-										echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
-												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
-											</td></tr>';
+										$tabla .= "<tr><th>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th><th>".utf8_encode($data[$i]['descripcion'])."</th>".
+															'<th><button type="submit" id="boton_actualizarNoti class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+											  	    			 <button type="submit" id="boton_eliminarNoti class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></th></tr>';
+											
 									}
+									echo $tabla;
 								?>
 								</tbody>
 							</table>

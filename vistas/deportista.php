@@ -12,7 +12,7 @@
 	  				</div>
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
-	  						<table class="table" id="tablaDeportista">
+	  						<table class="table table-hover" id="tablaDeportista">
 								<thead>
 									<tr>
 										<th>Deportista</th>
@@ -22,15 +22,15 @@
 								<tbody>
 									<?php
 											$data = $parametros;
+											
 											$tabla = "";
 										 	for ($i=0; $i < count($data) ; $i++)
 										 	{ 
-												echo '<tr>';
-												$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['Descripcion']."</td>";
-												echo "</tr>";
-												echo $tabla;
-												print_r($tabla);
+										 		$tabla .= "<tr><td>".'<img src="'.$data[$i]['foto'].'"/>'.
+														  "</td><td>".$data[$i]['nombre'].", ".$data[$i]['edad'].", ".$data[$i]['puntos'].", ".$data[$i]['categoria'].", ".$data[$i]['nombreClub']."</td></tr>";
+												
 											}
+										echo $tabla;	
 										?>
 								</tbody>
 							</table>
@@ -52,9 +52,9 @@
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
 	  					<div>
-							<input type="button" id="accion_registrarDeportista" alt="" accion="" class="glyphicon glyphicon-plus" value="registrar">
+	  						<button type="submit" id="accion_registrarDeportista" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 						</div>
-	  						<table class="table" id="tablaDeportista">
+	  						<table class="table table-hover" id="tablaDeportista">
 								<thead>
 									<tr>
 										<th>Deportista</th>
@@ -67,14 +67,14 @@
 										$tabla = "";
 										for ($i=0; $i < count($data) ; $i++)
 										{ 
-											echo '<tr>';
-											$tabla .= "<td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['Descripcion']."</td>";
-											echo "</tr>";
-											echo $tabla;
-											echo '<td><input type="button" id="boton_actualizarNoti" alt="" accion="" class="glyphicon glyphicon-pencil" value="actualizar">
-												<input type="button" id="boton_eliminarNoti" alt="" accion="" class="glyphicon glyphicon-remove" value="eliminar">
-											</td></tr>';
+											$tabla .= "<tr><td>".'<img src="'.$data[$i]['foto'].'"/>'.
+													  "</td><td>".$data[$i]['nombre'].", ".$data[$i]['edad'].", ".$data[$i]['puntos'].", ".$data[$i]['categoria'].", ".$data[$i]['nombreClub']."</td><td>".
+														'<button type="submit" id="boton_actualizarDeportista class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+														 <button type="submit" id="boton_eliminarDeportista class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td></tr>';
+											
+											
 										}
+										echo $tabla;
 									?>
 								</tbody>
 							</table>

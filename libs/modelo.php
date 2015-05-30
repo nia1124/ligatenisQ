@@ -222,15 +222,20 @@
 			$this->query($queryDelete);
 		}
 
-		public function cargarRankingModelo($consultaRf)
+		function cargarRankingModeloF($consultaRf)
 		{
-			$this->query($consultaRf);
+			return $this->query($consultaRf);
 		}
 
-		public function cargarDeportistaModelo($consultaDep)
+		function cargarDeportistaModelo($consultaDep)
 		{
-			$this->query($consultaDep);
+			return $this->query($consultaDep);
 		}
+
+		//function cargarOrganoAdmin($consultaOrgano)
+		//{
+		//	return $this->query($consultaOrgano);
+		//}
 		
 	}
 ?>

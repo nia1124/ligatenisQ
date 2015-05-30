@@ -27,7 +27,7 @@ $(document).ready(function()
             event.preventDefault();
             link('home/cargarRankingFHome', '#contenido');
             link('vistas/rankingF.php', '#contenido');
-            rankingF();
+ 
 
         });
 
@@ -43,6 +43,7 @@ $(document).ready(function()
             event.preventDefault();
             link('home/cargarDeportistaHome', '#contenido');
             link('vistas/deportista.php', '#contenido');
+            
         });  
 
         $('#accion_entrenador').click(function(event) 
@@ -371,7 +372,8 @@ $('#boton_menumobile').click(function(event)
                 success: function(response)
                 {
                     //console.log(response);
-                    $("#accion_tablaOrganoA").html(response.tabla);
+
+                    $("#accion_tablaOrganoA").html(response);
                 },
                 error: function(msg){
                    
@@ -392,11 +394,11 @@ $('#boton_menumobile').click(function(event)
                 },
                 success: function(response)
                 {
-                    //console.log(response);
+                    console.log(response);
                     $("#accion_tablaDeportista").html(response.tabla);
                 },
                 error: function(msg){
-                   
+                   console.log(msg)
                 }
             });
     }

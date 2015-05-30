@@ -13,7 +13,7 @@
 
 		function getOrganoA()
 		{
-			$resultado = $this->select()->fetchAll();
+			$resultado= $this->select()->fetchAll();
 			return $resultado;
 		}
 
@@ -30,6 +30,7 @@
 		function registrarOrganoA($campos, $valores)
 		{
 			$insertado = $this->insert($campos, $valores);
+			
 		}
 	}
  ?>

@@ -33,15 +33,8 @@
 
 		function cargarDeportistas()
 		{	
-			$consultaD= "SELECT dep.foto, m.nombre, dep.edad, dep.puntos, dep.categoria, c.nombre 
-						  FROM deportista dep 
-						  INNER JOIN miembro m
-						  ON dep.Miembro_id = m.id
-						  INNER JOIN club c 
-						  ON dep.Club_id = c.id";
-		
-			$resultado = $this->cargarDeportistas($consultaD);
-
+			$consultaD= "SELECT dep.foto, m.nombre, dep.edad, dep.puntos, dep.categoria, c.nombreClub FROM deportista dep INNER JOIN miembro m ON dep.Miembro_id = m.id INNER JOIN club c ON dep.Club_id = c.id";
+			$resultado = $this->cargarDeportistaModelo($consultaD)->fetchAll();
 			return $resultado;
 		}
 

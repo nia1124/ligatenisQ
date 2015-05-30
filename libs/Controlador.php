@@ -42,7 +42,6 @@
 			{
 				$parametros =  $params;
 				include_once($vista);
-				
 			}
 			else 
 			{

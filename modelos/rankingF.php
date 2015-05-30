@@ -41,11 +41,12 @@ require_once('libs/modelo.php');
 						  INNER JOIN ranking r 
 						  ON r.RankingD_id = rd.id 
 						  INNER JOIN miembro m 
-						  ON m.id = dep.Miembro_id";
+						  ON m.id = dep.Miembro_id
+						  WHERE dep.genero = 1";
 		
-			$resultado = $this->cargarRankingModelo($consultaRF);
+			$resultado = $this->cargarRankingModeloF($consultaRF);
 
-			return $resultado;
+			return $resultado->fetchAll();
 		}
 
 

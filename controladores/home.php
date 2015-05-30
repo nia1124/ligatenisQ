@@ -30,7 +30,7 @@
 
 		}
 
-		public function insertarNoticias()
+		public function insertarImagen()
 		{
 			$target_path = "uploads/";
 			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
@@ -74,7 +74,13 @@
 			{
 				echo $msg;
 			}
+		}
 
+
+		public function insertarNoticias()
+		{
+			
+			insertarImagen();
 			$titulo = $_POST['titulo'];
 			$descripcion =$_POST['descripcion'];
 			$campos = array('titulo', 'descripcion', 'imagen');
@@ -88,82 +94,38 @@
 		public function cargarRankingFHome()
 		{
 			$rankingF = $this->cargarModelo("rankingF");
-			$consultaRF = $rankingF->getRankingF();
+			$consultaRF = $rankingF->cargarRankingF();
 			$this->cargarVista("rankingF", $consultaRF);
 		}
 
 		public function cargarDeportistaHome()
 		{
-			$deportista = $this->cargarModelo("Deportista");
-			$consultaDepo = $deportista->getDeportista();
+			$deportista = $this->cargarModelo("deportista");
+			$consultaDepo = $deportista->cargarDeportistas();
 			$this->cargarVista("deportista", $consultaDepo);
 		}
 
 		public function cargarOrganoA()
 		{
 
-			$organoa = $this->cargarModelo("organoAdmin");
-
+			$organoa = $this->cargarModelo("organoAdm");
 			$consultaA = $organoa->getOrganoA();
-
 			$this->cargarVista("organoAdm", $consultaA);
-
 		}
 
 		public function insertarOragnoA()
 		{
-			$target_path = "uploads/";
-			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
-			if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) 
-			{
-				 echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
-			} else{
-				
-				echo "Ha ocurrido un error, trate de nuevo!";
-			}
-			$msg="";
-			$uploadedfileload="true";
-			$uploadedfile_size=$_FILES['uploadedfile']['size'];
-			echo $_FILES['uploadedfile']['name'];
-			if ($_FILES['uploadedfile']['size']>200000)
-			{
-				$msg="El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo<BR>";
-				$uploadedfileload="false";
-			}
-
-			if (!($_FILES['uploadedfile']['type'] =="image/jpeg" OR $_FILES['uploadedfile']['type'] =="image/gif"
-				OR $_FILES['uploadedfile']['type'] =="image/png") OR $_FILES['uploadedfile']['type'] =="image/jpg")
-			{
-				$msg=" Tu archivo tiene que ser JPG o GIF. Otros archivos no son permitidos<BR>";
-				$uploadedfileload="false";
-			}
-
-			$file_name=$_FILES['uploadedfile']['name'];
-			$add="uploads/$file_name";
-			if($uploadedfileload=="true")
-			{
-
-				if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
-					echo " Ha sido subido satisfactoriamente";
-				}else
-				{
-					echo "Error al subir el archivo";
-				}
-
-			}else
-			{
-				echo $msg;
-			}
-
-			//$nombre = $_POST['nombre'];
+			insertarImagen();
 			$contacto = $_POST['contacto'];
 			$cargo =$_POST['cargo'];
 			$informacion =$_POST['informacion'];
-			$campos = array('imagen','contacto', 'cargo', 'informacion');
-			$valores = array($target_path, $contacto, $cargo, $informacion);
+			$nombre=$_POST['nombre'];
+			$imagen=$_POST['imagen'];
+			$campos = array('contacto','cargo', 'informacion', 'nombre', 'imagen');
+			$valores = array($contacto, $cargo, $informacion, $nombre, $target_path,);
 
 			print_r($valores);
-			$organoa = $this->cargarModelo("organoAdmin");
+			$organoa = $this->cargarModelo("organoAdm");
 			$consultaOA = $organoa->registrarOrganoA($campos, $valores);
 		}
 
