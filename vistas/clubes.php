@@ -54,7 +54,7 @@
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
 	  					<div>
-	  						<button type="submit" id="accion_registrarclub" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+	  						<button type="submit" id="accion_registrarClub" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 						</div>
 	  						<table class="table table-hover" id="tablaClubes">
 								<thead>

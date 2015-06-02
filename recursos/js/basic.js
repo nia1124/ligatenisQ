@@ -263,7 +263,7 @@ $('#boton_menumobile').click(function(event)
        $('#insertar_club').click(function(event)
        {
             event.preventDefault();
-            link('vistas/ventanaModal.php', '#contenido');
+            link('vistas/index.php', '#contenido');
        });   
 /*-------------------fin administrador-----------------------*/
 
