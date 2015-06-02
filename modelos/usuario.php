@@ -1,7 +1,7 @@
 <?php 
 	require_once('libs/modelo.php');
 	
-	class Usuario extends modelo
+	class usuario extends modelo
 	{	
 		private $parametros;
 		

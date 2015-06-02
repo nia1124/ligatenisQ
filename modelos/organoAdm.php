@@ -2,7 +2,7 @@
 	require_once('libs/modelo.php');
 
 	
-	class OrganoAdmin extends modelo
+	class organoAdm extends modelo
 	{
 		
 		function __construct()
@@ -31,6 +31,15 @@
 		{
 			$insertado = $this->insert($campos, $valores);
 			
+		}
+
+		function consultarOrgA()
+		{
+			$consultaOAdmin = "SELECT oa.contacto, oa.cargo, oa.informacion, m.nombre, oa.imagen 
+								FROM organoadm oa INNER JOIN miembro m ON oa.Miembro_id = m.id";
+
+			$resultado = $this->cargarOrganoAdmin($consultaOAdmin)->fetchAll();
+			return $resultado;
 		}
 	}
  ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta http-equiv="Content-Type" name="viewport" content="text/html" initial-scale="1.0" charset="utf-8">
+	<meta http-equiv="Content-Type" name="viewport" content="content" initial-scale="1.0" charset="utf-8">
 	<script type="text/javascript" src="recursos/js/jquery-2.1.3.js"></script>
 	<script type="text/javascript" src="recursos/js/bootstrap.js" ></script>
 	<script type="text/javascript" src="recursos/js/basic.js" ></script>
@@ -49,7 +49,7 @@
 											$tabla = "";
 										 	for ($i=0; $i < count($data) ; $i++)
 										 	{ 
-												$tabla .= "<tr><th>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th><th>".utf8_encode($data[$i]['descripcion'])."</th><tr>";
+												$tabla .= "<tr><td>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td><td>".utf8_encode($data[$i]['descripcion'])."</td><tr>";
 												
 											}
 											echo $tabla;
@@ -94,9 +94,9 @@
 									$tabla = "";
 								 	for ($i=0; $i < count($data) ; $i++) 
 								 	{ 
-										$tabla .= "<tr><th>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th><th>".utf8_encode($data[$i]['descripcion'])."</th>".
-															'<th><button type="submit" id="boton_actualizarNoti class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
-											  	    			 <button type="submit" id="boton_eliminarNoti class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></th></tr>';
+										$tabla .= "<tr><td>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td><td>".utf8_encode($data[$i]['descripcion'])."</td>".
+															'<td><button type="submit" id="accion_actualizarNoti class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+											  	    			 <button type="submit" id="boton_eliminarNoti class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td></tr>';
 											
 									}
 									echo $tabla;
@@ -107,6 +107,9 @@
 					</div>
        	    	</form>
        	    	</div>
+       			</div>
+       			<div id="htmlActualizar">
+       				
        			</div>
 				<?php 
 				}

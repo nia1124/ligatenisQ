@@ -30,7 +30,122 @@
 
 		}
 
-		public function insertarImagen()
+		
+		//metodos crud de noticia
+		public function insertarNoticias()
+		{
+			
+			$target_path = "uploads/";
+			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
+			if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) 
+			{
+				 echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
+			} else{
+				
+				echo "Ha ocurrido un error, trate de nuevo!";
+			}
+			$msg="";
+			$uploadedfileload="true";
+			$uploadedfile_size=$_FILES['uploadedfile']['size'];
+			echo $_FILES['uploadedfile']['name'];
+			if ($_FILES['uploadedfile']['size']>200000)
+			{
+				$msg="El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo<BR>";
+				$uploadedfileload="false";
+			}
+
+			if (!($_FILES['uploadedfile']['type'] =="image/jpeg" OR $_FILES['uploadedfile']['type'] =="image/gif"
+				OR $_FILES['uploadedfile']['type'] =="image/png") OR $_FILES['uploadedfile']['type'] =="image/jpg")
+			{
+				$msg=" Tu archivo tiene que ser JPG o GIF. Otros archivos no son permitidos<BR>";
+				$uploadedfileload="false";
+			}
+
+			$file_name=$_FILES['uploadedfile']['name'];
+			$add="uploads/$file_name";
+			if($uploadedfileload=="true")
+			{
+
+				if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
+					echo " Ha sido subido satisfactoriamente";
+				}else
+				{
+					echo "Error al subir el archivo";
+				}
+
+			}else
+			{
+				echo $msg;
+			}
+			$titulo = $_POST['titulo'];
+			$descripcion =$_POST['descripcion'];
+			$campos = array('titulo', 'descripcion', 'imagen');
+			$valores = array($titulo, $descripcion, $target_path);
+
+			$noticia = $this->cargarModelo("noticia");
+			$consultaBDR = $noticia->registrarNoticia( $campos, $valores);
+		}
+
+
+
+		public function actualizarNoticiasHome()
+		{
+			$target_path = "uploads/";
+			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
+			if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) 
+			{
+				 echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
+			} else{
+				
+				echo "Ha ocurrido un error, trate de nuevo!";
+			}
+			$msg="";
+			$uploadedfileload="true";
+			$uploadedfile_size=$_FILES['uploadedfile']['size'];
+			echo $_FILES['uploadedfile']['name'];
+			if ($_FILES['uploadedfile']['size']>200000)
+			{
+				$msg="El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo<BR>";
+				$uploadedfileload="false";
+			}
+
+			if (!($_FILES['uploadedfile']['type'] =="image/jpeg" OR $_FILES['uploadedfile']['type'] =="image/gif"
+				OR $_FILES['uploadedfile']['type'] =="image/png") OR $_FILES['uploadedfile']['type'] =="image/jpg")
+			{
+				$msg=" Tu archivo tiene que ser JPG o GIF. Otros archivos no son permitidos<BR>";
+				$uploadedfileload="false";
+			}
+
+			$file_name=$_FILES['uploadedfile']['name'];
+			$add="uploads/$file_name";
+			if($uploadedfileload=="true")
+			{
+
+				if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
+					echo " Ha sido subido satisfactoriamente";
+				}else
+				{
+					echo "Error al subir el archivo";
+				}
+
+			}else
+			{
+				echo $msg;  
+			}
+
+			$titulo = $_POST['titulo'];
+			$descripcion =$_POST['descripcion'];
+			$campos = array('titulo', 'descripcion', 'imagen');
+			$valores = array($titulo, $descripcion, $target_path);
+			$condicion = 
+
+			$noticia = $this->cargarModelo("noticia");
+			$consultaBDR = $noticia->actualizarNoticias($valores, $condicion);
+		}
+		//fin crud noticia
+
+		//metodos crud club
+		public function insertarClub()
 		{
 			$target_path = "uploads/";
 			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
@@ -74,28 +189,31 @@
 			{
 				echo $msg;
 			}
+
+			$imagen = $_POST['imagen'];
+			$nombreC = $_POST['nombreClub'];
+			$contacto =$_POST['contacto'];
+			$informacion = $_POST['infoA'];
+			$campos = array('imagen', 'nombreClub', 'contacto', 'infoA');
+			$valores = array($target_path, $nombreC, $contacto, $informacion);
+
+			$club = $this->cargarModelo("clubes");
+			$consultaBD = $club->registrarClub($campos, $valores);
 		}
 
-
-		public function insertarNoticias()
-		{
-			
-			insertarImagen();
-			$titulo = $_POST['titulo'];
-			$descripcion =$_POST['descripcion'];
-			$campos = array('titulo', 'descripcion', 'imagen');
-			$valores = array($titulo, $descripcion, $target_path);
-
-			print_r($valores);
-			$noticia = $this->cargarModelo("noticia");
-			$consultaBDR = $noticia->registrarNoticia( $campos, $valores);
-		}
 
 		public function cargarRankingFHome()
 		{
 			$rankingF = $this->cargarModelo("rankingF");
 			$consultaRF = $rankingF->cargarRankingF();
 			$this->cargarVista("rankingF", $consultaRF);
+		}
+
+		public function cargarRankingMasculinoHome()
+		{
+			$rankingMaculino = $this->cargarModelo("rankingM");
+			$consultaRM = $rankingMaculino->cargarRankingM();
+			$this->cargarVista("rankingM", $consultaRM);
 		}
 
 		public function cargarDeportistaHome()
@@ -105,12 +223,31 @@
 			$this->cargarVista("deportista", $consultaDepo);
 		}
 
-		public function cargarOrganoA()
+		public function cargarEntrenadorHome()
 		{
-
+			$entrenador = $this->cargarModelo("entrenador");
+			$consultaEntrenador = $entrenador->cargarEntrenadores();
+			$this->cargarVista("entrenador", $consultaEntrenador);
+		}
+		public function cargarClubHome()
+		{
+			$club = $this->cargarModelo("clubes");
+			$consultaClub = $club->cargarClubes();
+			$this->cargarVista("clubes", $consultaClub);
+		}
+		
+		public function cargarOrganoAHome()
+		{	
 			$organoa = $this->cargarModelo("organoAdm");
-			$consultaA = $organoa->getOrganoA();
-			$this->cargarVista("organoAdm", $consultaA);
+			$consultaOA = $organoa->consultarOrgA();
+			$this->cargarVista("organoAdm", $consultaOA);
+		}
+
+		public function cargarEventosHome()
+		{
+			$eventos = $this->cargarModelo("eventos");
+			$consultaEV = $eventos->SeleccionarEventos();
+			$this->cargarVista("eventos", $consultaEV);
 		}
 
 		public function insertarOragnoA()
@@ -125,8 +262,6 @@
 			$valores = array($contacto, $cargo, $informacion, $nombre, $target_path,);
 
 			print_r($valores);
-			$organoa = $this->cargarModelo("organoAdm");
-			$consultaOA = $organoa->registrarOrganoA($campos, $valores);
 		}
 
 

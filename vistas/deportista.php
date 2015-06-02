@@ -15,8 +15,8 @@
 	  						<table class="table table-hover" id="tablaDeportista">
 								<thead>
 									<tr>
-										<th>Deportista</th>
-										<th>Descripción</th>
+										<th class="col-lg-4">Deportista</th>
+										<th class="col-lg-8">Descripción</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -57,8 +57,9 @@
 	  						<table class="table table-hover" id="tablaDeportista">
 								<thead>
 									<tr>
-										<th>Deportista</th>
-										<th>Descripción</th>
+										<th class="col-lg-3">Deportista</th>
+										<th class="col-lg-8">Descripción</th>
+										<th class="col-lg-2">Acciones</th>
 									</tr>
 								</thead>
 								<tbody>

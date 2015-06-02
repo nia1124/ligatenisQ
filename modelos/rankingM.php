@@ -1,40 +1,38 @@
 <?php 
 require_once('libs/modelo.php'); 
-
-	class rankingF extends modelo
+	
+	class rankingM extends modelo
 	{
-		private $parametros;
-		
 		function __construct()
 		{
 			parent::__construct();
 			$this->setNombreTabla("ranking");
 		}
 
-		function getRankingF()
+		function getRankingM()
 		{
 			$resultado = $this->select()->fetchAll();
 			return $resultado;
 		}
 
-		function eleminarRankingF()
+		function eleminarRankingM()
 		{
 			$eliminado = $this->delete();
 		}
 
-		function actualizarRankingF()
+		function actualizarRankingM()
 		{
 			$actualizado = $this->update();
 		}
 
-		function insertarRankingF($campos, $valores)
+		function insertarRankingM($campos, $valores)
 		{
 			$insertado = $this->insert($campos, $valores);
 		}
 
-		function cargarRankingF()
+		function cargarRankingM()
 		{	
-			$consultaRF= "SELECT r.posicion, m.nombre, dep.puntos 
+			$consultaRM= "SELECT r.posicion, m.nombre, dep.puntos 
 						  FROM deportista dep 
 						  INNER JOIN rankingd rd 
 						  ON dep.RankingD_id = rd.id 
@@ -42,14 +40,13 @@ require_once('libs/modelo.php');
 						  ON r.RankingD_id = rd.id 
 						  INNER JOIN miembro m 
 						  ON m.id = dep.Miembro_id
-						  WHERE dep.genero = 1";
+						  WHERE dep.genero = 0";
 		
-			$resultado = $this->cargarRankingModeloF($consultaRF);
+			$resultado = $this->cargarRankingModeloMas($consultaRM);
 
 			return $resultado->fetchAll();
 		}
-
-
 	}
+
 
  ?>

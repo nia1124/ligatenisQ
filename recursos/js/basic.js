@@ -11,7 +11,7 @@ $(document).ready(function()
         $('#accion_organoAdm').click(function(event) 
         {
             event.preventDefault();
-            link('home/cargarOrganoA', '#contenido');
+            link('home/cargarOrganoAHome', '#contenido');
             link('vistas/organoAdm.php', '#contenido');
 
         });
@@ -19,6 +19,7 @@ $(document).ready(function()
         $('#accion_club').click(function(event) 
         {
             event.preventDefault();
+            link('home/cargarClubHome', '#contenido');
             link('vistas/clubes.php', '#contenido');
         });
 
@@ -34,7 +35,7 @@ $(document).ready(function()
         $('#accion_rankingM').click(function(event) 
         {
             event.preventDefault();
-            link('vistas/rankingM.php', '#contenido');
+            link('home/cargarRankingMasculinoHome', '#contenido');
             link('vistas/rankingM.php', '#contenido');
         });
 
@@ -49,12 +50,14 @@ $(document).ready(function()
         $('#accion_entrenador').click(function(event) 
         {
             event.preventDefault();
+            link('home/cargarEntrenadorHome', '#contenido');
             link('vistas/entrenador.php', '#contenido');
         });  
         
         $('#accion_eventos').click(function(event) 
         {
             event.preventDefault();
+            link('home/cargarEventosHome', '#contenido');
             link('vistas/eventos.php', '#contenido');
         });
 
@@ -77,6 +80,14 @@ $(document).ready(function()
         {
             link('libs/conexion_facebook/app/logout.php', '#contenido');
         });
+
+        $('#accion_modal').click(function(event)
+        {
+            event.preventDefault();
+            link('vistas/index.php', '#contenido');
+        });
+        
+
 
         /*------------fin vistas escritorio------------------------*/
 
@@ -153,23 +164,110 @@ $('#boton_menumobile').click(function(event)
 })
 
 
+/*---------------------editar fila tabla --------------------*/
+    //variable que indica si una fila esta siendo editada
+    var edicion = false;
+    
+
+    //nodo: parametro que indica cada una de las partes de la 
+    //tabla, es decir-> tr, td. 
+    function transformarCampos(nodo)
+    {
+        if (edicion== false) 
+        {
+            var nodoTd = nodo.parentNode; //Nodo TD
+            var nodoTr = nodoTd.parentNode; //Nodo TR
+
+            var nodoContenedorForm = document.getElementById('htmlActualizar'); //Nodo DIV
+            var nodosEnTr = nodoTr.getElementsByTagName('td');
+
+            //variables que representan cada uno de los campos a editar en la tabla
+            var titulo = nodosEnTd[0].textContent; 
+            var imagen = nodosEnTd[1].textContent;
+            var descripcion = nodosEnTd[2].textContent;
+
+            //variable que representa la nueva forma que debe tomar la fila, 
+            //con inputs para editar
+            var htmlInput = '<td><input type="text" name="titulo" id="titulo" value="'+titulo+'" size="15"></td>'+
+                            '<td><input type="text" name="imagen" id="imagen" value="'+imagen+'" size="100"></td>'+
+                            '<td><input type="text" name="descripcion" id="descripcion" value="'+descripcion+'" size="30"></td>'+
+                            '<td><button type="submit" id="boton_eliminarNoti class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button></td>';
+
+            nodoTr.innerHTML = htmlInput;
+
+            nodoContenedorForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos'+
+            '<form name = "tablaNoticias" action="vistas/index.php" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
+            '<input class="boton" type = "submit" value="Aceptar"> <input class="boton" type="reset" value="Cancelar">';
+            edicion = "true";  
+        }
+        else 
+        {
+            alert ('En este momento esta siendo editada una noticia, por favor guarde los cambios y continue');
+        }
+    }
+
+    //metodo por medio del cual se capturan los nuevos datos ingresados en el formulario
+    function capturarEnvio()
+    {
+        var nodoContenedorForm = document.getElementById('htmlActualizar'); //Nodo DIV
+        nodoContenedorForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos'+
+        '<form name = "formulario" action="vistas/index.php" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
+        '<input type="hidden" name="titulo" value="'+document.querySelector('#titulo').value+'">'+
+        '<input type="hidden" name="imagen" value="'+document.querySelector('#imagen').value+'">'+
+        '<input type="hidden" name="descripcion" value="'+document.querySelector('#descripcion').value+'">'+
+        '<input class="boton" type = "submit" value="Aceptar"> <input class="boton" type="reset" value="Cancelar">';
+        document.formulario.submit();
+    }
+
+    //metodo por medio del cual se anula la acción 
+    function anular()
+    {
+        window.location.reload();
+    }
+/*-----------------------fin editar fila-----------------------------*/
 
 /*-------------------------administrador-------------------------*/
-        
+     //noticia   
         $('#accion_registrarNoticia').click(function(event){
 
             event.preventDefault();
             link('vistas/registrarNoticia.php', '#contenido');
-
-
         });
+
        $('#insertar_noticia').click(function(event){
 
             event.preventDefault();
-            link('vistas/index.php', '#contenido');
-            
+            link('vistas/ventanaModal.php', '#contenido');
         });
+
+       $('#accion_actualizarNoti').click(function(event){
+
+            event.preventDefault();
+            //link('vistas/index.php', '#contenido');
+            transformarCampos(nodo);
+        });
+
+       $('#actualizar_noticia').click(function(event)
+       {
+            event.preventDefault();
+            link('vistas/ventanaModal.php', '#contenido');
+       });
+
+    //club
+       $('#accion_registrarclub').click(function(event)
+       {
+            event.preventDefault();
+            link('vistas/registrarClub.php', '#contenido');
+       }); 
+
+       $('#insertar_club').click(function(event)
+       {
+            event.preventDefault();
+            link('vistas/ventanaModal.php', '#contenido');
+       });   
 /*-------------------fin administrador-----------------------*/
+
+/*...................ventana modal...........................*/
 
 
 
@@ -336,7 +434,7 @@ $('#boton_menumobile').click(function(event)
             });
     }
 
-    /*............cargar ranking base de datos........*/
+    /*............cargar ranking femenino base de datos........*/
     function rankingF()
     {
         $.ajax({
@@ -358,12 +456,12 @@ $('#boton_menumobile').click(function(event)
             });
     }
 
-    /*............cargar organo administrativo base de datos........*/
-    function organoAdm()
+    /*............cargar ranking masculino base de datos........*/
+    function rankingM()
     {
         $.ajax({
                 type: 'POST',
-                url:'home/cargarOrganoA',
+                url:'home/cargarRankingMasculinoHome',
                 
                 beforeSend: function()
                 {
@@ -372,11 +470,32 @@ $('#boton_menumobile').click(function(event)
                 success: function(response)
                 {
                     //console.log(response);
-
-                    $("#accion_tablaOrganoA").html(response);
+                    $("#accion_tablaRankingM").html(response.tabla);
                 },
                 error: function(msg){
                    
+                }
+            });
+    }
+
+    /*............cargar organo administrativo base de datos........*/
+    function organoAdm()
+    {
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarOrganoAHome',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    console.log(response);
+                    $("#accion_tablaOrganoA").html(response.tabla);
+                },
+                error: function(msg){
+                    console.log(msg);
                 }
             });
     }
@@ -394,15 +513,66 @@ $('#boton_menumobile').click(function(event)
                 },
                 success: function(response)
                 {
-                    console.log(response);
+                    //console.log(response);
                     $("#accion_tablaDeportista").html(response.tabla);
                 },
                 error: function(msg){
-                   console.log(msg)
+                  // console.log(msg)
                 }
             });
     }
+
+    /*............cargar clubes base de datos........*/
+    function clubes()
+    {
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarClubHome',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    //console.log(response);
+                    $("#accion_tablaClubes").html(response.tabla);
+                },
+                error: function(msg){
+                  // console.log(msg)
+                }
+            });
+    }
+
+
+    /*............cargar eventos base de datos........*/
+    function eventos()
+    {
+        $.ajax({
+                type: 'POST',
+                url:'home/cargarEventosHome',
+                
+                beforeSend: function()
+                {
+                   
+                },
+                success: function(response)
+                {
+                    $("#accion_tablaEventos").html(response.tabla);
+                },
+                error: function(msg){
+
+                }
+            });
+    }
+
+
+
     /*............. metodo ventana modal..........*/
+    function ventanaModal()
+    {
+        
+    }
 
 });
 

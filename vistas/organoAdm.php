@@ -29,7 +29,7 @@
 										$tabla = "";
 									 	for ($i=0; $i < count($data) ; $i++)
 									 	{ 
-											$tabla .= "<tr><th>".$data[$i]['contacto']."</th><th>".$data[$i]['cargo']."</th><th>".$data[$i]['informacion']."</th><th>".$data[$i]['nombre']."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th></tr>";
+											$tabla .= "<tr><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td><td>".$data[$i]['nombre']."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td></tr>";
 										}
 										echo $tabla;
 									?>
@@ -73,7 +73,7 @@
 										$tabla = "";
 									 	for ($i=0; $i < count($data) ; $i++)
 									 	{ 
-											$tabla .= "<tr><th>".$data[$i]['contacto']."</th><th>".$data[$i]['cargo']."</th><th>".$data[$i]['informacion']."</th><th>".$data['nombre']."</th><th>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</th><th>".
+											$tabla .= "<tr><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td><td>".$data['nombre']."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td><td>".
 													   '<button type="submit" id="boton_actualizarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
 											  	    	<button type="submit" id="boton_eliminarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></th></tr>';
 										}

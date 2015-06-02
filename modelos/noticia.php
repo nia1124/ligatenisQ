@@ -23,9 +23,9 @@
 			$eliminado = $this->delete();
 		}
 
-		function actualizarNoticias()
+		function actualizarNoticias($valores, $condicion)
 		{
-			$actualizada = $this->update();
+			$actualizada = $this->update($valores, $condicion);
 		}
 
 		function registrarNoticia($campos, $valores)

@@ -8,25 +8,25 @@
 	  				</div>
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
-	  						<table class="table">
+	  						<table class="table" id="tablaRankingM">
 								<thead>
 									<tr>
-										<th style="width: 216px">N°</th>
+										<th>Posicion</th>
 										<th>Nombre</th>
-										<th style="width: 216px">Puntos</th>
+										<th>Puntos</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Daniel</td>
-										<td>10000</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Cristian</td>
-										<td>2000</td>
-									</tr>
+									<?php
+										$data = $parametros;
+										$tabla = "";
+									 	for ($i=0; $i < count($data) ; $i++) 
+									 	{ 
+											$tabla .= "<tr><td>".$data[$i]['posicion']."</td><td>".$data[$i]['nombre']."</td><td>".$data[$i]['puntos']."</td></tr>";
+											
+										}
+										echo $tabla;
+									?>
 								</tbody>
 							</table>
 	  					</div>

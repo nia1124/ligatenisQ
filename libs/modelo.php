@@ -232,10 +232,24 @@
 			return $this->query($consultaDep);
 		}
 
-		//function cargarOrganoAdmin($consultaOrgano)
-		//{
-		//	return $this->query($consultaOrgano);
-		//}
-		
+	    function cargarEntrenadorModelo($consultaEntrenador)
+		{
+			return $this->query($consultaEntrenador);
+		}
+
+		function cargarOrganoAdmin($consultaOrgano)
+		{
+			return $this->query($consultaOrgano);
+		}
+
+		function cargarRankingModeloMas($consultaMas)
+		{
+			return $this->query($consultaMas);
+		}
+
+		function cargarClubesModelo($consultaClub)
+		{
+			return $this->query($consultaClub);
+		}
 	}
 ?>

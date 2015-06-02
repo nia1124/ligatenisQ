@@ -1,7 +1,7 @@
 <?php 
 	require_once('libs/modelo.php'); 
 	
-	class Deportista extends modelo
+	class deportista extends modelo
 	{
 		
 		function __construct()
