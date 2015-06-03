@@ -18,50 +18,55 @@
 </head>
 <body class="fondo-B">
 <div class="container">
-	<?php include 'header.php';
-?>
+<?php include 'header.php';?>
 	<div id="contenido" class="container">
-
 		<?php 
-			if (!isset($_COOKIE['chsm']) || $_COOKIE['chsm']=="logedin") 
-			{
+			if (!isset($_COOKIE['chsm']) || $_COOKIE['chsm']=="logedin"){
 		?>
-				<div class="row padding-l">
-					<div class=" col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 ">
-						<div class="panel panel-primary fondopagina borde fondo-B">
-		  					<div class="panel-heading ">
-		    					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
-		  					</div>
-		  					<div class="panel-body">
-			  					<div class="table-responsive">
-									<table class="table table-hover" id="tablaNoticias"> 
-										<thead>
-											<tr>
-												<th class="col-lg-3"></th>
-												<th class="col-lg-4"></th>
-												<th class="col-lg-6"></th>
-											</tr>
-										</thead>
-										<tbody>
-									
-										<?php
-											$data = $parametros;
-											$tabla = "";
-										 	for ($i=0; $i < count($data) ; $i++)
-										 	{ 
-												$tabla .= "<tr><td>"."<h3>".utf8_encode($data[$i]['titulo'])."</h3>"."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td><td>".utf8_encode($data[$i]['descripcion'])."</td><tr>";
-												
-											}
-											echo $tabla;
-
-										?>
-										</tbody>
-									</table>
-								</div>
-		  					</div>
-						</div>
-					</div>
+		<div class="row padding-l">
+			<div class=" col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 ">
+				<div class="panel panel-primary fondopagina borde fondo-B">
+				<div class="panel-heading ">
+					<h1 class="panel-title" align="left">Noticias Destacadas</h1>
 				</div>
+				<?php
+					$data = $parametros;
+					$tabla = "";
+					$campo = "";
+					$j=0;
+				 	for ($i=0; $i < count($data) ; $i++)
+				 	{ 
+				 		if($j==0)
+				 		{
+				 			$campo.='<div class="row">';
+				 		}
+				 		if($data[$i]['imagen']==""){
+				 			$data[$i]['imagen']="uploads/notFound.gif";
+				 		}
+
+				 		$campo .= 
+				 		'<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">'.
+				 			'<div class="thumbnail"><img class="img-responsive" src="'.$data[$i]['imagen'].'" alt="">
+				 				<div class="caption">
+				 					<h3>'.utf8_encode($data[$i]['titulo']).'</h3>
+				 					<p>'.utf8_encode($data[$i]['descripcion']).'</p>
+						      </div>
+						    </div>'
+				 		.'</div>';
+						$j++;
+						if($j==3)
+						{
+							$campo.='</div>';
+							$j=0;
+						}
+
+					}							
+					echo $campo;
+
+				?>
+				
+			</div>
+		</div>
 			</div>
 				<?php
 				}else{

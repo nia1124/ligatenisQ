@@ -318,25 +318,32 @@
 			if (count($respuesta)>0 && $tipo == 0) 
 			{
 
-				setcookie("chsm", "logedin", time()+3600, "/");
+				setcookie("user", "$username", time()+3600, "/");
+				setcookie("chsm", "logedin", time()+3600, "/");	
 				$result['estado']="Exito";			
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);
-				
+			
 			}
-			elseif (count($respuesta)>0 && $tipo == 1) {
+			else if (count($respuesta)>0 && $tipo == 1) {
+				setcookie("user", "$username", time()+3600, "/");
 				setcookie("chsm", "logedinAdmin", time()+3600, "/");
 				$result['estado']="Exito";
 				$result['mensaje']="Bienvenido";
 				echo json_encode($result);
-				
 			}
+			header('Location: index.php');
 		}
 		
 		public function logout()
 		{
-			setcookie("chsm", "", time() - 3600,"/");
-			header("location: /ligatenisQ");
+			if(isset($_COOKIE['chsm']))
+			{
+				setcookie("user", "$username", time()-3600, "/");
+				setcookie("chsm", "logedin", time()-3600, "/");		
+			}
+			header('Location: /index.php');
 		}
 	}
-?>
+
+

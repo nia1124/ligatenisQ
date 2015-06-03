@@ -54,22 +54,22 @@
 						          </ul>
 						        </li>
 
-						        <li class="dropdown">
+						       <!-- <li class="dropdown">
 						          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Galeria<span class="caret"></span></a>
 						          <ul class="dropdown-menu" role="menu">
 						            <li><a href="">Fotos</a></li>
 						            <li class="divider"></li>
 						            <li><a href="">Videos</a></li>
 						          </ul>
-						        </li>
+						        </li> -->
 
 						        <li><a href="" id="accion_eventos">Eventos</a></li>
-						        <li><a href="">Foro</a></li>
-						        <?php if (!isset($_SESSION['facebook'])): ?>
+						        <!--<li><a href="">Foro</a></li>-->
+						        <?php if(!isset($_SESSION['facebook']) && !isset($_COOKIE['user'])) { ?>
 						        <li><a href="" id="accion_registro" class="btn btn-danger2">Registrate</a></li>
 						        
 						        <li><a href=""  id="accion_iniciosesion" class="btn btn-danger">Iniciar Sesión</a></li>
-						        <?php else: ?>
+						        <?php }elseif (isset($_SESSION['facebook'])) { ?>
 						            <li class="dropdown">
 						              <a href="" class="dropdown-toggle btn btn-danger" data-toggle="dropdown">
 						                Bienvenido <?php echo $facebook_user->getFirstName();?><span class="caret"></span></a>
@@ -77,7 +77,15 @@
 						                <li id="cerrarSesion"><a href="" class="dropdown-toggle">Cerrar Sesión</a></li>
 						              </ul> 
 						            </li> 
-						            <?php endif; ?> 
+						            <?php }else{ ?>
+										<li class="dropdown">
+						              <a href="" class="dropdown-toggle btn btn-danger" data-toggle="dropdown">
+						                Bienvenido <?php echo $_COOKIE['user'];?><span class="caret"></span></a>
+						              <ul class="dropdown-menu" role="menu">
+						                <li id="cerrarSesion"><a href="" class="dropdown-toggle">Cerrar Sesión</a></li>
+						              </ul> 
+						            </li> 
+						            <?php	} ?> 
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->

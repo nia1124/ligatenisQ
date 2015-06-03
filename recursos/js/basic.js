@@ -78,6 +78,8 @@ $(document).ready(function()
 
         $('#cerrarSesion').click(function(event)
         {
+
+            $.ajax({url:'home/logout'});
             link('libs/conexion_facebook/app/logout.php', '#contenido');
         });
 
@@ -394,7 +396,7 @@ $('#boton_menumobile').click(function(event)
                         $('#boton_iniciosesion').attr('disabled', false);
                     }
                 });
-                return false;
+                
             });
         },500);
     }

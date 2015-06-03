@@ -1,7 +1,7 @@
 <div class="iniciosesion container margen" id="contenido" >
 	<div class="row" >
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " style="margin: 0%">
-			<form role="form" id="accion_iniciosesion" action="home/login" method="POST" accept-charset="utf-8">
+			<form role="form" id="accion_iniciosesion" method="POST" accept-charset="utf-8">
 				<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 panel borde " align="center">
 					<div class="panel-heading">
 						<h1 class="panel-title" align="left">Iniciar Sesión</h1>
