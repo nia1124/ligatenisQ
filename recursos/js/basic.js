@@ -13,6 +13,7 @@ $(document).ready(function()
             event.preventDefault();
             link('home/cargarOrganoAHome', '#contenido');
             link('vistas/organoAdm.php', '#contenido');
+            cargarBotonRegistroOrganoA();
 
         });
 
@@ -21,6 +22,7 @@ $(document).ready(function()
             event.preventDefault();
             link('home/cargarClubHome', '#contenido');
             link('vistas/clubes.php', '#contenido');
+            cargarBotonRegistroClub();
         });
 
         $('#accion_rankingF').click(function(event) 
@@ -44,7 +46,7 @@ $(document).ready(function()
             event.preventDefault();
             link('home/cargarDeportistaHome', '#contenido');
             link('vistas/deportista.php', '#contenido');
-            
+            cargarBotonRegistroDeportista();
         });  
 
         $('#accion_entrenador').click(function(event) 
@@ -59,6 +61,7 @@ $(document).ready(function()
             event.preventDefault();
             link('home/cargarEventosHome', '#contenido');
             link('vistas/eventos.php', '#contenido');
+            cargarBotonRegistroEvento();
         });
 
         $('#accion_registro').click(function(event) 
@@ -163,7 +166,7 @@ $(document).ready(function()
 $('#boton_menumobile').click(function(event)
 {
     $('#collapsed').Collapse('hide');
-})
+});
 
 
 /*---------------------editar fila tabla --------------------*/
@@ -234,13 +237,43 @@ $('#boton_menumobile').click(function(event)
 
             event.preventDefault();
             link('vistas/registrarNoticia.php', '#contenido');
+            registronoticia();
         });
 
-       $('#insertar_noticia').click(function(event){
 
-            event.preventDefault();
-            link('vistas/ventanaModal.php', '#contenido');
-        });
+        function registronoticia(){
+            setTimeout(function() {
+  
+            $('#insertar_noticia').click(function(){
+                
+                var idImagen = document.getElementById("uploadedfile");
+                var imagen = idImagen.files;
+                var archivos = new FormData();
+                 // Adjunto una imagen
+                 
+                 archivos.append('uploadedfile', imagen);
+                 archivos.append('titulo', $("#titulo").val());
+                 archivos.append('descripcion', $("#descripcion").val());
+                 console.log(archivos);
+                $.ajax({
+                    type: 'POST',
+                    url:'home/insertarNoticias',
+                    data: archivos,
+                    processData: false,
+                    success: function(response)
+                    {
+                       
+                        console.log(response);
+                        $("#modal").html(response);
+                    },
+                    error: function(msg){
+                      // console.log(msg)
+                    }
+                });   
+            });       
+            }, 500);
+          
+        }
 
        $('#accion_actualizarNoti').click(function(event){
 
@@ -255,19 +288,87 @@ $('#boton_menumobile').click(function(event)
             link('vistas/ventanaModal.php', '#contenido');
        });
 
-    //club
-       $('#accion_registrarclub').click(function(event)
-       {
-            event.preventDefault();
-            link('vistas/registrarClub.php', '#contenido');
-       }); 
+    //organo administrativo
+    function cargarBotonRegistroOrganoA()
+    {
+        setTimeout(function(){
+        $('#accion_registrarOrganoA').click(function(event)
+         {  event.preventDefault();
+            link('vistas/registrarOrganoA.php', '#contenido');
+         });
+        },500);
 
-       $('#insertar_club').click(function(event)
-       {
+        $('#insertar_organoA').click(function(event)
+           {
+                event.preventDefault();
+                link('home/insertarOrganoA', '#contenido')
+                link('vistas/ventanaModal.php', '#contenido');
+           });  
+    }   
+
+    //club
+    function cargarBotonRegistroClub()
+    {  
+         setTimeout(function(){
+         $('#accion_registrarclub').click(function(event)
+         {  event.preventDefault();
+            link('vistas/registrarclub.php', '#contenido');
+         });   
+         },500);
+
+           $('#insertar_club').click(function(event)
+           {
+                event.preventDefault();
+                link('home/insertarclub', '#contenido')
+                link('vistas/ventanaModal.php', '#contenido');
+           });  
+    }
+       
+
+    //eventos
+    function cargarBotonRegistroEvento()
+    {
+        setTimeout(function(){
+        $('#accion_registrarEvento').click(function(event)
+        {   event.preventDefault();
+            link('vistas/registrarEvento.php', '#contenido');
+        });  
+        },500);
+
+        $('#insertar_evento').click(function(event)
+        {
+            event.preventDefault();
+            link('home/insertarEvento', '#contenido');
+            link('vistas/index.php', '#contenido');
+        });    
+
+    }
+
+    //deportista
+    function cargarBotonRegistroDeportista()
+    {
+        setTimeout(function(){
+        $('accion_registrarDeportista').click(function(event)
+        {
+            event.preventDefault();
+            link('vistas/registrarDeportista.php', '#contenido');
+        });  
+        },500);
+
+        $('#insertar_deportista').click(function(event)
+        {
             event.preventDefault();
             link('vistas/index.php', '#contenido');
-       });   
-/*-------------------fin administrador-----------------------*/
+        }); 
+    }
+
+
+        
+
+        
+
+
+        /*-------------------fin administrador-----------------------*/
 
 /*...................ventana modal...........................*/
 

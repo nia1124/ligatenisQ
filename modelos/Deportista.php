@@ -38,6 +38,13 @@
 			return $resultado;
 		}
 
+		function registrarDeportista($campos, $valores)
+		{
+			$consultaRegistrar = "";
+			$resultado = $this->registrarDeportistaModelo($consultaRegistrar)->fetchAll();
+			return $resultado;
+		}
+
 	}
 
  ?>

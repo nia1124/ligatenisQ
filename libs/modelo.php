@@ -163,7 +163,6 @@
 				}
 
 			}
-			echo "$queryInsert";
 			$this->query($queryInsert);	
 		}
 
@@ -250,6 +249,11 @@
 		function cargarClubesModelo($consultaClub)
 		{
 			return $this->query($consultaClub);
+		}
+
+		function registrarDeportistaModelo($consultaDeportista)
+		{
+			return $this->query($consultaDeportista);
 		}
 	}
 ?>

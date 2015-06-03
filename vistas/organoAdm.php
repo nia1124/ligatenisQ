@@ -15,11 +15,10 @@
 	  						<table class="table" id="tablaOrganoA"> 
 								<thead>
 									<tr>
+										<th>Nombre</th>
 										<th>Contacto</th>
 										<th>Cargo</th>
 										<th>Informacion</th>
-										<th>Nombre</th> 
-										<th>Imagen</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -29,7 +28,7 @@
 										$tabla = "";
 									 	for ($i=0; $i < count($data) ; $i++)
 									 	{ 
-											$tabla .= "<tr><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td><td>".$data[$i]['nombre']."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td></tr>";
+											$tabla .= "<tr><td>".$data[$i]['nombre']."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td></tr>";
 										}
 										echo $tabla;
 									?>
@@ -54,16 +53,15 @@
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
 	  						<div>
-	  							<button type="submit" id="boton_eliminarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+	  							<button type="submit" id="accion_registrarOrganoA" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 							</div>
 	  						<table class="table" id="tablaOrganoA"> 
 								<thead>
 									<tr>
+										<th>Nombre</th>
 										<th>Contacto</th>
 										<th>Cargo</th>
-										<th>Informacion</th>
-										<th>Nombre</th> 
-										<th>Imagen</th>
+										<th>Información</th> 
 									</tr>
 								</thead>
 								<tbody>
@@ -73,7 +71,7 @@
 										$tabla = "";
 									 	for ($i=0; $i < count($data) ; $i++)
 									 	{ 
-											$tabla .= "<tr><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td><td>".$data['nombre']."</td><td>".'<img class="img-responsive thumbnail" src="'.$data[$i]['imagen'].'"/>'."</td><td>".
+											$tabla .= $tabla .= "<tr><td>".$data[$i]['nombre']."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['cargo']."</td><td>".$data[$i]['informacion']."</td><td>".
 													   '<button type="submit" id="boton_actualizarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
 											  	    	<button type="submit" id="boton_eliminarOrgA" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></th></tr>';
 										}

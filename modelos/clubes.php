@@ -26,7 +26,7 @@
 			$actualizado = $this->update();
 		}
 
-		function registrarClub($campos, $valores)
+		function registrarclub($campos, $valores)
 		{
 			$insertado = $this->insert($campos, $valores);
 		}

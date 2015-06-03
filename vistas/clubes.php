@@ -16,7 +16,6 @@
 								<thead>
 									<tr>
 									<th>Club</th>
-									<th>Nombre</th>
 									<th>Contacto</th>
 									<th>Información Adicional</th>
 									</tr>
@@ -28,7 +27,7 @@
 											$tabla = "";
 										 	for ($i=0; $i < count($data) ; $i++)
 										 	{ 
-										 		$tabla .= "<tr><td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['nombreClub']."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['infoA']."</td></tr>";
+										 		$tabla .= "<tr><td>".$data[$i]['nombreClub']."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['infoA']."</td></tr>";
 												
 											}
 										echo $tabla;	
@@ -54,13 +53,12 @@
 	  				<div class="panel-body">
 	  					<div class="table-responsive">
 	  					<div>
-	  						<button type="submit" id="accion_registrarClub" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+	  						<button type="submit" id="accion_registrarclub" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 						</div>
 	  						<table class="table table-hover" id="tablaClubes">
 								<thead>
 									<tr>
 									<th>Club</th>
-									<th>Nombre</th>
 									<th>Contacto</th>
 									<th>Información Adicional</th>
 									</tr>
@@ -72,8 +70,8 @@
 											$tabla = "";
 										 	for ($i=0; $i < count($data) ; $i++)
 										 	{ 
-										 		$tabla .= "<tr><td>".'<img src="'.$data[$i]['imagen'].'"/>'."</td><td>".$data[$i]['nombreClub']."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['infoA'].
-										 		'<td><button type="submit" id="boton_actualizarClubes class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
+										 		$tabla .= "<tr><td>".$data[$i]['nombreClub']."</td><td>".$data[$i]['contacto']."</td><td>".$data[$i]['infoA']."</td><td>".
+										 		'<button type="submit" id="boton_actualizarClubes class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span></button>
 												 <button type="submit" id="boton_eliminarClubes class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>'."</td></tr>";
 											}
 										echo $tabla;	

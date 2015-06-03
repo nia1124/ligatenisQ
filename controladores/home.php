@@ -30,24 +30,29 @@
 
 		}
 
+		public function cargarImagen()
+		{
+
+		}
 		
 		//metodos crud de noticia
 		public function insertarNoticias()
 		{
+			echo json_encode($_FILES);
+
 			
 			$target_path = "uploads/";
-			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
+			$target_path = $target_path . basename( $_FILES[0]['name']); 
 			if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) 
 			{
-				 echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
+				
 			} else{
 				
-				echo "Ha ocurrido un error, trate de nuevo!";
+				
 			}
 			$msg="";
 			$uploadedfileload="true";
 			$uploadedfile_size=$_FILES['uploadedfile']['size'];
-			echo $_FILES['uploadedfile']['name'];
 			if ($_FILES['uploadedfile']['size']>200000)
 			{
 				$msg="El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo<BR>";
@@ -63,20 +68,8 @@
 
 			$file_name=$_FILES['uploadedfile']['name'];
 			$add="uploads/$file_name";
-			if($uploadedfileload=="true")
-			{
 
-				if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
-					echo " Ha sido subido satisfactoriamente";
-				}else
-				{
-					echo "Error al subir el archivo";
-				}
-
-			}else
-			{
-				echo $msg;
-			}
+			
 			$titulo = $_POST['titulo'];
 			$descripcion =$_POST['descripcion'];
 			$campos = array('titulo', 'descripcion', 'imagen');
@@ -84,6 +77,7 @@
 
 			$noticia = $this->cargarModelo("noticia");
 			$consultaBDR = $noticia->registrarNoticia( $campos, $valores);
+			echo json_encode("exitoso");
 		}
 
 
@@ -145,60 +139,64 @@
 		//fin crud noticia
 
 		//metodos crud club
-		public function insertarClub()
+		public function insertarclub()
 		{
-			$target_path = "uploads/";
-			$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
-			if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) 
-			{
-				 echo "El archivo ". basename( $_FILES['uploadedfile']['name']). " ha sido subido";
-			} else{
-				
-				echo "Ha ocurrido un error, trate de nuevo!";
-			}
-			$msg="";
-			$uploadedfileload="true";
-			$uploadedfile_size=$_FILES['uploadedfile']['size'];
-			echo $_FILES['uploadedfile']['name'];
-			if ($_FILES['uploadedfile']['size']>200000)
-			{
-				$msg="El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo<BR>";
-				$uploadedfileload="false";
-			}
-
-			if (!($_FILES['uploadedfile']['type'] =="image/jpeg" OR $_FILES['uploadedfile']['type'] =="image/gif"
-				OR $_FILES['uploadedfile']['type'] =="image/png") OR $_FILES['uploadedfile']['type'] =="image/jpg")
-			{
-				$msg=" Tu archivo tiene que ser JPG o GIF. Otros archivos no son permitidos<BR>";
-				$uploadedfileload="false";
-			}
-
-			$file_name=$_FILES['uploadedfile']['name'];
-			$add="uploads/$file_name";
-			if($uploadedfileload=="true")
-			{
-
-				if(move_uploaded_file ($_FILES['uploadedfile']['tmp_name'], $add)){
-					echo " Ha sido subido satisfactoriamente";
-				}else
-				{
-					echo "Error al subir el archivo";
-				}
-
-			}else
-			{
-				echo $msg;
-			}
-
-			$imagen = $_POST['imagen'];
 			$nombreC = $_POST['nombreClub'];
 			$contacto =$_POST['contacto'];
 			$informacion = $_POST['infoA'];
-			$campos = array('imagen', 'nombreClub', 'contacto', 'infoA');
-			$valores = array($target_path, $nombreC, $contacto, $informacion);
+			$campos = array('nombreClub', 'contacto', 'infoA');
+			$valores = array($nombreC, $contacto, $informacion);
 
 			$club = $this->cargarModelo("clubes");
-			$consultaBD = $club->registrarClub($campos, $valores);
+			$consultaBD = $club->registrarclub($campos, $valores);
+		}
+
+		//crud deportista
+		public function insertarDeportista()
+		{
+			$nombre = $_POST['nombre'];
+			$edad = $_POST['edad'];
+			$puntos = $_POST['puntos'];
+			$categoria = $_POST['categoria'];
+			$nombrecl = $_POST['nombreClub'];
+
+			$campos = array('nombre', 'edad', 'puntos', 'categoria', 'nombreClub');
+			$valores = array($nombre, $edad, $puntos, $categoria, $nombrecl);
+
+			$deportista = $this->cargarModelo("deportista");
+			$consultaBDD = $deportista->registrarDeportista($campos, $valores); 
+
+		}
+
+		//crud eventos
+		public function insertarEvento()
+		{
+			$numero = $_POST['numero'];
+			$titulo = $_POST['titulo'];
+			$actividad = $_POST['actividad'];
+			$categoria = $_POST['categoria'];
+			$modalidad = $_POST['modalidad'];
+			$ciudad = $_POST['ciudad'];
+			$fecha = $_POST['fecha'];
+
+			$campos = array('numero', 'titulo', 'actividad', 'categoria', 'modalidad', 'ciudad', 'fecha');
+			$valores = array($numero, $titulo, $actividad, $categoria, $modalidad, $ciudad,STR_TO_DATE("$fecha", '%Y/%m/%d') );
+
+			$evento = $this->cargarModelo("eventos");
+			$consultaBDE = $evento->insertarEventos($campos, $valores);
+		}
+
+		//crud organo adminsitrativo
+		public function insertarOragnoA()
+		{
+			$nombre=$_POST['nombre'];
+			$contacto = $_POST['contacto'];
+			$cargo =$_POST['cargo'];
+			$informacion =$_POST['informacion'];
+			$campos = array('nombre','contacto', 'cargo', 'informacion');
+			$valores = array($nombre, $contacto, $cargo, $informacion);
+
+			print_r($valores);
 		}
 
 
@@ -250,20 +248,7 @@
 			$this->cargarVista("eventos", $consultaEV);
 		}
 
-		public function insertarOragnoA()
-		{
-			insertarImagen();
-			$contacto = $_POST['contacto'];
-			$cargo =$_POST['cargo'];
-			$informacion =$_POST['informacion'];
-			$nombre=$_POST['nombre'];
-			$imagen=$_POST['imagen'];
-			$campos = array('contacto','cargo', 'informacion', 'nombre', 'imagen');
-			$valores = array($contacto, $cargo, $informacion, $nombre, $target_path,);
-
-			print_r($valores);
-		}
-
+		
 
 		public function register() 
 		{	
